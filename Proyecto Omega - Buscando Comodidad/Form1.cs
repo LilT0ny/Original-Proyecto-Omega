@@ -22,7 +22,7 @@ namespace Proyecto_Omega
         public string apellido;
         public string cedula;
         public int telefono;
-        Fecha;
+        Fecha reservacion;
     }
     public struct Datos
     {
@@ -53,6 +53,7 @@ namespace Proyecto_Omega
 
         private void button1_Click(object sender, EventArgs e)
         {
+
 
 
         }
