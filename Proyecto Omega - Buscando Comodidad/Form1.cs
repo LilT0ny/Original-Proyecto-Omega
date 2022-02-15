@@ -10,6 +10,14 @@ using System.Windows.Forms;
 
 namespace Proyecto_Omega
 {
+
+    public struct Informacion
+    {
+        char nombre;
+        char apellido;
+        char cedul
+    }
+
     public partial class Form1 : Form
     {
         public Form1()
@@ -17,53 +25,12 @@ namespace Proyecto_Omega
             InitializeComponent();
         }
 
-
-
-
-        private void label1_Click(object sender, EventArgs e)
-        {
-
-        }
-
         private void contextMenuStrip1_Opening(object sender, CancelEventArgs e)
         {
-
+            //No sirve es 
         }
 
-        private void label4_Click(object sender, EventArgs e)
-        {
 
-        }
-
-        private void label7_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void numericUpDown1_ValueChanged(object sender, EventArgs e)
-        {
-
-        }
-
-        private void treeView1_AfterSelect(object sender, TreeViewEventArgs e)
-        {
-
-        }
-
-        private void button1_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void label13_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void label16_Click(object sender, EventArgs e)
-        {
-
-        }
 
     }
 }
