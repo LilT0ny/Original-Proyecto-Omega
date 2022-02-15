@@ -10,6 +10,14 @@ using System.Windows.Forms;
 
 namespace Proyecto_Omega
 {
+
+    public struct Informacion
+    {
+        char nombre;
+        char apellido;
+        char cedul
+    }
+
     public partial class Form1 : Form
     {
         public Form1()
@@ -21,6 +29,7 @@ namespace Proyecto_Omega
         {
             //No sirve es 
         }
+
 
 
     }
