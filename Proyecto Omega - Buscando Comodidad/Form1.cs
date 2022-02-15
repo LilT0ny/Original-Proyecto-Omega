@@ -28,6 +28,14 @@ namespace Proyecto_Omega
     {
         public int acompaniantes;
         public string provincia;
+        public int presupueto;
+    }
+
+    public struct Habitacion
+    {
+        public int adultos;
+        public int ninios;
+        public int habitaciones;
 
     }
 
@@ -45,6 +53,7 @@ namespace Proyecto_Omega
 
         private void button1_Click(object sender, EventArgs e)
         {
+
 
         }
     }
