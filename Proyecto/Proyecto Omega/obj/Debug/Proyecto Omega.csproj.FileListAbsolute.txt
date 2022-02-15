@@ -1,0 +1,22 @@
+C:\Users\anjag\Documents\GitHub\Proyecto-Omega\Proyecto Omega\bin\Debug\Proyecto Omega.exe.config
+C:\Users\anjag\Documents\GitHub\Proyecto-Omega\Proyecto Omega\bin\Debug\Proyecto Omega.exe
+C:\Users\anjag\Documents\GitHub\Proyecto-Omega\Proyecto Omega\bin\Debug\Proyecto Omega.pdb
+C:\Users\anjag\Documents\GitHub\Proyecto-Omega\Proyecto Omega\obj\Debug\Proyecto Omega.csproj.AssemblyReference.cache
+C:\Users\anjag\Documents\GitHub\Proyecto-Omega\Proyecto Omega\obj\Debug\Proyecto Omega.csproj.SuggestedBindingRedirects.cache
+C:\Users\anjag\Documents\GitHub\Proyecto-Omega\Proyecto Omega\obj\Debug\Proyecto_Omega.Form1.resources
+C:\Users\anjag\Documents\GitHub\Proyecto-Omega\Proyecto Omega\obj\Debug\Proyecto_Omega.Properties.Resources.resources
+C:\Users\anjag\Documents\GitHub\Proyecto-Omega\Proyecto Omega\obj\Debug\Proyecto Omega.csproj.GenerateResource.cache
+C:\Users\anjag\Documents\GitHub\Proyecto-Omega\Proyecto Omega\obj\Debug\Proyecto Omega.csproj.CoreCompileInputs.cache
+C:\Users\anjag\Documents\GitHub\Proyecto-Omega\Proyecto Omega\obj\Debug\Proyecto Omega.exe
+C:\Users\anjag\Documents\GitHub\Proyecto-Omega\Proyecto Omega\obj\Debug\Proyecto Omega.pdb
+C:\Users\Shandri\Desktop\Directorio\Proyecto-Omega\Proyecto Omega\bin\Debug\Proyecto Omega.exe.config
+C:\Users\Shandri\Desktop\Directorio\Proyecto-Omega\Proyecto Omega\bin\Debug\Proyecto Omega.exe
+C:\Users\Shandri\Desktop\Directorio\Proyecto-Omega\Proyecto Omega\bin\Debug\Proyecto Omega.pdb
+C:\Users\Shandri\Desktop\Directorio\Proyecto-Omega\Proyecto Omega\obj\Debug\Proyecto Omega.csproj.AssemblyReference.cache
+C:\Users\Shandri\Desktop\Directorio\Proyecto-Omega\Proyecto Omega\obj\Debug\Proyecto Omega.csproj.SuggestedBindingRedirects.cache
+C:\Users\Shandri\Desktop\Directorio\Proyecto-Omega\Proyecto Omega\obj\Debug\Proyecto_Omega.Form1.resources
+C:\Users\Shandri\Desktop\Directorio\Proyecto-Omega\Proyecto Omega\obj\Debug\Proyecto_Omega.Properties.Resources.resources
+C:\Users\Shandri\Desktop\Directorio\Proyecto-Omega\Proyecto Omega\obj\Debug\Proyecto Omega.csproj.GenerateResource.cache
+C:\Users\Shandri\Desktop\Directorio\Proyecto-Omega\Proyecto Omega\obj\Debug\Proyecto Omega.csproj.CoreCompileInputs.cache
+C:\Users\Shandri\Desktop\Directorio\Proyecto-Omega\Proyecto Omega\obj\Debug\Proyecto Omega.exe
+C:\Users\Shandri\Desktop\Directorio\Proyecto-Omega\Proyecto Omega\obj\Debug\Proyecto Omega.pdb
