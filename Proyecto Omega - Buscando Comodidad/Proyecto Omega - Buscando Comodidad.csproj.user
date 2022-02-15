@@ -11,5 +11,6 @@
     <EnableUnmanagedDebugging>true</EnableUnmanagedDebugging>
     <EnableSQLServerDebugging>true</EnableSQLServerDebugging>
     <RemoteDebugEnabled>false</RemoteDebugEnabled>
+    <StartWorkingDirectory>C:\Users\Shandri\Desktop\Directorio\Original-Proyecto-Omega\Proyecto Omega - Buscando Comodidad\</StartWorkingDirectory>
   </PropertyGroup>
 </Project>

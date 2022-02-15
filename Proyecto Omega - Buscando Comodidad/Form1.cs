@@ -13,9 +13,10 @@ namespace Proyecto_Omega
 
     public struct Informacion
     {
-        char nombre;
-        char apellido;
-        char cedul
+        public string nombre;
+        public string apellido;
+        public string cedula;
+
     }
 
     public partial class Form1 : Form
@@ -30,7 +31,9 @@ namespace Proyecto_Omega
             //No sirve es 
         }
 
+        private void button1_Click(object sender, EventArgs e)
+        {
 
-
+        }
     }
 }
