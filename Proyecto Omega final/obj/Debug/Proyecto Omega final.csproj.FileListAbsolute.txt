@@ -9,3 +9,14 @@ C:\Users\Shandri\Desktop\Directorio\Original-Proyecto-Omega\Proyecto Omega final
 C:\Users\Shandri\Desktop\Directorio\Original-Proyecto-Omega\Proyecto Omega final\obj\Debug\Proyecto Omega final.csproj.CoreCompileInputs.cache
 C:\Users\Shandri\Desktop\Directorio\Original-Proyecto-Omega\Proyecto Omega final\obj\Debug\Proyecto Omega final.exe
 C:\Users\Shandri\Desktop\Directorio\Original-Proyecto-Omega\Proyecto Omega final\obj\Debug\Proyecto Omega final.pdb
+C:\Users\anjag\Documents\GitHub\Proyecto Omega final\bin\Debug\Proyecto Omega final.exe.config
+C:\Users\anjag\Documents\GitHub\Proyecto Omega final\bin\Debug\Proyecto Omega final.exe
+C:\Users\anjag\Documents\GitHub\Proyecto Omega final\bin\Debug\Proyecto Omega final.pdb
+C:\Users\anjag\Documents\GitHub\Proyecto Omega final\obj\Debug\Proyecto Omega final.csproj.AssemblyReference.cache
+C:\Users\anjag\Documents\GitHub\Proyecto Omega final\obj\Debug\Proyecto Omega final.csproj.SuggestedBindingRedirects.cache
+C:\Users\anjag\Documents\GitHub\Proyecto Omega final\obj\Debug\Proyecto_Omega_final.Form1.resources
+C:\Users\anjag\Documents\GitHub\Proyecto Omega final\obj\Debug\Proyecto_Omega_final.Properties.Resources.resources
+C:\Users\anjag\Documents\GitHub\Proyecto Omega final\obj\Debug\Proyecto Omega final.csproj.GenerateResource.cache
+C:\Users\anjag\Documents\GitHub\Proyecto Omega final\obj\Debug\Proyecto Omega final.csproj.CoreCompileInputs.cache
+C:\Users\anjag\Documents\GitHub\Proyecto Omega final\obj\Debug\Proyecto Omega final.exe
+C:\Users\anjag\Documents\GitHub\Proyecto Omega final\obj\Debug\Proyecto Omega final.pdb
