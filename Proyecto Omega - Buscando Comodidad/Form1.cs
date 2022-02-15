@@ -17,59 +17,11 @@ namespace Proyecto_Omega
             InitializeComponent();
         }
 
-        private void label1_Click(object sender, EventArgs e)
-        {
-
-        }
-
         private void contextMenuStrip1_Opening(object sender, CancelEventArgs e)
         {
-
+            //No sirve es 
         }
 
-        private void label4_Click(object sender, EventArgs e)
-        {
 
-        }
-
-        private void label7_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void numericUpDown1_ValueChanged(object sender, EventArgs e)
-        {
-
-        }
-
-        private void treeView1_AfterSelect(object sender, TreeViewEventArgs e)
-        {
-
-        }
-
-        private void button1_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void label13_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void label16_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void txtNombre_TextChanged(object sender, EventArgs e)
-        {
-
-        }
-
-        private void txtApellido_TextChanged(object sender, EventArgs e)
-        {
-
-        }
     }
 }

@@ -62,7 +62,6 @@
             this.numUpAdulto = new System.Windows.Forms.NumericUpDown();
             this.numUpNinio = new System.Windows.Forms.NumericUpDown();
             this.numUpMatrimonial = new System.Windows.Forms.NumericUpDown();
-            this.NumUpFamiliar = new System.Windows.Forms.NumericUpDown();
             this.numUpSingular = new System.Windows.Forms.NumericUpDown();
             this.label18 = new System.Windows.Forms.Label();
             this.label19 = new System.Windows.Forms.Label();
@@ -75,12 +74,13 @@
             this.rbtDesayuno = new System.Windows.Forms.RadioButton();
             this.rbtPicina = new System.Windows.Forms.RadioButton();
             this.backgroundWorker1 = new System.ComponentModel.BackgroundWorker();
+            this.NumUpFamiliar = new System.Windows.Forms.NumericUpDown();
             ((System.ComponentModel.ISupportInitialize)(this.numUpAcompaniante)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.numUpAdulto)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.numUpNinio)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.numUpMatrimonial)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.NumUpFamiliar)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.numUpSingular)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.NumUpFamiliar)).BeginInit();
             this.SuspendLayout();
             // 
             // label1
@@ -93,7 +93,6 @@
             this.label1.Size = new System.Drawing.Size(696, 51);
             this.label1.TabIndex = 0;
             this.label1.Text = "BUSCANDO TU COMODIDAD";
-            this.label1.Click += new System.EventHandler(this.label1_Click);
             // 
             // txtNombre
             // 
@@ -101,7 +100,6 @@
             this.txtNombre.Name = "txtNombre";
             this.txtNombre.Size = new System.Drawing.Size(200, 20);
             this.txtNombre.TabIndex = 1;
-            this.txtNombre.TextChanged += new System.EventHandler(this.txtNombre_TextChanged);
             // 
             // contextMenuStrip1
             // 
@@ -142,7 +140,6 @@
             this.label4.Size = new System.Drawing.Size(66, 13);
             this.label4.TabIndex = 6;
             this.label4.Text = "APELLIDOS";
-            this.label4.Click += new System.EventHandler(this.label4_Click);
             // 
             // label5
             // 
@@ -170,7 +167,6 @@
             this.label7.Size = new System.Drawing.Size(96, 26);
             this.label7.TabIndex = 9;
             this.label7.Text = "NÚMERO\r\nACOMPAÑANTES";
-            this.label7.Click += new System.EventHandler(this.label7_Click);
             // 
             // label8
             // 
@@ -196,7 +192,6 @@
             this.txtApellido.Name = "txtApellido";
             this.txtApellido.Size = new System.Drawing.Size(200, 20);
             this.txtApellido.TabIndex = 12;
-            this.txtApellido.TextChanged += new System.EventHandler(this.txtApellido_TextChanged);
             // 
             // txtCedula
             // 
@@ -218,7 +213,6 @@
             this.numUpAcompaniante.Name = "numUpAcompaniante";
             this.numUpAcompaniante.Size = new System.Drawing.Size(67, 20);
             this.numUpAcompaniante.TabIndex = 15;
-            this.numUpAcompaniante.ValueChanged += new System.EventHandler(this.numericUpDown1_ValueChanged);
             // 
             // cboxProvincia
             // 
@@ -304,7 +298,6 @@
             this.button1.TabIndex = 25;
             this.button1.Text = "COMPRAR";
             this.button1.UseVisualStyleBackColor = true;
-            this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
             // rbtNinguno
             // 
@@ -343,7 +336,6 @@
             this.label13.Size = new System.Drawing.Size(75, 52);
             this.label13.TabIndex = 29;
             this.label13.Text = "Familiar\r\n      - 3 Camas.\r\n      - 2 Baños.\r\n\r\n";
-            this.label13.Click += new System.EventHandler(this.label13_Click);
             // 
             // label14
             // 
@@ -372,7 +364,6 @@
             this.label16.Size = new System.Drawing.Size(58, 13);
             this.label16.TabIndex = 32;
             this.label16.Text = "ADULTOS";
-            this.label16.Click += new System.EventHandler(this.label16_Click);
             // 
             // label17
             // 
@@ -403,13 +394,6 @@
             this.numUpMatrimonial.Name = "numUpMatrimonial";
             this.numUpMatrimonial.Size = new System.Drawing.Size(120, 20);
             this.numUpMatrimonial.TabIndex = 36;
-            // 
-            // NumUpFamiliar
-            // 
-            this.NumUpFamiliar.Location = new System.Drawing.Point(161, 638);
-            this.NumUpFamiliar.Name = "NumUpFamiliar";
-            this.NumUpFamiliar.Size = new System.Drawing.Size(120, 20);
-            this.NumUpFamiliar.TabIndex = 37;
             // 
             // numUpSingular
             // 
@@ -518,6 +502,13 @@
             this.rbtPicina.UseMnemonic = false;
             this.rbtPicina.UseVisualStyleBackColor = true;
             // 
+            // NumUpFamiliar
+            // 
+            this.NumUpFamiliar.Location = new System.Drawing.Point(161, 638);
+            this.NumUpFamiliar.Name = "NumUpFamiliar";
+            this.NumUpFamiliar.Size = new System.Drawing.Size(120, 20);
+            this.NumUpFamiliar.TabIndex = 37;
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -574,8 +565,8 @@
             ((System.ComponentModel.ISupportInitialize)(this.numUpAdulto)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.numUpNinio)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.numUpMatrimonial)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.NumUpFamiliar)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.numUpSingular)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.NumUpFamiliar)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -616,7 +607,6 @@
         private System.Windows.Forms.NumericUpDown numUpAdulto;
         private System.Windows.Forms.NumericUpDown numUpNinio;
         private System.Windows.Forms.NumericUpDown numUpMatrimonial;
-        private System.Windows.Forms.NumericUpDown NumUpFamiliar;
         private System.Windows.Forms.NumericUpDown numUpSingular;
         private System.Windows.Forms.Label label18;
         private System.Windows.Forms.Label label19;
@@ -629,6 +619,7 @@
         private System.Windows.Forms.RadioButton rbtDesayuno;
         private System.Windows.Forms.RadioButton rbtPicina;
         private System.ComponentModel.BackgroundWorker backgroundWorker1;
+        private System.Windows.Forms.NumericUpDown NumUpFamiliar;
     }
 }
 
