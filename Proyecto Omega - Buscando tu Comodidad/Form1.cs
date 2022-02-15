@@ -17,6 +17,9 @@ namespace Proyecto_Omega
             InitializeComponent();
         }
 
+
+
+
         private void label1_Click(object sender, EventArgs e)
         {
 
@@ -62,14 +65,5 @@ namespace Proyecto_Omega
 
         }
 
-        private void txtNombre_TextChanged(object sender, EventArgs e)
-        {
-
-        }
-
-        private void txtApellido_TextChanged(object sender, EventArgs e)
-        {
-
-        }
     }
 }
