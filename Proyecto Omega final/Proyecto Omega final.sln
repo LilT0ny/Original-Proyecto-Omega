@@ -1,0 +1,25 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.0.32126.317
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Proyecto Omega final", "Proyecto Omega final.csproj", "{0E7653AB-6C82-4AEE-8414-123D5994495F}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{0E7653AB-6C82-4AEE-8414-123D5994495F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{0E7653AB-6C82-4AEE-8414-123D5994495F}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{0E7653AB-6C82-4AEE-8414-123D5994495F}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{0E7653AB-6C82-4AEE-8414-123D5994495F}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {B9F43A45-CFD3-48E0-A5A1-83C05BEA7F53}
+	EndGlobalSection
+EndGlobal
