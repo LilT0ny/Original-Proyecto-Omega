@@ -4,3 +4,8 @@ C:\Users\Shandri\Desktop\Directorio\Original-Proyecto-Omega\Proyecto Omega - Bus
 C:\Users\Shandri\Desktop\Directorio\Original-Proyecto-Omega\Proyecto Omega - Buscando Comodidad\obj\Debug\Proyecto_Omega___Buscando_Comodidad.Properties.Resources.resources
 C:\Users\Shandri\Desktop\Directorio\Original-Proyecto-Omega\Proyecto Omega - Buscando Comodidad\obj\Debug\Proyecto Omega - Buscando Comodidad.csproj.GenerateResource.cache
 C:\Users\Shandri\Desktop\Directorio\Original-Proyecto-Omega\Proyecto Omega - Buscando Comodidad\obj\Debug\Proyecto Omega - Buscando Comodidad.csproj.CoreCompileInputs.cache
+C:\Users\anjag\Documents\GitHub\Original-Proyecto-Omega\Proyecto Omega - Buscando Comodidad (variables)\obj\Debug\Proyecto Omega - Buscando Comodidad.csproj.AssemblyReference.cache
+C:\Users\anjag\Documents\GitHub\Original-Proyecto-Omega\Proyecto Omega - Buscando Comodidad (variables)\obj\Debug\Proyecto_Omega.Form1.resources
+C:\Users\anjag\Documents\GitHub\Original-Proyecto-Omega\Proyecto Omega - Buscando Comodidad (variables)\obj\Debug\Proyecto_Omega___Buscando_Comodidad.Properties.Resources.resources
+C:\Users\anjag\Documents\GitHub\Original-Proyecto-Omega\Proyecto Omega - Buscando Comodidad (variables)\obj\Debug\Proyecto Omega - Buscando Comodidad.csproj.GenerateResource.cache
+C:\Users\anjag\Documents\GitHub\Original-Proyecto-Omega\Proyecto Omega - Buscando Comodidad (variables)\obj\Debug\Proyecto Omega - Buscando Comodidad.csproj.CoreCompileInputs.cache
