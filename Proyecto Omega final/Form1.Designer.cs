@@ -41,26 +41,26 @@
             this.label11 = new System.Windows.Forms.Label();
             this.label12 = new System.Windows.Forms.Label();
             this.label13 = new System.Windows.Forms.Label();
-            this.dateTimePicker1 = new System.Windows.Forms.DateTimePicker();
-            this.textBox1 = new System.Windows.Forms.TextBox();
-            this.textBox2 = new System.Windows.Forms.TextBox();
-            this.textBox3 = new System.Windows.Forms.TextBox();
-            this.textBox4 = new System.Windows.Forms.TextBox();
-            this.numericUpDown1 = new System.Windows.Forms.NumericUpDown();
-            this.numericUpDown2 = new System.Windows.Forms.NumericUpDown();
-            this.numericUpDown3 = new System.Windows.Forms.NumericUpDown();
-            this.numericUpDown4 = new System.Windows.Forms.NumericUpDown();
-            this.numericUpDown5 = new System.Windows.Forms.NumericUpDown();
-            this.numericUpDown6 = new System.Windows.Forms.NumericUpDown();
-            this.comboBox1 = new System.Windows.Forms.ComboBox();
-            this.radioButton1 = new System.Windows.Forms.RadioButton();
-            this.radioButton2 = new System.Windows.Forms.RadioButton();
-            this.radioButton3 = new System.Windows.Forms.RadioButton();
-            this.textBox5 = new System.Windows.Forms.TextBox();
-            this.comboBox2 = new System.Windows.Forms.ComboBox();
-            this.radioButton5 = new System.Windows.Forms.RadioButton();
-            this.button1 = new System.Windows.Forms.Button();
-            this.radioButton6 = new System.Windows.Forms.RadioButton();
+            this.dtFecha = new System.Windows.Forms.DateTimePicker();
+            this.txtNombre = new System.Windows.Forms.TextBox();
+            this.txtApellido = new System.Windows.Forms.TextBox();
+            this.txtCedula = new System.Windows.Forms.TextBox();
+            this.txtNumero = new System.Windows.Forms.TextBox();
+            this.numUpAcompaniante = new System.Windows.Forms.NumericUpDown();
+            this.numUpAdultos = new System.Windows.Forms.NumericUpDown();
+            this.numUpNiños = new System.Windows.Forms.NumericUpDown();
+            this.numUpMatrimonial = new System.Windows.Forms.NumericUpDown();
+            this.numUpFamiliar = new System.Windows.Forms.NumericUpDown();
+            this.numUpEscolar = new System.Windows.Forms.NumericUpDown();
+            this.cmbProvincia = new System.Windows.Forms.ComboBox();
+            this.rbtCarro = new System.Windows.Forms.RadioButton();
+            this.rbtBus = new System.Windows.Forms.RadioButton();
+            this.rbtAvion = new System.Windows.Forms.RadioButton();
+            this.txtPresupuesto = new System.Windows.Forms.TextBox();
+            this.cmbCategoria = new System.Windows.Forms.ComboBox();
+            this.rbtPicina = new System.Windows.Forms.RadioButton();
+            this.btComprar = new System.Windows.Forms.Button();
+            this.rbtDesayunos = new System.Windows.Forms.RadioButton();
             this.label14 = new System.Windows.Forms.Label();
             this.label15 = new System.Windows.Forms.Label();
             this.label16 = new System.Windows.Forms.Label();
@@ -71,13 +71,13 @@
             this.label21 = new System.Windows.Forms.Label();
             this.label22 = new System.Windows.Forms.Label();
             this.label23 = new System.Windows.Forms.Label();
-            this.radioButton4 = new System.Windows.Forms.RadioButton();
-            ((System.ComponentModel.ISupportInitialize)(this.numericUpDown1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.numericUpDown2)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.numericUpDown3)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.numericUpDown4)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.numericUpDown5)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.numericUpDown6)).BeginInit();
+            this.rbtNinguno = new System.Windows.Forms.RadioButton();
+            ((System.ComponentModel.ISupportInitialize)(this.numUpAcompaniante)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.numUpAdultos)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.numUpNiños)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.numUpMatrimonial)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.numUpFamiliar)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.numUpEscolar)).BeginInit();
             this.SuspendLayout();
             // 
             // label1
@@ -193,87 +193,87 @@
             this.label13.TabIndex = 12;
             this.label13.Text = "FECHA \r\nRESERVACION";
             // 
-            // dateTimePicker1
+            // dtFecha
             // 
-            this.dateTimePicker1.Location = new System.Drawing.Point(125, 252);
-            this.dateTimePicker1.Name = "dateTimePicker1";
-            this.dateTimePicker1.Size = new System.Drawing.Size(200, 20);
-            this.dateTimePicker1.TabIndex = 13;
+            this.dtFecha.Location = new System.Drawing.Point(125, 252);
+            this.dtFecha.Name = "dtFecha";
+            this.dtFecha.Size = new System.Drawing.Size(200, 20);
+            this.dtFecha.TabIndex = 13;
             // 
-            // textBox1
+            // txtNombre
             // 
-            this.textBox1.Location = new System.Drawing.Point(125, 120);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(224, 20);
-            this.textBox1.TabIndex = 14;
+            this.txtNombre.Location = new System.Drawing.Point(125, 120);
+            this.txtNombre.Name = "txtNombre";
+            this.txtNombre.Size = new System.Drawing.Size(224, 20);
+            this.txtNombre.TabIndex = 14;
             // 
-            // textBox2
+            // txtApellido
             // 
-            this.textBox2.Location = new System.Drawing.Point(125, 147);
-            this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(224, 20);
-            this.textBox2.TabIndex = 15;
+            this.txtApellido.Location = new System.Drawing.Point(125, 147);
+            this.txtApellido.Name = "txtApellido";
+            this.txtApellido.Size = new System.Drawing.Size(224, 20);
+            this.txtApellido.TabIndex = 15;
             // 
-            // textBox3
+            // txtCedula
             // 
-            this.textBox3.Location = new System.Drawing.Point(125, 181);
-            this.textBox3.Name = "textBox3";
-            this.textBox3.Size = new System.Drawing.Size(100, 20);
-            this.textBox3.TabIndex = 16;
+            this.txtCedula.Location = new System.Drawing.Point(125, 181);
+            this.txtCedula.Name = "txtCedula";
+            this.txtCedula.Size = new System.Drawing.Size(100, 20);
+            this.txtCedula.TabIndex = 16;
             // 
-            // textBox4
+            // txtNumero
             // 
-            this.textBox4.Location = new System.Drawing.Point(125, 212);
-            this.textBox4.Name = "textBox4";
-            this.textBox4.Size = new System.Drawing.Size(100, 20);
-            this.textBox4.TabIndex = 17;
+            this.txtNumero.Location = new System.Drawing.Point(125, 212);
+            this.txtNumero.Name = "txtNumero";
+            this.txtNumero.Size = new System.Drawing.Size(100, 20);
+            this.txtNumero.TabIndex = 17;
             // 
-            // numericUpDown1
+            // numUpAcompaniante
             // 
-            this.numericUpDown1.Location = new System.Drawing.Point(571, 121);
-            this.numericUpDown1.Name = "numericUpDown1";
-            this.numericUpDown1.Size = new System.Drawing.Size(102, 20);
-            this.numericUpDown1.TabIndex = 18;
+            this.numUpAcompaniante.Location = new System.Drawing.Point(571, 121);
+            this.numUpAcompaniante.Name = "numUpAcompaniante";
+            this.numUpAcompaniante.Size = new System.Drawing.Size(102, 20);
+            this.numUpAcompaniante.TabIndex = 18;
             // 
-            // numericUpDown2
+            // numUpAdultos
             // 
-            this.numericUpDown2.Location = new System.Drawing.Point(139, 397);
-            this.numericUpDown2.Name = "numericUpDown2";
-            this.numericUpDown2.Size = new System.Drawing.Size(90, 20);
-            this.numericUpDown2.TabIndex = 19;
+            this.numUpAdultos.Location = new System.Drawing.Point(139, 397);
+            this.numUpAdultos.Name = "numUpAdultos";
+            this.numUpAdultos.Size = new System.Drawing.Size(90, 20);
+            this.numUpAdultos.TabIndex = 19;
             // 
-            // numericUpDown3
+            // numUpNiños
             // 
-            this.numericUpDown3.Location = new System.Drawing.Point(139, 424);
-            this.numericUpDown3.Name = "numericUpDown3";
-            this.numericUpDown3.Size = new System.Drawing.Size(90, 20);
-            this.numericUpDown3.TabIndex = 20;
+            this.numUpNiños.Location = new System.Drawing.Point(139, 424);
+            this.numUpNiños.Name = "numUpNiños";
+            this.numUpNiños.Size = new System.Drawing.Size(90, 20);
+            this.numUpNiños.TabIndex = 20;
             // 
-            // numericUpDown4
+            // numUpMatrimonial
             // 
-            this.numericUpDown4.Location = new System.Drawing.Point(138, 567);
-            this.numericUpDown4.Name = "numericUpDown4";
-            this.numericUpDown4.Size = new System.Drawing.Size(120, 20);
-            this.numericUpDown4.TabIndex = 21;
+            this.numUpMatrimonial.Location = new System.Drawing.Point(138, 567);
+            this.numUpMatrimonial.Name = "numUpMatrimonial";
+            this.numUpMatrimonial.Size = new System.Drawing.Size(120, 20);
+            this.numUpMatrimonial.TabIndex = 21;
             // 
-            // numericUpDown5
+            // numUpFamiliar
             // 
-            this.numericUpDown5.Location = new System.Drawing.Point(138, 649);
-            this.numericUpDown5.Name = "numericUpDown5";
-            this.numericUpDown5.Size = new System.Drawing.Size(120, 20);
-            this.numericUpDown5.TabIndex = 22;
+            this.numUpFamiliar.Location = new System.Drawing.Point(138, 649);
+            this.numUpFamiliar.Name = "numUpFamiliar";
+            this.numUpFamiliar.Size = new System.Drawing.Size(120, 20);
+            this.numUpFamiliar.TabIndex = 22;
             // 
-            // numericUpDown6
+            // numUpEscolar
             // 
-            this.numericUpDown6.Location = new System.Drawing.Point(138, 722);
-            this.numericUpDown6.Name = "numericUpDown6";
-            this.numericUpDown6.Size = new System.Drawing.Size(120, 20);
-            this.numericUpDown6.TabIndex = 23;
+            this.numUpEscolar.Location = new System.Drawing.Point(138, 722);
+            this.numUpEscolar.Name = "numUpEscolar";
+            this.numUpEscolar.Size = new System.Drawing.Size(120, 20);
+            this.numUpEscolar.TabIndex = 23;
             // 
-            // comboBox1
+            // cmbProvincia
             // 
-            this.comboBox1.FormattingEnabled = true;
-            this.comboBox1.Items.AddRange(new object[] {
+            this.cmbProvincia.FormattingEnabled = true;
+            this.cmbProvincia.Items.AddRange(new object[] {
             "Azuay",
             "Bolívar",
             "Cañar",
@@ -298,95 +298,95 @@
             "Sucumbíos",
             "Tungurahua",
             "Zamora-Chinchipe"});
-            this.comboBox1.Location = new System.Drawing.Point(571, 199);
-            this.comboBox1.Name = "comboBox1";
-            this.comboBox1.Size = new System.Drawing.Size(121, 21);
-            this.comboBox1.TabIndex = 24;
+            this.cmbProvincia.Location = new System.Drawing.Point(571, 199);
+            this.cmbProvincia.Name = "cmbProvincia";
+            this.cmbProvincia.Size = new System.Drawing.Size(121, 21);
+            this.cmbProvincia.TabIndex = 24;
             // 
-            // radioButton1
+            // rbtCarro
             // 
-            this.radioButton1.AutoSize = true;
-            this.radioButton1.Location = new System.Drawing.Point(571, 258);
-            this.radioButton1.Name = "radioButton1";
-            this.radioButton1.Size = new System.Drawing.Size(138, 17);
-            this.radioButton1.TabIndex = 25;
-            this.radioButton1.TabStop = true;
-            this.radioButton1.Text = "Alquiler de un Automovil";
-            this.radioButton1.UseVisualStyleBackColor = true;
+            this.rbtCarro.AutoSize = true;
+            this.rbtCarro.Location = new System.Drawing.Point(571, 258);
+            this.rbtCarro.Name = "rbtCarro";
+            this.rbtCarro.Size = new System.Drawing.Size(138, 17);
+            this.rbtCarro.TabIndex = 25;
+            this.rbtCarro.TabStop = true;
+            this.rbtCarro.Text = "Alquiler de un Automovil";
+            this.rbtCarro.UseVisualStyleBackColor = true;
             // 
-            // radioButton2
+            // rbtBus
             // 
-            this.radioButton2.AutoSize = true;
-            this.radioButton2.Location = new System.Drawing.Point(571, 281);
-            this.radioButton2.Name = "radioButton2";
-            this.radioButton2.Size = new System.Drawing.Size(43, 17);
-            this.radioButton2.TabIndex = 26;
-            this.radioButton2.TabStop = true;
-            this.radioButton2.Text = "Bus";
-            this.radioButton2.UseVisualStyleBackColor = true;
+            this.rbtBus.AutoSize = true;
+            this.rbtBus.Location = new System.Drawing.Point(571, 281);
+            this.rbtBus.Name = "rbtBus";
+            this.rbtBus.Size = new System.Drawing.Size(43, 17);
+            this.rbtBus.TabIndex = 26;
+            this.rbtBus.TabStop = true;
+            this.rbtBus.Text = "Bus";
+            this.rbtBus.UseVisualStyleBackColor = true;
             // 
-            // radioButton3
+            // rbtAvion
             // 
-            this.radioButton3.AutoSize = true;
-            this.radioButton3.Location = new System.Drawing.Point(571, 305);
-            this.radioButton3.Name = "radioButton3";
-            this.radioButton3.Size = new System.Drawing.Size(52, 17);
-            this.radioButton3.TabIndex = 27;
-            this.radioButton3.TabStop = true;
-            this.radioButton3.Text = "Avion";
-            this.radioButton3.UseVisualStyleBackColor = true;
+            this.rbtAvion.AutoSize = true;
+            this.rbtAvion.Location = new System.Drawing.Point(571, 305);
+            this.rbtAvion.Name = "rbtAvion";
+            this.rbtAvion.Size = new System.Drawing.Size(52, 17);
+            this.rbtAvion.TabIndex = 27;
+            this.rbtAvion.TabStop = true;
+            this.rbtAvion.Text = "Avion";
+            this.rbtAvion.UseVisualStyleBackColor = true;
             // 
-            // textBox5
+            // txtPresupuesto
             // 
-            this.textBox5.Location = new System.Drawing.Point(573, 376);
-            this.textBox5.Name = "textBox5";
-            this.textBox5.Size = new System.Drawing.Size(100, 20);
-            this.textBox5.TabIndex = 29;
+            this.txtPresupuesto.Location = new System.Drawing.Point(573, 376);
+            this.txtPresupuesto.Name = "txtPresupuesto";
+            this.txtPresupuesto.Size = new System.Drawing.Size(100, 20);
+            this.txtPresupuesto.TabIndex = 29;
             // 
-            // comboBox2
+            // cmbCategoria
             // 
-            this.comboBox2.FormattingEnabled = true;
-            this.comboBox2.Items.AddRange(new object[] {
+            this.cmbCategoria.FormattingEnabled = true;
+            this.cmbCategoria.Items.AddRange(new object[] {
             "★★★★★",
             "★★★★",
             "★★★",
             "★★",
             "★"});
-            this.comboBox2.Location = new System.Drawing.Point(571, 503);
-            this.comboBox2.Name = "comboBox2";
-            this.comboBox2.Size = new System.Drawing.Size(121, 21);
-            this.comboBox2.TabIndex = 30;
+            this.cmbCategoria.Location = new System.Drawing.Point(571, 503);
+            this.cmbCategoria.Name = "cmbCategoria";
+            this.cmbCategoria.Size = new System.Drawing.Size(121, 21);
+            this.cmbCategoria.TabIndex = 30;
             // 
-            // radioButton5
+            // rbtPicina
             // 
-            this.radioButton5.AutoSize = true;
-            this.radioButton5.Location = new System.Drawing.Point(573, 576);
-            this.radioButton5.Name = "radioButton5";
-            this.radioButton5.Size = new System.Drawing.Size(54, 17);
-            this.radioButton5.TabIndex = 31;
-            this.radioButton5.TabStop = true;
-            this.radioButton5.Text = "Picina";
-            this.radioButton5.UseVisualStyleBackColor = true;
+            this.rbtPicina.AutoSize = true;
+            this.rbtPicina.Location = new System.Drawing.Point(573, 576);
+            this.rbtPicina.Name = "rbtPicina";
+            this.rbtPicina.Size = new System.Drawing.Size(54, 17);
+            this.rbtPicina.TabIndex = 31;
+            this.rbtPicina.TabStop = true;
+            this.rbtPicina.Text = "Picina";
+            this.rbtPicina.UseVisualStyleBackColor = true;
             // 
-            // button1
+            // btComprar
             // 
-            this.button1.Location = new System.Drawing.Point(548, 629);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(75, 23);
-            this.button1.TabIndex = 32;
-            this.button1.Text = "COMPRAR";
-            this.button1.UseVisualStyleBackColor = true;
+            this.btComprar.Location = new System.Drawing.Point(548, 629);
+            this.btComprar.Name = "btComprar";
+            this.btComprar.Size = new System.Drawing.Size(75, 23);
+            this.btComprar.TabIndex = 32;
+            this.btComprar.Text = "COMPRAR";
+            this.btComprar.UseVisualStyleBackColor = true;
             // 
-            // radioButton6
+            // rbtDesayunos
             // 
-            this.radioButton6.AutoSize = true;
-            this.radioButton6.Location = new System.Drawing.Point(573, 553);
-            this.radioButton6.Name = "radioButton6";
-            this.radioButton6.Size = new System.Drawing.Size(78, 17);
-            this.radioButton6.TabIndex = 33;
-            this.radioButton6.TabStop = true;
-            this.radioButton6.Text = "Desayunos";
-            this.radioButton6.UseVisualStyleBackColor = true;
+            this.rbtDesayunos.AutoSize = true;
+            this.rbtDesayunos.Location = new System.Drawing.Point(573, 553);
+            this.rbtDesayunos.Name = "rbtDesayunos";
+            this.rbtDesayunos.Size = new System.Drawing.Size(78, 17);
+            this.rbtDesayunos.TabIndex = 33;
+            this.rbtDesayunos.TabStop = true;
+            this.rbtDesayunos.Text = "Desayunos";
+            this.rbtDesayunos.UseVisualStyleBackColor = true;
             // 
             // label14
             // 
@@ -480,16 +480,16 @@
             this.label23.TabIndex = 43;
             this.label23.Text = "PRESUPUESTO";
             // 
-            // radioButton4
+            // rbtNinguno
             // 
-            this.radioButton4.AutoSize = true;
-            this.radioButton4.Location = new System.Drawing.Point(571, 329);
-            this.radioButton4.Name = "radioButton4";
-            this.radioButton4.Size = new System.Drawing.Size(65, 17);
-            this.radioButton4.TabIndex = 44;
-            this.radioButton4.TabStop = true;
-            this.radioButton4.Text = "Ninguno";
-            this.radioButton4.UseVisualStyleBackColor = true;
+            this.rbtNinguno.AutoSize = true;
+            this.rbtNinguno.Location = new System.Drawing.Point(571, 329);
+            this.rbtNinguno.Name = "rbtNinguno";
+            this.rbtNinguno.Size = new System.Drawing.Size(65, 17);
+            this.rbtNinguno.TabIndex = 44;
+            this.rbtNinguno.TabStop = true;
+            this.rbtNinguno.Text = "Ninguno";
+            this.rbtNinguno.UseVisualStyleBackColor = true;
             // 
             // Form1
             // 
@@ -497,7 +497,7 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(192)))), ((int)(((byte)(255)))));
             this.ClientSize = new System.Drawing.Size(800, 827);
-            this.Controls.Add(this.radioButton4);
+            this.Controls.Add(this.rbtNinguno);
             this.Controls.Add(this.label23);
             this.Controls.Add(this.label22);
             this.Controls.Add(this.label21);
@@ -508,26 +508,26 @@
             this.Controls.Add(this.label16);
             this.Controls.Add(this.label15);
             this.Controls.Add(this.label14);
-            this.Controls.Add(this.radioButton6);
-            this.Controls.Add(this.button1);
-            this.Controls.Add(this.radioButton5);
-            this.Controls.Add(this.comboBox2);
-            this.Controls.Add(this.textBox5);
-            this.Controls.Add(this.radioButton3);
-            this.Controls.Add(this.radioButton2);
-            this.Controls.Add(this.radioButton1);
-            this.Controls.Add(this.comboBox1);
-            this.Controls.Add(this.numericUpDown6);
-            this.Controls.Add(this.numericUpDown5);
-            this.Controls.Add(this.numericUpDown4);
-            this.Controls.Add(this.numericUpDown3);
-            this.Controls.Add(this.numericUpDown2);
-            this.Controls.Add(this.numericUpDown1);
-            this.Controls.Add(this.textBox4);
-            this.Controls.Add(this.textBox3);
-            this.Controls.Add(this.textBox2);
-            this.Controls.Add(this.textBox1);
-            this.Controls.Add(this.dateTimePicker1);
+            this.Controls.Add(this.rbtDesayunos);
+            this.Controls.Add(this.btComprar);
+            this.Controls.Add(this.rbtPicina);
+            this.Controls.Add(this.cmbCategoria);
+            this.Controls.Add(this.txtPresupuesto);
+            this.Controls.Add(this.rbtAvion);
+            this.Controls.Add(this.rbtBus);
+            this.Controls.Add(this.rbtCarro);
+            this.Controls.Add(this.cmbProvincia);
+            this.Controls.Add(this.numUpEscolar);
+            this.Controls.Add(this.numUpFamiliar);
+            this.Controls.Add(this.numUpMatrimonial);
+            this.Controls.Add(this.numUpNiños);
+            this.Controls.Add(this.numUpAdultos);
+            this.Controls.Add(this.numUpAcompaniante);
+            this.Controls.Add(this.txtNumero);
+            this.Controls.Add(this.txtCedula);
+            this.Controls.Add(this.txtApellido);
+            this.Controls.Add(this.txtNombre);
+            this.Controls.Add(this.dtFecha);
             this.Controls.Add(this.label13);
             this.Controls.Add(this.label12);
             this.Controls.Add(this.label11);
@@ -544,12 +544,12 @@
             this.Name = "Form1";
             this.Text = "Proyecto Omega";
             this.Load += new System.EventHandler(this.Form1_Load);
-            ((System.ComponentModel.ISupportInitialize)(this.numericUpDown1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.numericUpDown2)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.numericUpDown3)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.numericUpDown4)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.numericUpDown5)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.numericUpDown6)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.numUpAcompaniante)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.numUpAdultos)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.numUpNiños)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.numUpMatrimonial)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.numUpFamiliar)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.numUpEscolar)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -569,26 +569,26 @@
         private System.Windows.Forms.Label label11;
         private System.Windows.Forms.Label label12;
         private System.Windows.Forms.Label label13;
-        private System.Windows.Forms.DateTimePicker dateTimePicker1;
-        private System.Windows.Forms.TextBox textBox1;
-        private System.Windows.Forms.TextBox textBox2;
-        private System.Windows.Forms.TextBox textBox3;
-        private System.Windows.Forms.TextBox textBox4;
-        private System.Windows.Forms.NumericUpDown numericUpDown1;
-        private System.Windows.Forms.NumericUpDown numericUpDown2;
-        private System.Windows.Forms.NumericUpDown numericUpDown3;
-        private System.Windows.Forms.NumericUpDown numericUpDown4;
-        private System.Windows.Forms.NumericUpDown numericUpDown5;
-        private System.Windows.Forms.NumericUpDown numericUpDown6;
-        private System.Windows.Forms.ComboBox comboBox1;
-        private System.Windows.Forms.RadioButton radioButton1;
-        private System.Windows.Forms.RadioButton radioButton2;
-        private System.Windows.Forms.RadioButton radioButton3;
-        private System.Windows.Forms.TextBox textBox5;
-        private System.Windows.Forms.ComboBox comboBox2;
-        private System.Windows.Forms.RadioButton radioButton5;
-        private System.Windows.Forms.Button button1;
-        private System.Windows.Forms.RadioButton radioButton6;
+        private System.Windows.Forms.DateTimePicker dtFecha;
+        private System.Windows.Forms.TextBox txtNombre;
+        private System.Windows.Forms.TextBox txtApellido;
+        private System.Windows.Forms.TextBox txtCedula;
+        private System.Windows.Forms.TextBox txtNumero;
+        private System.Windows.Forms.NumericUpDown numUpAcompaniante;
+        private System.Windows.Forms.NumericUpDown numUpAdultos;
+        private System.Windows.Forms.NumericUpDown numUpNiños;
+        private System.Windows.Forms.NumericUpDown numUpMatrimonial;
+        private System.Windows.Forms.NumericUpDown numUpFamiliar;
+        private System.Windows.Forms.NumericUpDown numUpEscolar;
+        private System.Windows.Forms.ComboBox cmbProvincia;
+        private System.Windows.Forms.RadioButton rbtCarro;
+        private System.Windows.Forms.RadioButton rbtBus;
+        private System.Windows.Forms.RadioButton rbtAvion;
+        private System.Windows.Forms.TextBox txtPresupuesto;
+        private System.Windows.Forms.ComboBox cmbCategoria;
+        private System.Windows.Forms.RadioButton rbtPicina;
+        private System.Windows.Forms.Button btComprar;
+        private System.Windows.Forms.RadioButton rbtDesayunos;
         private System.Windows.Forms.Label label14;
         private System.Windows.Forms.Label label15;
         private System.Windows.Forms.Label label16;
@@ -599,7 +599,7 @@
         private System.Windows.Forms.Label label21;
         private System.Windows.Forms.Label label22;
         private System.Windows.Forms.Label label23;
-        private System.Windows.Forms.RadioButton radioButton4;
+        private System.Windows.Forms.RadioButton rbtNinguno;
     }
 }
 
