@@ -16,10 +16,33 @@ namespace Proyecto_Omega_final
         {
             InitializeComponent();
         }
+        
+        struct Informacion{
+            String nombre;
+            String apellido;
+            String cedula;
+            String numero;
+        };
+        struct Fecha{ // no se como poner la estruc fecha 
+            
+        };
+        struct Hotel{
+            char categoria;
+            String provincia;
+            String adicionales;
+            String transporte;
+            int presupuesto;
 
-        private void Form1_Load(object sender, EventArgs e)
-        {
-
+        };
+        struct Habitaciones{
+            int matrimonial;
+            int familiar;
+            int escolar;
         }
+        struct Huespedes{
+            int adultos;
+            int ninos;
+            int acompanantes;
+        };
     }
 }
