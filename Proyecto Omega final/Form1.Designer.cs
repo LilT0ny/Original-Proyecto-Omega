@@ -71,15 +71,17 @@
             this.label21 = new System.Windows.Forms.Label();
             this.label22 = new System.Windows.Forms.Label();
             this.label23 = new System.Windows.Forms.Label();
-            this.rbtNinguno = new System.Windows.Forms.RadioButton();
             this.btnLimpiar = new System.Windows.Forms.Button();
-            this.rbtCena = new System.Windows.Forms.RadioButton();
-            this.rbtAlmuerzo = new System.Windows.Forms.RadioButton();
             this.panel1 = new System.Windows.Forms.Panel();
             this.label8 = new System.Windows.Forms.Label();
             this.panel2 = new System.Windows.Forms.Panel();
             this.panel3 = new System.Windows.Forms.Panel();
             this.panel4 = new System.Windows.Forms.Panel();
+            this.btnSalir = new System.Windows.Forms.Button();
+            this.rbtCena = new System.Windows.Forms.RadioButton();
+            this.rbtAlmuerzo = new System.Windows.Forms.RadioButton();
+            this.groupBox3 = new System.Windows.Forms.GroupBox();
+            this.groupBox1 = new System.Windows.Forms.GroupBox();
             ((System.ComponentModel.ISupportInitialize)(this.numUpAcompaniante)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.numUpAdultos)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.numUpNiños)).BeginInit();
@@ -90,6 +92,8 @@
             this.panel2.SuspendLayout();
             this.panel3.SuspendLayout();
             this.panel4.SuspendLayout();
+            this.groupBox3.SuspendLayout();
+            this.groupBox1.SuspendLayout();
             this.SuspendLayout();
             // 
             // label1
@@ -318,33 +322,31 @@
             // rbtCarro
             // 
             this.rbtCarro.AutoSize = true;
-            this.rbtCarro.Location = new System.Drawing.Point(96, 302);
+            this.rbtCarro.Cursor = System.Windows.Forms.Cursors.Default;
+            this.rbtCarro.Location = new System.Drawing.Point(11, 19);
             this.rbtCarro.Name = "rbtCarro";
             this.rbtCarro.Size = new System.Drawing.Size(138, 17);
             this.rbtCarro.TabIndex = 25;
-            this.rbtCarro.TabStop = true;
             this.rbtCarro.Text = "Alquiler de un Automovil";
             this.rbtCarro.UseVisualStyleBackColor = true;
             // 
             // rbtBus
             // 
             this.rbtBus.AutoSize = true;
-            this.rbtBus.Location = new System.Drawing.Point(96, 325);
+            this.rbtBus.Location = new System.Drawing.Point(11, 42);
             this.rbtBus.Name = "rbtBus";
             this.rbtBus.Size = new System.Drawing.Size(43, 17);
             this.rbtBus.TabIndex = 26;
-            this.rbtBus.TabStop = true;
             this.rbtBus.Text = "Bus";
             this.rbtBus.UseVisualStyleBackColor = true;
             // 
             // rbtAvion
             // 
             this.rbtAvion.AutoSize = true;
-            this.rbtAvion.Location = new System.Drawing.Point(96, 349);
+            this.rbtAvion.Location = new System.Drawing.Point(11, 65);
             this.rbtAvion.Name = "rbtAvion";
             this.rbtAvion.Size = new System.Drawing.Size(52, 17);
             this.rbtAvion.TabIndex = 27;
-            this.rbtAvion.TabStop = true;
             this.rbtAvion.Text = "Avion";
             this.rbtAvion.UseVisualStyleBackColor = true;
             // 
@@ -372,13 +374,13 @@
             // rbtPiscina
             // 
             this.rbtPiscina.AutoSize = true;
-            this.rbtPiscina.Location = new System.Drawing.Point(96, 253);
+            this.rbtPiscina.Location = new System.Drawing.Point(11, 88);
             this.rbtPiscina.Name = "rbtPiscina";
             this.rbtPiscina.Size = new System.Drawing.Size(59, 17);
             this.rbtPiscina.TabIndex = 31;
-            this.rbtPiscina.TabStop = true;
             this.rbtPiscina.Text = "Piscina";
             this.rbtPiscina.UseVisualStyleBackColor = true;
+            this.rbtPiscina.CheckedChanged += new System.EventHandler(this.rbtPiscina_CheckedChanged);
             // 
             // btComprar
             // 
@@ -394,13 +396,13 @@
             // rbtDesayunos
             // 
             this.rbtDesayunos.AutoSize = true;
-            this.rbtDesayunos.Location = new System.Drawing.Point(96, 184);
+            this.rbtDesayunos.Location = new System.Drawing.Point(11, 19);
             this.rbtDesayunos.Name = "rbtDesayunos";
             this.rbtDesayunos.Size = new System.Drawing.Size(78, 17);
             this.rbtDesayunos.TabIndex = 33;
-            this.rbtDesayunos.TabStop = true;
             this.rbtDesayunos.Text = "Desayunos";
             this.rbtDesayunos.UseVisualStyleBackColor = true;
+            this.rbtDesayunos.CheckedChanged += new System.EventHandler(this.rbtDesayunos_CheckedChanged);
             // 
             // label14
             // 
@@ -494,17 +496,6 @@
             this.label23.TabIndex = 43;
             this.label23.Text = "PRESUPUESTO";
             // 
-            // rbtNinguno
-            // 
-            this.rbtNinguno.AutoSize = true;
-            this.rbtNinguno.Location = new System.Drawing.Point(96, 373);
-            this.rbtNinguno.Name = "rbtNinguno";
-            this.rbtNinguno.Size = new System.Drawing.Size(65, 17);
-            this.rbtNinguno.TabIndex = 44;
-            this.rbtNinguno.TabStop = true;
-            this.rbtNinguno.Text = "Ninguno";
-            this.rbtNinguno.UseVisualStyleBackColor = true;
-            // 
             // btnLimpiar
             // 
             this.btnLimpiar.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(192)))), ((int)(((byte)(255)))));
@@ -515,52 +506,25 @@
             this.btnLimpiar.TabIndex = 45;
             this.btnLimpiar.Text = "LIMPIAR";
             this.btnLimpiar.UseVisualStyleBackColor = false;
-            // 
-            // rbtCena
-            // 
-            this.rbtCena.AutoSize = true;
-            this.rbtCena.Location = new System.Drawing.Point(96, 230);
-            this.rbtCena.Name = "rbtCena";
-            this.rbtCena.Size = new System.Drawing.Size(50, 17);
-            this.rbtCena.TabIndex = 46;
-            this.rbtCena.TabStop = true;
-            this.rbtCena.Text = "Cena";
-            this.rbtCena.UseVisualStyleBackColor = true;
-            // 
-            // rbtAlmuerzo
-            // 
-            this.rbtAlmuerzo.AutoSize = true;
-            this.rbtAlmuerzo.Location = new System.Drawing.Point(96, 207);
-            this.rbtAlmuerzo.Name = "rbtAlmuerzo";
-            this.rbtAlmuerzo.Size = new System.Drawing.Size(68, 17);
-            this.rbtAlmuerzo.TabIndex = 47;
-            this.rbtAlmuerzo.TabStop = true;
-            this.rbtAlmuerzo.Text = "Almuerzo";
-            this.rbtAlmuerzo.UseVisualStyleBackColor = true;
+            this.btnLimpiar.Click += new System.EventHandler(this.btnLimpiar_Click);
             // 
             // panel1
             // 
             this.panel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(192)))), ((int)(((byte)(255)))));
+            this.panel1.Controls.Add(this.groupBox1);
+            this.panel1.Controls.Add(this.groupBox3);
             this.panel1.Controls.Add(this.label8);
             this.panel1.Controls.Add(this.label22);
-            this.panel1.Controls.Add(this.rbtAlmuerzo);
             this.panel1.Controls.Add(this.label7);
-            this.panel1.Controls.Add(this.rbtCena);
             this.panel1.Controls.Add(this.dtFecha);
             this.panel1.Controls.Add(this.label11);
             this.panel1.Controls.Add(this.label13);
             this.panel1.Controls.Add(this.cmbProvincia);
-            this.panel1.Controls.Add(this.rbtNinguno);
-            this.panel1.Controls.Add(this.rbtCarro);
             this.panel1.Controls.Add(this.label23);
-            this.panel1.Controls.Add(this.rbtBus);
-            this.panel1.Controls.Add(this.rbtAvion);
             this.panel1.Controls.Add(this.label21);
             this.panel1.Controls.Add(this.txtPresupuesto);
             this.panel1.Controls.Add(this.label20);
             this.panel1.Controls.Add(this.cmbCategoria);
-            this.panel1.Controls.Add(this.rbtPiscina);
-            this.panel1.Controls.Add(this.rbtDesayunos);
             this.panel1.Location = new System.Drawing.Point(29, 80);
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(315, 403);
@@ -624,12 +588,70 @@
             this.panel4.Size = new System.Drawing.Size(315, 196);
             this.panel4.TabIndex = 51;
             // 
+            // btnSalir
+            // 
+            this.btnSalir.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(192)))), ((int)(((byte)(255)))));
+            this.btnSalir.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnSalir.Location = new System.Drawing.Point(585, 619);
+            this.btnSalir.Name = "btnSalir";
+            this.btnSalir.Size = new System.Drawing.Size(80, 30);
+            this.btnSalir.TabIndex = 52;
+            this.btnSalir.Text = "SALIR";
+            this.btnSalir.UseVisualStyleBackColor = false;
+            this.btnSalir.Click += new System.EventHandler(this.btnSalir_Click);
+            // 
+            // rbtCena
+            // 
+            this.rbtCena.AutoSize = true;
+            this.rbtCena.Location = new System.Drawing.Point(11, 65);
+            this.rbtCena.Name = "rbtCena";
+            this.rbtCena.Size = new System.Drawing.Size(50, 17);
+            this.rbtCena.TabIndex = 46;
+            this.rbtCena.Text = "Cena";
+            this.rbtCena.UseVisualStyleBackColor = true;
+            // 
+            // rbtAlmuerzo
+            // 
+            this.rbtAlmuerzo.AutoSize = true;
+            this.rbtAlmuerzo.Location = new System.Drawing.Point(11, 42);
+            this.rbtAlmuerzo.Name = "rbtAlmuerzo";
+            this.rbtAlmuerzo.Size = new System.Drawing.Size(68, 17);
+            this.rbtAlmuerzo.TabIndex = 47;
+            this.rbtAlmuerzo.Text = "Almuerzo";
+            this.rbtAlmuerzo.UseVisualStyleBackColor = true;
+            // 
+            // groupBox3
+            // 
+            this.groupBox3.Controls.Add(this.rbtPiscina);
+            this.groupBox3.Controls.Add(this.rbtCena);
+            this.groupBox3.Controls.Add(this.rbtAlmuerzo);
+            this.groupBox3.Controls.Add(this.rbtDesayunos);
+            this.groupBox3.Location = new System.Drawing.Point(78, 175);
+            this.groupBox3.Name = "groupBox3";
+            this.groupBox3.Size = new System.Drawing.Size(168, 121);
+            this.groupBox3.TabIndex = 51;
+            this.groupBox3.TabStop = false;
+            this.groupBox3.Text = "groupBox3";
+            // 
+            // groupBox1
+            // 
+            this.groupBox1.Controls.Add(this.rbtAvion);
+            this.groupBox1.Controls.Add(this.rbtBus);
+            this.groupBox1.Controls.Add(this.rbtCarro);
+            this.groupBox1.Location = new System.Drawing.Point(78, 299);
+            this.groupBox1.Name = "groupBox1";
+            this.groupBox1.Size = new System.Drawing.Size(162, 98);
+            this.groupBox1.TabIndex = 52;
+            this.groupBox1.TabStop = false;
+            this.groupBox1.Text = "groupBox1";
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(128)))), ((int)(((byte)(255)))));
             this.ClientSize = new System.Drawing.Size(692, 709);
+            this.Controls.Add(this.btnSalir);
             this.Controls.Add(this.panel4);
             this.Controls.Add(this.panel3);
             this.Controls.Add(this.panel2);
@@ -655,6 +677,10 @@
             this.panel3.PerformLayout();
             this.panel4.ResumeLayout(false);
             this.panel4.PerformLayout();
+            this.groupBox3.ResumeLayout(false);
+            this.groupBox3.PerformLayout();
+            this.groupBox1.ResumeLayout(false);
+            this.groupBox1.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -704,15 +730,17 @@
         private System.Windows.Forms.Label label21;
         private System.Windows.Forms.Label label22;
         private System.Windows.Forms.Label label23;
-        private System.Windows.Forms.RadioButton rbtNinguno;
         private System.Windows.Forms.Button btnLimpiar;
-        private System.Windows.Forms.RadioButton rbtCena;
-        private System.Windows.Forms.RadioButton rbtAlmuerzo;
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.Panel panel2;
         private System.Windows.Forms.Panel panel3;
         private System.Windows.Forms.Panel panel4;
         private System.Windows.Forms.Label label8;
+        private System.Windows.Forms.Button btnSalir;
+        private System.Windows.Forms.RadioButton rbtAlmuerzo;
+        private System.Windows.Forms.RadioButton rbtCena;
+        private System.Windows.Forms.GroupBox groupBox3;
+        private System.Windows.Forms.GroupBox groupBox1;
     }
 }
 
