@@ -73,15 +73,15 @@
             this.label23 = new System.Windows.Forms.Label();
             this.btnLimpiar = new System.Windows.Forms.Button();
             this.panel1 = new System.Windows.Forms.Panel();
+            this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.groupBox3 = new System.Windows.Forms.GroupBox();
+            this.rbtCena = new System.Windows.Forms.RadioButton();
+            this.rbtAlmuerzo = new System.Windows.Forms.RadioButton();
             this.label8 = new System.Windows.Forms.Label();
             this.panel2 = new System.Windows.Forms.Panel();
             this.panel3 = new System.Windows.Forms.Panel();
             this.panel4 = new System.Windows.Forms.Panel();
             this.btnSalir = new System.Windows.Forms.Button();
-            this.rbtCena = new System.Windows.Forms.RadioButton();
-            this.rbtAlmuerzo = new System.Windows.Forms.RadioButton();
-            this.groupBox3 = new System.Windows.Forms.GroupBox();
-            this.groupBox1 = new System.Windows.Forms.GroupBox();
             ((System.ComponentModel.ISupportInitialize)(this.numUpAcompaniante)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.numUpAdultos)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.numUpNiños)).BeginInit();
@@ -89,11 +89,11 @@
             ((System.ComponentModel.ISupportInitialize)(this.numUpFamiliar)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.numUpEscolar)).BeginInit();
             this.panel1.SuspendLayout();
+            this.groupBox1.SuspendLayout();
+            this.groupBox3.SuspendLayout();
             this.panel2.SuspendLayout();
             this.panel3.SuspendLayout();
             this.panel4.SuspendLayout();
-            this.groupBox3.SuspendLayout();
-            this.groupBox1.SuspendLayout();
             this.SuspendLayout();
             // 
             // label1
@@ -392,6 +392,7 @@
             this.btComprar.TabIndex = 32;
             this.btComprar.Text = "COMPRAR";
             this.btComprar.UseVisualStyleBackColor = false;
+            this.btComprar.Click += new System.EventHandler(this.btComprar_Click);
             // 
             // rbtDesayunos
             // 
@@ -530,6 +531,51 @@
             this.panel1.Size = new System.Drawing.Size(315, 403);
             this.panel1.TabIndex = 48;
             // 
+            // groupBox1
+            // 
+            this.groupBox1.Controls.Add(this.rbtAvion);
+            this.groupBox1.Controls.Add(this.rbtBus);
+            this.groupBox1.Controls.Add(this.rbtCarro);
+            this.groupBox1.Location = new System.Drawing.Point(78, 299);
+            this.groupBox1.Name = "groupBox1";
+            this.groupBox1.Size = new System.Drawing.Size(162, 98);
+            this.groupBox1.TabIndex = 52;
+            this.groupBox1.TabStop = false;
+            this.groupBox1.Text = "groupBox1";
+            // 
+            // groupBox3
+            // 
+            this.groupBox3.Controls.Add(this.rbtPiscina);
+            this.groupBox3.Controls.Add(this.rbtCena);
+            this.groupBox3.Controls.Add(this.rbtAlmuerzo);
+            this.groupBox3.Controls.Add(this.rbtDesayunos);
+            this.groupBox3.Location = new System.Drawing.Point(78, 175);
+            this.groupBox3.Name = "groupBox3";
+            this.groupBox3.Size = new System.Drawing.Size(168, 121);
+            this.groupBox3.TabIndex = 51;
+            this.groupBox3.TabStop = false;
+            this.groupBox3.Text = "groupBox3";
+            // 
+            // rbtCena
+            // 
+            this.rbtCena.AutoSize = true;
+            this.rbtCena.Location = new System.Drawing.Point(11, 65);
+            this.rbtCena.Name = "rbtCena";
+            this.rbtCena.Size = new System.Drawing.Size(50, 17);
+            this.rbtCena.TabIndex = 46;
+            this.rbtCena.Text = "Cena";
+            this.rbtCena.UseVisualStyleBackColor = true;
+            // 
+            // rbtAlmuerzo
+            // 
+            this.rbtAlmuerzo.AutoSize = true;
+            this.rbtAlmuerzo.Location = new System.Drawing.Point(11, 42);
+            this.rbtAlmuerzo.Name = "rbtAlmuerzo";
+            this.rbtAlmuerzo.Size = new System.Drawing.Size(68, 17);
+            this.rbtAlmuerzo.TabIndex = 47;
+            this.rbtAlmuerzo.Text = "Almuerzo";
+            this.rbtAlmuerzo.UseVisualStyleBackColor = true;
+            // 
             // label8
             // 
             this.label8.AutoSize = true;
@@ -600,51 +646,6 @@
             this.btnSalir.UseVisualStyleBackColor = false;
             this.btnSalir.Click += new System.EventHandler(this.btnSalir_Click);
             // 
-            // rbtCena
-            // 
-            this.rbtCena.AutoSize = true;
-            this.rbtCena.Location = new System.Drawing.Point(11, 65);
-            this.rbtCena.Name = "rbtCena";
-            this.rbtCena.Size = new System.Drawing.Size(50, 17);
-            this.rbtCena.TabIndex = 46;
-            this.rbtCena.Text = "Cena";
-            this.rbtCena.UseVisualStyleBackColor = true;
-            // 
-            // rbtAlmuerzo
-            // 
-            this.rbtAlmuerzo.AutoSize = true;
-            this.rbtAlmuerzo.Location = new System.Drawing.Point(11, 42);
-            this.rbtAlmuerzo.Name = "rbtAlmuerzo";
-            this.rbtAlmuerzo.Size = new System.Drawing.Size(68, 17);
-            this.rbtAlmuerzo.TabIndex = 47;
-            this.rbtAlmuerzo.Text = "Almuerzo";
-            this.rbtAlmuerzo.UseVisualStyleBackColor = true;
-            // 
-            // groupBox3
-            // 
-            this.groupBox3.Controls.Add(this.rbtPiscina);
-            this.groupBox3.Controls.Add(this.rbtCena);
-            this.groupBox3.Controls.Add(this.rbtAlmuerzo);
-            this.groupBox3.Controls.Add(this.rbtDesayunos);
-            this.groupBox3.Location = new System.Drawing.Point(78, 175);
-            this.groupBox3.Name = "groupBox3";
-            this.groupBox3.Size = new System.Drawing.Size(168, 121);
-            this.groupBox3.TabIndex = 51;
-            this.groupBox3.TabStop = false;
-            this.groupBox3.Text = "groupBox3";
-            // 
-            // groupBox1
-            // 
-            this.groupBox1.Controls.Add(this.rbtAvion);
-            this.groupBox1.Controls.Add(this.rbtBus);
-            this.groupBox1.Controls.Add(this.rbtCarro);
-            this.groupBox1.Location = new System.Drawing.Point(78, 299);
-            this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(162, 98);
-            this.groupBox1.TabIndex = 52;
-            this.groupBox1.TabStop = false;
-            this.groupBox1.Text = "groupBox1";
-            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -671,16 +672,16 @@
             ((System.ComponentModel.ISupportInitialize)(this.numUpEscolar)).EndInit();
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
+            this.groupBox1.ResumeLayout(false);
+            this.groupBox1.PerformLayout();
+            this.groupBox3.ResumeLayout(false);
+            this.groupBox3.PerformLayout();
             this.panel2.ResumeLayout(false);
             this.panel2.PerformLayout();
             this.panel3.ResumeLayout(false);
             this.panel3.PerformLayout();
             this.panel4.ResumeLayout(false);
             this.panel4.PerformLayout();
-            this.groupBox3.ResumeLayout(false);
-            this.groupBox3.PerformLayout();
-            this.groupBox1.ResumeLayout(false);
-            this.groupBox1.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
