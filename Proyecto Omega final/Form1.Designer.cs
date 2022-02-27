@@ -377,7 +377,7 @@
             // 
             this.btComprar.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(192)))), ((int)(((byte)(255)))));
             this.btComprar.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btComprar.Location = new System.Drawing.Point(585, 602);
+            this.btComprar.Location = new System.Drawing.Point(69, 638);
             this.btComprar.Name = "btComprar";
             this.btComprar.Size = new System.Drawing.Size(80, 30);
             this.btComprar.TabIndex = 32;
@@ -481,7 +481,7 @@
             // 
             this.btnLimpiar.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(192)))), ((int)(((byte)(255)))));
             this.btnLimpiar.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnLimpiar.Location = new System.Drawing.Point(585, 566);
+            this.btnLimpiar.Location = new System.Drawing.Point(89, 581);
             this.btnLimpiar.Name = "btnLimpiar";
             this.btnLimpiar.Size = new System.Drawing.Size(80, 30);
             this.btnLimpiar.TabIndex = 45;
@@ -506,7 +506,7 @@
             this.panel1.Controls.Add(this.txtPresupuesto);
             this.panel1.Controls.Add(this.label20);
             this.panel1.Controls.Add(this.cmbCategoria);
-            this.panel1.Location = new System.Drawing.Point(29, 80);
+            this.panel1.Location = new System.Drawing.Point(370, 69);
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(315, 403);
             this.panel1.TabIndex = 48;
@@ -598,7 +598,7 @@
             this.panel2.Controls.Add(this.label10);
             this.panel2.Controls.Add(this.label9);
             this.panel2.Controls.Add(this.label6);
-            this.panel2.Location = new System.Drawing.Point(29, 489);
+            this.panel2.Location = new System.Drawing.Point(379, 508);
             this.panel2.Name = "panel2";
             this.panel2.Size = new System.Drawing.Size(315, 160);
             this.panel2.TabIndex = 49;
@@ -614,7 +614,7 @@
             this.panel3.Controls.Add(this.numUpEscolar);
             this.panel3.Controls.Add(this.numUpFamiliar);
             this.panel3.Controls.Add(this.numUpMatrimonial);
-            this.panel3.Location = new System.Drawing.Point(350, 80);
+            this.panel3.Location = new System.Drawing.Point(12, 275);
             this.panel3.Name = "panel3";
             this.panel3.Size = new System.Drawing.Size(315, 259);
             this.panel3.TabIndex = 50;
@@ -631,7 +631,7 @@
             this.panel4.Controls.Add(this.label4);
             this.panel4.Controls.Add(this.label3);
             this.panel4.Controls.Add(this.label2);
-            this.panel4.Location = new System.Drawing.Point(350, 345);
+            this.panel4.Location = new System.Drawing.Point(18, 62);
             this.panel4.Name = "panel4";
             this.panel4.Size = new System.Drawing.Size(315, 196);
             this.panel4.TabIndex = 51;
@@ -640,7 +640,7 @@
             // 
             this.btnSalir.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(192)))), ((int)(((byte)(255)))));
             this.btnSalir.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnSalir.Location = new System.Drawing.Point(585, 638);
+            this.btnSalir.Location = new System.Drawing.Point(230, 581);
             this.btnSalir.Name = "btnSalir";
             this.btnSalir.Size = new System.Drawing.Size(80, 30);
             this.btnSalir.TabIndex = 52;
@@ -650,7 +650,7 @@
             // 
             // button1
             // 
-            this.button1.Location = new System.Drawing.Point(585, 674);
+            this.button1.Location = new System.Drawing.Point(235, 638);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(75, 23);
             this.button1.TabIndex = 53;
@@ -663,7 +663,7 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(128)))), ((int)(((byte)(255)))));
-            this.ClientSize = new System.Drawing.Size(692, 709);
+            this.ClientSize = new System.Drawing.Size(775, 709);
             this.Controls.Add(this.button1);
             this.Controls.Add(this.btnSalir);
             this.Controls.Add(this.panel4);
