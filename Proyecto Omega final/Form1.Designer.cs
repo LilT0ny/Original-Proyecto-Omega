@@ -72,17 +72,18 @@
             this.btnLimpiar = new System.Windows.Forms.Button();
             this.panel1 = new System.Windows.Forms.Panel();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.groupBox3 = new System.Windows.Forms.GroupBox();
+            this.rbtPiscina = new System.Windows.Forms.RadioButton();
+            this.rbtCena = new System.Windows.Forms.RadioButton();
+            this.rbtAlmuerzo = new System.Windows.Forms.RadioButton();
+            this.rbtDesayunos = new System.Windows.Forms.RadioButton();
             this.label8 = new System.Windows.Forms.Label();
             this.panel2 = new System.Windows.Forms.Panel();
             this.panel3 = new System.Windows.Forms.Panel();
             this.panel4 = new System.Windows.Forms.Panel();
             this.btnSalir = new System.Windows.Forms.Button();
             this.backgroundWorker1 = new System.ComponentModel.BackgroundWorker();
-            this.rbtDesayunos = new System.Windows.Forms.RadioButton();
-            this.rbtAlmuerzo = new System.Windows.Forms.RadioButton();
-            this.rbtCena = new System.Windows.Forms.RadioButton();
-            this.rbtPiscina = new System.Windows.Forms.RadioButton();
-            this.groupBox3 = new System.Windows.Forms.GroupBox();
+            this.button1 = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.numUpAcompaniante)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.numUpAdultos)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.numUpNiños)).BeginInit();
@@ -91,10 +92,10 @@
             ((System.ComponentModel.ISupportInitialize)(this.numUpEscolar)).BeginInit();
             this.panel1.SuspendLayout();
             this.groupBox1.SuspendLayout();
+            this.groupBox3.SuspendLayout();
             this.panel2.SuspendLayout();
             this.panel3.SuspendLayout();
             this.panel4.SuspendLayout();
-            this.groupBox3.SuspendLayout();
             this.SuspendLayout();
             // 
             // label1
@@ -376,7 +377,7 @@
             // 
             this.btComprar.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(192)))), ((int)(((byte)(255)))));
             this.btComprar.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btComprar.Location = new System.Drawing.Point(398, 559);
+            this.btComprar.Location = new System.Drawing.Point(585, 602);
             this.btComprar.Name = "btComprar";
             this.btComprar.Size = new System.Drawing.Size(80, 30);
             this.btComprar.TabIndex = 32;
@@ -480,7 +481,7 @@
             // 
             this.btnLimpiar.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(192)))), ((int)(((byte)(255)))));
             this.btnLimpiar.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnLimpiar.Location = new System.Drawing.Point(547, 559);
+            this.btnLimpiar.Location = new System.Drawing.Point(585, 566);
             this.btnLimpiar.Name = "btnLimpiar";
             this.btnLimpiar.Size = new System.Drawing.Size(80, 30);
             this.btnLimpiar.TabIndex = 45;
@@ -521,6 +522,61 @@
             this.groupBox1.TabIndex = 52;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "groupBox1";
+            // 
+            // groupBox3
+            // 
+            this.groupBox3.Controls.Add(this.rbtPiscina);
+            this.groupBox3.Controls.Add(this.rbtCena);
+            this.groupBox3.Controls.Add(this.rbtAlmuerzo);
+            this.groupBox3.Controls.Add(this.rbtDesayunos);
+            this.groupBox3.Location = new System.Drawing.Point(90, 165);
+            this.groupBox3.Name = "groupBox3";
+            this.groupBox3.Size = new System.Drawing.Size(168, 105);
+            this.groupBox3.TabIndex = 51;
+            this.groupBox3.TabStop = false;
+            this.groupBox3.Text = "groupBox3";
+            // 
+            // rbtPiscina
+            // 
+            this.rbtPiscina.AutoSize = true;
+            this.rbtPiscina.Location = new System.Drawing.Point(11, 88);
+            this.rbtPiscina.Name = "rbtPiscina";
+            this.rbtPiscina.Size = new System.Drawing.Size(59, 17);
+            this.rbtPiscina.TabIndex = 31;
+            this.rbtPiscina.Text = "Piscina";
+            this.rbtPiscina.UseVisualStyleBackColor = true;
+            this.rbtPiscina.CheckedChanged += new System.EventHandler(this.rbtPiscina_CheckedChanged);
+            // 
+            // rbtCena
+            // 
+            this.rbtCena.AutoSize = true;
+            this.rbtCena.Location = new System.Drawing.Point(11, 65);
+            this.rbtCena.Name = "rbtCena";
+            this.rbtCena.Size = new System.Drawing.Size(50, 17);
+            this.rbtCena.TabIndex = 46;
+            this.rbtCena.Text = "Cena";
+            this.rbtCena.UseVisualStyleBackColor = true;
+            // 
+            // rbtAlmuerzo
+            // 
+            this.rbtAlmuerzo.AutoSize = true;
+            this.rbtAlmuerzo.Location = new System.Drawing.Point(6, 42);
+            this.rbtAlmuerzo.Name = "rbtAlmuerzo";
+            this.rbtAlmuerzo.Size = new System.Drawing.Size(68, 17);
+            this.rbtAlmuerzo.TabIndex = 47;
+            this.rbtAlmuerzo.Text = "Almuerzo";
+            this.rbtAlmuerzo.UseVisualStyleBackColor = true;
+            // 
+            // rbtDesayunos
+            // 
+            this.rbtDesayunos.AutoSize = true;
+            this.rbtDesayunos.Location = new System.Drawing.Point(11, 19);
+            this.rbtDesayunos.Name = "rbtDesayunos";
+            this.rbtDesayunos.Size = new System.Drawing.Size(78, 17);
+            this.rbtDesayunos.TabIndex = 33;
+            this.rbtDesayunos.Text = "Desayunos";
+            this.rbtDesayunos.UseVisualStyleBackColor = true;
+            this.rbtDesayunos.CheckedChanged += new System.EventHandler(this.rbtDesayunos_CheckedChanged);
             // 
             // label8
             // 
@@ -584,7 +640,7 @@
             // 
             this.btnSalir.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(192)))), ((int)(((byte)(255)))));
             this.btnSalir.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnSalir.Location = new System.Drawing.Point(585, 619);
+            this.btnSalir.Location = new System.Drawing.Point(585, 638);
             this.btnSalir.Name = "btnSalir";
             this.btnSalir.Size = new System.Drawing.Size(80, 30);
             this.btnSalir.TabIndex = 52;
@@ -592,60 +648,15 @@
             this.btnSalir.UseVisualStyleBackColor = false;
             this.btnSalir.Click += new System.EventHandler(this.btnSalir_Click);
             // 
-            // rbtDesayunos
+            // button1
             // 
-            this.rbtDesayunos.AutoSize = true;
-            this.rbtDesayunos.Location = new System.Drawing.Point(11, 19);
-            this.rbtDesayunos.Name = "rbtDesayunos";
-            this.rbtDesayunos.Size = new System.Drawing.Size(78, 17);
-            this.rbtDesayunos.TabIndex = 33;
-            this.rbtDesayunos.Text = "Desayunos";
-            this.rbtDesayunos.UseVisualStyleBackColor = true;
-            this.rbtDesayunos.CheckedChanged += new System.EventHandler(this.rbtDesayunos_CheckedChanged);
-            // 
-            // rbtAlmuerzo
-            // 
-            this.rbtAlmuerzo.AutoSize = true;
-            this.rbtAlmuerzo.Location = new System.Drawing.Point(6, 42);
-            this.rbtAlmuerzo.Name = "rbtAlmuerzo";
-            this.rbtAlmuerzo.Size = new System.Drawing.Size(68, 17);
-            this.rbtAlmuerzo.TabIndex = 47;
-            this.rbtAlmuerzo.Text = "Almuerzo";
-            this.rbtAlmuerzo.UseVisualStyleBackColor = true;
-            // 
-            // rbtCena
-            // 
-            this.rbtCena.AutoSize = true;
-            this.rbtCena.Location = new System.Drawing.Point(11, 65);
-            this.rbtCena.Name = "rbtCena";
-            this.rbtCena.Size = new System.Drawing.Size(50, 17);
-            this.rbtCena.TabIndex = 46;
-            this.rbtCena.Text = "Cena";
-            this.rbtCena.UseVisualStyleBackColor = true;
-            // 
-            // rbtPiscina
-            // 
-            this.rbtPiscina.AutoSize = true;
-            this.rbtPiscina.Location = new System.Drawing.Point(11, 88);
-            this.rbtPiscina.Name = "rbtPiscina";
-            this.rbtPiscina.Size = new System.Drawing.Size(59, 17);
-            this.rbtPiscina.TabIndex = 31;
-            this.rbtPiscina.Text = "Piscina";
-            this.rbtPiscina.UseVisualStyleBackColor = true;
-            this.rbtPiscina.CheckedChanged += new System.EventHandler(this.rbtPiscina_CheckedChanged);
-            // 
-            // groupBox3
-            // 
-            this.groupBox3.Controls.Add(this.rbtPiscina);
-            this.groupBox3.Controls.Add(this.rbtCena);
-            this.groupBox3.Controls.Add(this.rbtAlmuerzo);
-            this.groupBox3.Controls.Add(this.rbtDesayunos);
-            this.groupBox3.Location = new System.Drawing.Point(90, 165);
-            this.groupBox3.Name = "groupBox3";
-            this.groupBox3.Size = new System.Drawing.Size(168, 105);
-            this.groupBox3.TabIndex = 51;
-            this.groupBox3.TabStop = false;
-            this.groupBox3.Text = "groupBox3";
+            this.button1.Location = new System.Drawing.Point(585, 674);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(75, 23);
+            this.button1.TabIndex = 53;
+            this.button1.Text = "button1";
+            this.button1.UseVisualStyleBackColor = true;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
             // Form1
             // 
@@ -653,6 +664,7 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(128)))), ((int)(((byte)(255)))));
             this.ClientSize = new System.Drawing.Size(692, 709);
+            this.Controls.Add(this.button1);
             this.Controls.Add(this.btnSalir);
             this.Controls.Add(this.panel4);
             this.Controls.Add(this.panel3);
@@ -675,14 +687,14 @@
             this.panel1.PerformLayout();
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
+            this.groupBox3.ResumeLayout(false);
+            this.groupBox3.PerformLayout();
             this.panel2.ResumeLayout(false);
             this.panel2.PerformLayout();
             this.panel3.ResumeLayout(false);
             this.panel3.PerformLayout();
             this.panel4.ResumeLayout(false);
             this.panel4.PerformLayout();
-            this.groupBox3.ResumeLayout(false);
-            this.groupBox3.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -744,6 +756,7 @@
         private System.Windows.Forms.RadioButton rbtAlmuerzo;
         private System.Windows.Forms.RadioButton rbtDesayunos;
         private System.ComponentModel.BackgroundWorker backgroundWorker1;
+        private System.Windows.Forms.Button button1;
     }
 }
 

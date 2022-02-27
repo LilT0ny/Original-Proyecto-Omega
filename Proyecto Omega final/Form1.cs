@@ -19,13 +19,9 @@ namespace Proyecto_Omega_final {
             public int mes;
             public int anio;
         };
-        public struct Informacion{
-            public String nombre;
-            public String apellido;
-            public String cedula;
-            public String numero;
+        
                  
-        };
+        
         public struct Hotel
         {
             public string categoria;
@@ -90,9 +86,14 @@ namespace Proyecto_Omega_final {
             uno.transporte = txtNombre.Text;
             //falta presupueso;
 
-
-
             
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            Form recibo = new Form2();
+            recibo.Show();
+
         }
     }
 }
