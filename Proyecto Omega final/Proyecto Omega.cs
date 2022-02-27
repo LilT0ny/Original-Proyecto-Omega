@@ -13,10 +13,16 @@ namespace Proyecto_Omega_final {
 
         public Form1() {
             InitializeComponent();
-        }  
+        }
+
+        int verificarnombre = 0;
+        int verificarCedula = 0;
+        int verificarApellido=0;
+        int verificarNumero=0;
+        
         public void verificacionNombre() {
             if (txtNombre.Text.Trim() != String.Empty && txtNombre.Text.All(Char.IsLetter)) {
-                btConfirmar.Enabled = false;
+                verificarnombre++;
                 errorProvider1.SetError(txtNombre, "");
             } else {
                 if (!(txtNombre.Text.All(Char.IsLetter))) {
@@ -30,7 +36,7 @@ namespace Proyecto_Omega_final {
         }
         public void verificacionApellido() {
             if (txtApellido.Text.Trim() != String.Empty && txtApellido.Text.All(Char.IsLetter)) {
-                btConfirmar.Enabled = false;
+                verificarApellido   ++;
                 errorProvider1.SetError(txtApellido, "");
             } else {
                 if (!(txtApellido.Text.All(Char.IsLetter))) {
@@ -44,7 +50,7 @@ namespace Proyecto_Omega_final {
         }
         public void verificacionCedula() {
             if (txtCedula.Text.Trim() != String.Empty && txtCedula.Text.All(Char.IsNumber)) {
-                btConfirmar.Enabled = false;
+                verificarCedula ++;
                 errorProvider1.SetError(txtCedula, "");
             } else {
                 if (!(txtCedula.Text.All(Char.IsNumber))) {
@@ -58,7 +64,7 @@ namespace Proyecto_Omega_final {
         }
         public void verificacionTelefono() {
             if (txtTelefono.Text.Trim() != String.Empty && txtTelefono.Text.All(Char.IsNumber)) {
-                btConfirmar.Enabled = false;
+               verificarNumero++;
                 errorProvider1.SetError(txtTelefono, "");
             } else {
                 if (!(txtTelefono.Text.All(Char.IsNumber))) {
@@ -69,17 +75,15 @@ namespace Proyecto_Omega_final {
                 btConfirmar.Enabled = false;
                 txtTelefono.Focus();
             }
-        }
-        public void confirmar() { 
-            if ((txtNombre.Text.Trim() != String.Empty && txtNombre.Text.All(Char.IsLetter))&&
-                (txtApellido.Text.Trim() != String.Empty && txtApellido.Text.All(Char.IsLetter)) &&
-                (txtCedula.Text.Trim() != String.Empty && txtCedula.Text.All(Char.IsNumber))&&
-                (txtTelefono.Text.Trim() != String.Empty && txtTelefono.Text.All(Char.IsNumber))) {
+            if (verificarnombre > 0 || verificarApellido > 0 || verificarCedula > 0 || verificarNumero > 0)
+            {
                 btConfirmar.Enabled = true;
-            } else {
-                lblCamposObligatorios = true;
+
+
             }
+            else { btConfirmar.Enabled = false; }
         }
+        
         private void btnLimpiar_Click(object sender, EventArgs e) {
             txtNombre.Text = "";
             txtApellido.Text = "";
@@ -105,6 +109,7 @@ namespace Proyecto_Omega_final {
             this.Close();
         }
         public void btComprar_Click(object sender, EventArgs e) {
+            
             Form recibo = new Recibo();
             recibo.Show();
             Datos.nombre = txtNombre.Text.ToUpper();  
@@ -127,9 +132,17 @@ namespace Proyecto_Omega_final {
             Huespedes.ninos = numUpNiños.Value.ToString();
 
         }
+        int precio;
+        public void provincias()
+        {
+            if (Hotel.provincia == "Pichincha")
+            {
+                
+            }
+        }
         private void Form1_Load(object sender, EventArgs e) {
             btConfirmar.Enabled = false;
-            lblCamposObligatorios = false;
+            
         }
         private void txtNombre_TextChanged(object sender, EventArgs e){
             verificacionNombre();
@@ -143,5 +156,8 @@ namespace Proyecto_Omega_final {
         private void txtTelefono_TextChanged(object sender, EventArgs e) {
             verificacionTelefono();
         }
+
+        
+        }
     }
-}
+

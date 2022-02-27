@@ -29,4 +29,15 @@ namespace Proyecto_Omega_final
         static public String adultos;
         static public String ninos;
     }
+
+    static class Precios
+    {
+        static int hotel = 0;
+        static int habitacion = 0;
+        static int adicional=0;
+        static int niños=0;
+        static int adulto=0;
+        static int trasporte =0;
+
+    }
 }
