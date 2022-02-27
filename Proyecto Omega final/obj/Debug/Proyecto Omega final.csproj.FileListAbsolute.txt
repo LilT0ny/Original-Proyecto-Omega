@@ -32,3 +32,4 @@ C:\Users\anjag\Documents\Original-Proyecto-Omega\Proyecto Omega final\obj\Debug\
 C:\Users\anjag\Documents\Original-Proyecto-Omega\Proyecto Omega final\obj\Debug\Proyecto Omega final.exe
 C:\Users\anjag\Documents\Original-Proyecto-Omega\Proyecto Omega final\obj\Debug\Proyecto Omega final.pdb
 C:\Users\Shandri\Desktop\Directorio\Original-Proyecto-Omega\Proyecto Omega final\obj\Debug\Proyecto_Omega_final.Form2.resources
+C:\Users\anjag\Documents\Original-Proyecto-Omega\Proyecto Omega final\obj\Debug\Proyecto_Omega_final.Recibo.resources
