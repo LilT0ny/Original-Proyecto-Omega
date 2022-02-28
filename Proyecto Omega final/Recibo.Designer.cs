@@ -39,7 +39,7 @@
             // 
             this.btnConfirmar.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(192)))), ((int)(((byte)(255)))));
             this.btnConfirmar.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnConfirmar.Location = new System.Drawing.Point(28, 429);
+            this.btnConfirmar.Location = new System.Drawing.Point(30, 507);
             this.btnConfirmar.Name = "btnConfirmar";
             this.btnConfirmar.Size = new System.Drawing.Size(90, 30);
             this.btnConfirmar.TabIndex = 0;
@@ -53,7 +53,7 @@
             this.txtRecibo.Location = new System.Drawing.Point(28, 64);
             this.txtRecibo.Multiline = true;
             this.txtRecibo.Name = "txtRecibo";
-            this.txtRecibo.Size = new System.Drawing.Size(265, 345);
+            this.txtRecibo.Size = new System.Drawing.Size(305, 426);
             this.txtRecibo.TabIndex = 1;
             // 
             // lblRecibo
@@ -70,7 +70,7 @@
             // 
             this.btnSalir.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(192)))), ((int)(((byte)(255)))));
             this.btnSalir.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnSalir.Location = new System.Drawing.Point(213, 429);
+            this.btnSalir.Location = new System.Drawing.Point(243, 507);
             this.btnSalir.Name = "btnSalir";
             this.btnSalir.Size = new System.Drawing.Size(90, 30);
             this.btnSalir.TabIndex = 53;
@@ -83,7 +83,7 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(128)))), ((int)(((byte)(255)))));
-            this.ClientSize = new System.Drawing.Size(329, 490);
+            this.ClientSize = new System.Drawing.Size(369, 565);
             this.Controls.Add(this.btnSalir);
             this.Controls.Add(this.lblRecibo);
             this.Controls.Add(this.txtRecibo);

@@ -25,10 +25,11 @@ namespace Proyecto_Omega_final
                              "Numero:\t\t\t" + Datos.telefono + "\r\n" +
                              "\r\n" +
                              "Hotel" + "\r\n" +
+                             "Nombre:\t\t\t" + Hotel.nombre + "\r\n" +
                              "Categoria:\t\t" + Hotel.categoria + "\r\n" +
                              "Provincia:\t\t\t" + Hotel.provincia + "\r\n" +
                              "Fecha de reservacion:\t" + Hotel.fecha + "\r\n" +
-                             "Adicionales:\t\t" + Hotel.adiciones + "\r\n" +
+                             "Adicionales:\t\t" + Hotel.desayuno + ',' + Hotel.almuerzo + ',' + Hotel.cena + ',' + Hotel.piscina + "\r\n" +
                              "Transporte:\t\t" + Hotel.transporte + "\r\n" +
                              "\r\n" +
                              "Habitaciones" + "\r\n" +

@@ -11,12 +11,17 @@ namespace Proyecto_Omega_final
        static public String apellido;
        static public String cedula;
        static public String telefono;
+
     }
     static class Hotel{
+        static public String nombre;
         static public String categoria;
         static public String provincia;
         static public String fecha;
-        static public String adiciones;
+        static public String desayuno;
+        static public String almuerzo;
+        static public String cena;
+        static public String piscina;
         static public String transporte;
     }
     static class Habitaciones {
@@ -29,15 +34,12 @@ namespace Proyecto_Omega_final
         static public String adultos;
         static public String ninos;
     }
-
-    static class Precios
-    {
-        static int hotel = 0;
-        static int habitacion = 0;
-        static int adicional=0;
-        static int niños=0;
-        static int adulto=0;
-        static int trasporte =0;
-
+     static class Precios {
+        static public int precioHotel = 0;
+        static public int precioNinos = 0;
+        static public int precioAdultos = 0;
+        static public int precioTransporte = 0;
+        static public double precioAdicion = 0;
     }
+    
 }
