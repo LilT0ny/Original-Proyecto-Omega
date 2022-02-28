@@ -141,20 +141,33 @@ namespace Proyecto_Omega_final {
 
         }
         public void Adiciones() {
+            
+                if (chbxDesayuno.Checked == true)
+                {
+                    if (chbxCena.Checked == true) if (chbxPiscina.Checked == true)
+                            Hotel.desayuno = chbxDesayuno.Text.ToUpper();
+                    precioAdicion1 = 2.50;
+                }
+                else
+                {
+                    precioAdicion1 = 0;
+                }
 
-            if (chbxDesayuno.Checked == true) { if (chbxCena.Checked == true) if (chbxPiscina.Checked == true)
-                        Hotel.desayuno = chbxDesayuno.Text.ToUpper();
-                precioAdicion1 = 2.50;
-            } else {
-                precioAdicion1 = 0;
-            }
+                if (chbxAlmuerzo.Checked == true)
+                {
+                    Hotel.almuerzo = chbxAlmuerzo.Text.ToUpper();
+                    precioAdicion2 = 3.50;
+                }
+                else
+                {
+                    Hotel.desayuno = "ninguno".ToUpper();
+                    precioAdicion2 = 0;
+                }
+            
 
-            if (chbxAlmuerzo.Checked == true) {
-                Hotel.almuerzo = chbxAlmuerzo.Text.ToUpper();
-                precioAdicion2 = 3.50;
-            } else {
-                precioAdicion2 = 0;
-            }
+         
+            
+
             Hotel.cena = chbxCena.Text.ToUpper();
             precioAdicion3 = 2.50;
             Hotel.piscina = chbxPiscina.Text.ToUpper();
@@ -189,15 +202,27 @@ namespace Proyecto_Omega_final {
             if (cmbProvincia.Text == "Pichincha" ) {
                 if(cmbCategoria.Text == "★★★★★") {
                     Hotel.nombre = "Prueba 5";
+                    matrimonial = 80 * numUpMatrimonial.Value;
+                    familiar = 100 *;
+                    Habitaciones.escolar = 300;
                 }
                 if (cmbCategoria.Text == "★★★")
                 {
                     Hotel.nombre = "Prueba 3";
+                    Habitaciones.matrimonial = 30;
+                    Habitaciones.familiar = 40;
+                    Habitaciones.escolar = 150;
                 }
                 if (cmbCategoria.Text == "★") {
                     Hotel.nombre = "Prueba 1";
+                    Habitaciones.matrimonial = 15;
+                    Habitaciones.familiar = 20;
+                    Habitaciones.escolar = 80;
                 }
             }
+        }
+        public void Factura() {
+            subtotal = ; 
         }
         private void Form1_Load(object sender, EventArgs e) {
             btConfirmar.Enabled = false;
