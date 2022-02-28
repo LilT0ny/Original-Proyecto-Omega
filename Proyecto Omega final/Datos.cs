@@ -26,7 +26,7 @@ namespace Proyecto_Omega_final {
         static public String piscina;
         static public String transporte;
         static public String diasRecidencia;
-    }
+        }
 
     //HABITACIONES
     static class Habitaciones{
@@ -52,6 +52,7 @@ namespace Proyecto_Omega_final {
         static public double precioAdicion = 0;
         static public double pagoTotal = 0;
         static public double pagoSubtotal = 0;
+        static public double descuentos;
     }
 
 }
