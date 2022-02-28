@@ -15,83 +15,22 @@ namespace Proyecto_Omega_final {
             InitializeComponent();
         }
 
+        //VARIABLES PARA EL FORM DE PROYECTO OMEGA
         int verificarnombre = 0;
         int verificarCedula = 0;
         int verificarApellido = 0;
         int verificarTelefono = 0;
-        double precioAdicion1 = 0;
-        double precioAdicion2 = 0;
-        double precioAdicion3 = 0;
-        double precioAdicion4 = 0;
-        double iva=0;
-        double subtotal=0;
-        double precioDesayuno=0;
-        double precioAlmuerzo = 0;
-        double precioCena = 0;
-        double precioPiscina = 0;
+        double iva = 0;
+        double subtotal = 0;
 
-        public void verificacionNombre() {
-            if (txtNombre.Text.Trim() != String.Empty && txtNombre.Text.All(Char.IsLetter)) {
-                verificarnombre++;
-                errorProvider1.SetError(txtNombre, "");
-            } else {
-                if (!(txtNombre.Text.All(Char.IsLetter))) {
-                    errorProvider1.SetError(txtNombre, "El nombre solo debe contener letras");
-                } else {
-                    errorProvider1.SetError(txtNombre, "Debe incluir su nombre");
-                }
-                btConfirmar.Enabled = false;
-                txtNombre.Focus();
-            }
+        //FUNCION PARA OBJETOS CUANDO SE ABRE EL PROGRAMA
+        private void Form1_Load(object sender, EventArgs e) {
+            btConfirmar.Enabled = false;
         }
-        public void verificacionApellido() {
-            if (txtApellido.Text.Trim() != String.Empty && txtApellido.Text.All(Char.IsLetter)) {
-                verificarApellido++;
-                errorProvider1.SetError(txtApellido, "");
-            } else {
-                if (!(txtApellido.Text.All(Char.IsLetter))) {
-                    errorProvider1.SetError(txtApellido, "El apellido solo debe contener letras");
-                } else {
-                    errorProvider1.SetError(txtApellido, "Debe incluir su apellido");
-                }
-                btConfirmar.Enabled = false;
-                txtApellido.Focus();
-            }
-        }
-        public void verificacionCedula() {
-            if (txtCedula.Text.Trim() != String.Empty && txtCedula.Text.All(Char.IsNumber)) {
-                verificarCedula++;
-                errorProvider1.SetError(txtCedula, "");
-            } else {
-                if (!(txtCedula.Text.All(Char.IsNumber))) {
-                    errorProvider1.SetError(txtCedula, "La cedula solo debe contener numeros");
-                } else {
-                    errorProvider1.SetError(txtCedula, "Debe incluir su cedula");
-                }
-                btConfirmar.Enabled = false;
-                txtCedula.Focus();
-            }
-        }
-        public void verificacionTelefono() {
-            if (txtTelefono.Text.Trim() != String.Empty && txtTelefono.Text.All(Char.IsNumber)) {
-                verificarTelefono++;
-                errorProvider1.SetError(txtTelefono, "");
-            } else {
-                if (!(txtTelefono.Text.All(Char.IsNumber))) {
-                    errorProvider1.SetError(txtTelefono, "El telefono solo debe contener numeros");
-                } else {
-                    errorProvider1.SetError(txtTelefono, "Debe incluir su telefono");
-                }
-                btConfirmar.Enabled = false;
-                txtTelefono.Focus();
-            }
-        }
-        public void validacion() {
-            if (verificarnombre > 0 || verificarApellido > 0 || verificarCedula > 0 || verificarTelefono > 0) {
-                btConfirmar.Enabled = true;
-            } else {
-                btConfirmar.Enabled = false;
-            }
+
+        //BOTONES
+        private void btnSalir_Click(object sender, EventArgs e) {
+            this.Close();
         }
         private void btnLimpiar_Click(object sender, EventArgs e) {
             txtNombre.Text = "";
@@ -106,63 +45,102 @@ namespace Proyecto_Omega_final {
             rbtCarro.Checked = false;
             rbtBus.Checked = false;
             rbtAvion.Checked = false;
-            numUpAcompaniante.Value = 0;
+            chkbxDesayuno.Checked = false;
+            chkbxAlmuerzo.Checked = false;
+            chkbxCena.Checked = false;
+            chkbxPiscina.Checked = false;
             numUpAdultos.Value = 0;
             numUpNiños.Value = 0;
-        }
-        private void btnSalir_Click(object sender, EventArgs e) {
-            this.Close();
-        }
+        }  
         public void btComprar_Click(object sender, EventArgs e) {
+
 
             Form recibo = new Recibo();
             recibo.Show();
+
 
             Datos.nombre = txtNombre.Text.ToUpper();
             Datos.apellido = txtApellido.Text.ToUpper();
             Datos.cedula = txtCedula.Text;
             Datos.telefono = txtTelefono.Text;
 
+
             Provincias();
             Hotel.categoria = cmbCategoria.Text;
             Hotel.provincia = cmbProvincia.Text.ToUpper();
             Hotel.fecha = dtFecha.Value.ToString("dd-MM-yyyy");
+            Hotel.diasRecidencia = numUpDiasRecidencia.Value.ToString();
             Adiciones();
             Transporte();
+
 
             Habitaciones.matrimonial = numUpMatrimonial.Value.ToString();
             Habitaciones.familiar = numUpFamiliar.Value.ToString();
             Habitaciones.escolar = numUpEscolar.Value.ToString();
 
+
             Huespedes.acompanantes = numUpAcompaniante.Value.ToString();
             Huespedes.adultos = numUpAdultos.Value.ToString();
             Huespedes.ninos = numUpNiños.Value.ToString();
+
             Factura();
 
         }
+        
+        //ADICIONES
         public void Adiciones() {
-            if(chkbxDesayuno.Checked == true)
+            double precioDesayuno;
+            double precioAlmuerzo;
+            double precioCena;
+            double precioPiscina;
+            int numeroDiasRecidencia = Convert.ToInt32(Hotel.diasRecidencia);
+
+            if (chkbxDesayuno.Checked == true)
             {
                 Hotel.desayuno = chkbxDesayuno.Text.ToString().ToUpper();
-                precioDesayuno = 2.50;
+                precioDesayuno = 2.50 * numeroDiasRecidencia;
+            } else
+            {
+                Hotel.piscina = "ninguno".ToUpper();
+                precioDesayuno = 0;
             }
+            
             if(chkbxAlmuerzo.Checked == true)
             {
                 Hotel.almuerzo  = chkbxAlmuerzo.Text.ToString().ToUpper();
-                precioAlmuerzo = 3.50;
+                precioAlmuerzo = 3.50 * numeroDiasRecidencia;
+            }else
+            {
+                Hotel.piscina = "ninguno".ToUpper();
+                precioAlmuerzo = 0;
             }
+
             if (chkbxCena.Checked == true)
             {
                 Hotel.cena= chkbxCena.Text.ToString().ToUpper();
-                precioCena = 2.50;
+                precioCena = 2.50 * numeroDiasRecidencia;
             }
+            else
+            {
+                Hotel.piscina = "ninguno".ToUpper();
+                precioCena = 0;
+            }
+
             if (chkbxPiscina.Checked == true)
             {
                 Hotel.piscina = chkbxPiscina.Text.ToString().ToUpper();
-                precioPiscina = 6;
+                precioPiscina = 10;
+            } else
+            {
+                Hotel.piscina = "ninguno".ToUpper();
+                precioPiscina = 0;
             }
 
+            Precios.precioAdicion = precioDesayuno + precioAlmuerzo + precioCena + precioPiscina;
+
         }
+
+        //TRANSPORTE 
         public void Transporte()
         {
 
@@ -194,8 +172,17 @@ namespace Proyecto_Omega_final {
             }
 
         }
-        public void Provincias()
-        {
+
+        //FACTURA ES OBTENER TODOS LOS VALORES PARA EL TOTAL Y SUB TOTAL
+        public void Factura() {
+            subtotal = Precios.precioTransporte ;
+            Precios.pagoSubtotal = subtotal ;
+            iva = subtotal * 0.12;
+            Precios.pagoTotal = iva + subtotal;
+        }
+        
+        //PROVINCIAS CON SUS RESPECTOS HOTELES Y PRECIOS
+         public void Provincias() {
             int NumeroHabitacionMatrimonial = Convert.ToInt32(Habitaciones.matrimonial);
             int NumeroHabitacionfamiliar = Convert.ToInt32(Habitaciones.familiar);
             int NumeroHabitacionescolar = Convert.ToInt32(Habitaciones.escolar);
@@ -828,15 +815,8 @@ namespace Proyecto_Omega_final {
             }
             Precios.preciosCamas = Precios.precioMatrimonial + Precios.precioFamiliar + Precios.precioEscolar;
         }
-        public void Factura() {
-            subtotal = Precios.precioTransporte ;
-            Precios.pagoSubtotal = subtotal ;
-            iva = subtotal * 0.12;
-            Precios.pagoTotal = iva + subtotal;
-        }
-        private void Form1_Load(object sender, EventArgs e) {
-            btConfirmar.Enabled = false;
-        }
+
+        // FUNCIONES A LLAMAR EN LAS TXTBOX PARA LA VALIDACION DE LOS DATOS
         private void txtNombre_TextChanged(object sender, EventArgs e){
             verificacionNombre();
             validacion();
@@ -853,7 +833,71 @@ namespace Proyecto_Omega_final {
             verificacionTelefono();
             validacion();
         }
-        
-    }
-    }
 
+        //VALLIDACION DE DATOS EN TXTBOX
+        public void verificacionNombre() {
+            if (txtNombre.Text.Trim() != String.Empty && txtNombre.Text.All(Char.IsLetter)) {
+                verificarnombre++;
+                errorProvider1.SetError(txtNombre, "");
+            } else {
+                if (!(txtNombre.Text.All(Char.IsLetter))) {
+                    errorProvider1.SetError(txtNombre, "El nombre solo debe contener letras");
+                } else {
+                    errorProvider1.SetError(txtNombre, "Debe incluir su nombre");
+                }
+                btConfirmar.Enabled = false;
+                txtNombre.Focus();
+            }
+        }
+        public void verificacionApellido() {
+            if (txtApellido.Text.Trim() != String.Empty && txtApellido.Text.All(Char.IsLetter)) {
+                verificarApellido++;
+                errorProvider1.SetError(txtApellido, "");
+            } else {
+                if (!(txtApellido.Text.All(Char.IsLetter))) {
+                    errorProvider1.SetError(txtApellido, "El apellido solo debe contener letras");
+                } else {
+                    errorProvider1.SetError(txtApellido, "Debe incluir su apellido");
+                }
+                btConfirmar.Enabled = false;
+                txtApellido.Focus();
+            }
+        }
+        public void verificacionCedula() {
+            if (txtCedula.Text.Trim() != String.Empty && txtCedula.Text.All(Char.IsNumber)) {
+                verificarCedula++;
+                errorProvider1.SetError(txtCedula, "");
+            } else {
+                if (!(txtCedula.Text.All(Char.IsNumber))) {
+                    errorProvider1.SetError(txtCedula, "La cedula solo debe contener numeros");
+                } else {
+                    errorProvider1.SetError(txtCedula, "Debe incluir su cedula");
+                }
+                btConfirmar.Enabled = false;
+                txtCedula.Focus();
+            }
+        }
+        public void verificacionTelefono() {
+            if (txtTelefono.Text.Trim() != String.Empty && txtTelefono.Text.All(Char.IsNumber)) {
+                verificarTelefono++;
+                errorProvider1.SetError(txtTelefono, "");
+            } else {
+                if (!(txtTelefono.Text.All(Char.IsNumber))) {
+                    errorProvider1.SetError(txtTelefono, "El telefono solo debe contener numeros");
+                } else {
+                    errorProvider1.SetError(txtTelefono, "Debe incluir su telefono");
+                }
+                btConfirmar.Enabled = false;
+                txtTelefono.Focus();
+            }
+        }
+        public void validacion() {
+            if (verificarnombre > 0 || verificarApellido > 0 || verificarCedula > 0 || verificarTelefono > 0) {
+                btConfirmar.Enabled = true;
+            } else {
+                btConfirmar.Enabled = false;
+            }
+        }
+
+    }
+    }

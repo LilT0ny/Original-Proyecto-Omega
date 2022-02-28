@@ -70,15 +70,17 @@
             this.label22 = new System.Windows.Forms.Label();
             this.btnLimpiar = new System.Windows.Forms.Button();
             this.panel1 = new System.Windows.Forms.Panel();
+            this.numUpDiasRecidencia = new System.Windows.Forms.NumericUpDown();
+            this.lblDiasRecidencia = new System.Windows.Forms.Label();
+            this.chkbxPiscina = new System.Windows.Forms.CheckBox();
+            this.chkbxCena = new System.Windows.Forms.CheckBox();
+            this.chkbxAlmuerzo = new System.Windows.Forms.CheckBox();
+            this.chkbxDesayuno = new System.Windows.Forms.CheckBox();
             this.panel2 = new System.Windows.Forms.Panel();
             this.panel3 = new System.Windows.Forms.Panel();
             this.panel4 = new System.Windows.Forms.Panel();
             this.btnSalir = new System.Windows.Forms.Button();
             this.errorProvider1 = new System.Windows.Forms.ErrorProvider(this.components);
-            this.chkbxDesayuno = new System.Windows.Forms.CheckBox();
-            this.chkbxAlmuerzo = new System.Windows.Forms.CheckBox();
-            this.chkbxCena = new System.Windows.Forms.CheckBox();
-            this.chkbxPiscina = new System.Windows.Forms.CheckBox();
             ((System.ComponentModel.ISupportInitialize)(this.numUpAcompaniante)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.numUpAdultos)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.numUpNiños)).BeginInit();
@@ -86,6 +88,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.numUpFamiliar)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.numUpEscolar)).BeginInit();
             this.panel1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.numUpDiasRecidencia)).BeginInit();
             this.panel2.SuspendLayout();
             this.panel3.SuspendLayout();
             this.panel4.SuspendLayout();
@@ -180,7 +183,7 @@
             // label11
             // 
             this.label11.AutoSize = true;
-            this.label11.Location = new System.Drawing.Point(6, 267);
+            this.label11.Location = new System.Drawing.Point(6, 287);
             this.label11.Name = "label11";
             this.label11.Size = new System.Drawing.Size(73, 13);
             this.label11.TabIndex = 10;
@@ -323,7 +326,7 @@
             // 
             this.rbtCarro.AutoSize = true;
             this.rbtCarro.Cursor = System.Windows.Forms.Cursors.Default;
-            this.rbtCarro.Location = new System.Drawing.Point(92, 292);
+            this.rbtCarro.Location = new System.Drawing.Point(96, 309);
             this.rbtCarro.Name = "rbtCarro";
             this.rbtCarro.Size = new System.Drawing.Size(138, 17);
             this.rbtCarro.TabIndex = 25;
@@ -333,7 +336,7 @@
             // rbtBus
             // 
             this.rbtBus.AutoSize = true;
-            this.rbtBus.Location = new System.Drawing.Point(92, 315);
+            this.rbtBus.Location = new System.Drawing.Point(96, 332);
             this.rbtBus.Name = "rbtBus";
             this.rbtBus.Size = new System.Drawing.Size(43, 17);
             this.rbtBus.TabIndex = 26;
@@ -343,7 +346,7 @@
             // rbtAvion
             // 
             this.rbtAvion.AutoSize = true;
-            this.rbtAvion.Location = new System.Drawing.Point(92, 338);
+            this.rbtAvion.Location = new System.Drawing.Point(96, 355);
             this.rbtAvion.Name = "rbtAvion";
             this.rbtAvion.Size = new System.Drawing.Size(52, 17);
             this.rbtAvion.TabIndex = 27;
@@ -366,7 +369,7 @@
             // 
             this.btConfirmar.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(192)))), ((int)(((byte)(255)))));
             this.btConfirmar.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btConfirmar.Location = new System.Drawing.Point(27, 573);
+            this.btConfirmar.Location = new System.Drawing.Point(29, 581);
             this.btConfirmar.Name = "btConfirmar";
             this.btConfirmar.Size = new System.Drawing.Size(90, 30);
             this.btConfirmar.TabIndex = 32;
@@ -432,7 +435,7 @@
             // label20
             // 
             this.label20.AutoSize = true;
-            this.label20.Location = new System.Drawing.Point(6, 147);
+            this.label20.Location = new System.Drawing.Point(6, 177);
             this.label20.Name = "label20";
             this.label20.Size = new System.Drawing.Size(78, 13);
             this.label20.TabIndex = 40;
@@ -461,7 +464,7 @@
             // 
             this.btnLimpiar.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(192)))), ((int)(((byte)(255)))));
             this.btnLimpiar.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnLimpiar.Location = new System.Drawing.Point(130, 573);
+            this.btnLimpiar.Location = new System.Drawing.Point(132, 581);
             this.btnLimpiar.Name = "btnLimpiar";
             this.btnLimpiar.Size = new System.Drawing.Size(90, 30);
             this.btnLimpiar.TabIndex = 45;
@@ -472,6 +475,8 @@
             // panel1
             // 
             this.panel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(192)))), ((int)(((byte)(255)))));
+            this.panel1.Controls.Add(this.numUpDiasRecidencia);
+            this.panel1.Controls.Add(this.lblDiasRecidencia);
             this.panel1.Controls.Add(this.chkbxPiscina);
             this.panel1.Controls.Add(this.chkbxCena);
             this.panel1.Controls.Add(this.chkbxAlmuerzo);
@@ -490,8 +495,64 @@
             this.panel1.Controls.Add(this.label20);
             this.panel1.Location = new System.Drawing.Point(339, 62);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(315, 369);
+            this.panel1.Size = new System.Drawing.Size(315, 393);
             this.panel1.TabIndex = 48;
+            // 
+            // numUpDiasRecidencia
+            // 
+            this.numUpDiasRecidencia.Location = new System.Drawing.Point(96, 136);
+            this.numUpDiasRecidencia.Name = "numUpDiasRecidencia";
+            this.numUpDiasRecidencia.Size = new System.Drawing.Size(120, 20);
+            this.numUpDiasRecidencia.TabIndex = 48;
+            // 
+            // lblDiasRecidencia
+            // 
+            this.lblDiasRecidencia.AutoSize = true;
+            this.lblDiasRecidencia.Location = new System.Drawing.Point(6, 138);
+            this.lblDiasRecidencia.Name = "lblDiasRecidencia";
+            this.lblDiasRecidencia.Size = new System.Drawing.Size(72, 26);
+            this.lblDiasRecidencia.TabIndex = 47;
+            this.lblDiasRecidencia.Text = "DIAS DE \r\nRESIDENCIA";
+            // 
+            // chkbxPiscina
+            // 
+            this.chkbxPiscina.AutoSize = true;
+            this.chkbxPiscina.Location = new System.Drawing.Point(96, 262);
+            this.chkbxPiscina.Name = "chkbxPiscina";
+            this.chkbxPiscina.Size = new System.Drawing.Size(60, 17);
+            this.chkbxPiscina.TabIndex = 46;
+            this.chkbxPiscina.Text = "Piscina";
+            this.chkbxPiscina.UseVisualStyleBackColor = true;
+            // 
+            // chkbxCena
+            // 
+            this.chkbxCena.AutoSize = true;
+            this.chkbxCena.Location = new System.Drawing.Point(96, 239);
+            this.chkbxCena.Name = "chkbxCena";
+            this.chkbxCena.Size = new System.Drawing.Size(51, 17);
+            this.chkbxCena.TabIndex = 45;
+            this.chkbxCena.Text = "Cena";
+            this.chkbxCena.UseVisualStyleBackColor = true;
+            // 
+            // chkbxAlmuerzo
+            // 
+            this.chkbxAlmuerzo.AutoSize = true;
+            this.chkbxAlmuerzo.Location = new System.Drawing.Point(96, 216);
+            this.chkbxAlmuerzo.Name = "chkbxAlmuerzo";
+            this.chkbxAlmuerzo.Size = new System.Drawing.Size(69, 17);
+            this.chkbxAlmuerzo.TabIndex = 44;
+            this.chkbxAlmuerzo.Text = "Almuerzo";
+            this.chkbxAlmuerzo.UseVisualStyleBackColor = true;
+            // 
+            // chkbxDesayuno
+            // 
+            this.chkbxDesayuno.AutoSize = true;
+            this.chkbxDesayuno.Location = new System.Drawing.Point(96, 193);
+            this.chkbxDesayuno.Name = "chkbxDesayuno";
+            this.chkbxDesayuno.Size = new System.Drawing.Size(74, 17);
+            this.chkbxDesayuno.TabIndex = 43;
+            this.chkbxDesayuno.Text = "Desayuno";
+            this.chkbxDesayuno.UseVisualStyleBackColor = true;
             // 
             // panel2
             // 
@@ -503,7 +564,7 @@
             this.panel2.Controls.Add(this.label10);
             this.panel2.Controls.Add(this.label9);
             this.panel2.Controls.Add(this.label6);
-            this.panel2.Location = new System.Drawing.Point(339, 437);
+            this.panel2.Location = new System.Drawing.Point(339, 461);
             this.panel2.Name = "panel2";
             this.panel2.Size = new System.Drawing.Size(315, 160);
             this.panel2.TabIndex = 49;
@@ -545,7 +606,7 @@
             // 
             this.btnSalir.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(192)))), ((int)(((byte)(255)))));
             this.btnSalir.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnSalir.Location = new System.Drawing.Point(230, 573);
+            this.btnSalir.Location = new System.Drawing.Point(232, 581);
             this.btnSalir.Name = "btnSalir";
             this.btnSalir.Size = new System.Drawing.Size(90, 30);
             this.btnSalir.TabIndex = 52;
@@ -556,46 +617,6 @@
             // errorProvider1
             // 
             this.errorProvider1.ContainerControl = this;
-            // 
-            // chkbxDesayuno
-            // 
-            this.chkbxDesayuno.AutoSize = true;
-            this.chkbxDesayuno.Location = new System.Drawing.Point(92, 163);
-            this.chkbxDesayuno.Name = "chkbxDesayuno";
-            this.chkbxDesayuno.Size = new System.Drawing.Size(74, 17);
-            this.chkbxDesayuno.TabIndex = 43;
-            this.chkbxDesayuno.Text = "Desayuno";
-            this.chkbxDesayuno.UseVisualStyleBackColor = true;
-            // 
-            // chkbxAlmuerzo
-            // 
-            this.chkbxAlmuerzo.AutoSize = true;
-            this.chkbxAlmuerzo.Location = new System.Drawing.Point(92, 186);
-            this.chkbxAlmuerzo.Name = "chkbxAlmuerzo";
-            this.chkbxAlmuerzo.Size = new System.Drawing.Size(69, 17);
-            this.chkbxAlmuerzo.TabIndex = 44;
-            this.chkbxAlmuerzo.Text = "Almuerzo";
-            this.chkbxAlmuerzo.UseVisualStyleBackColor = true;
-            // 
-            // chkbxCena
-            // 
-            this.chkbxCena.AutoSize = true;
-            this.chkbxCena.Location = new System.Drawing.Point(92, 209);
-            this.chkbxCena.Name = "chkbxCena";
-            this.chkbxCena.Size = new System.Drawing.Size(51, 17);
-            this.chkbxCena.TabIndex = 45;
-            this.chkbxCena.Text = "Cena";
-            this.chkbxCena.UseVisualStyleBackColor = true;
-            // 
-            // chkbxPiscina
-            // 
-            this.chkbxPiscina.AutoSize = true;
-            this.chkbxPiscina.Location = new System.Drawing.Point(92, 232);
-            this.chkbxPiscina.Name = "chkbxPiscina";
-            this.chkbxPiscina.Size = new System.Drawing.Size(60, 17);
-            this.chkbxPiscina.TabIndex = 46;
-            this.chkbxPiscina.Text = "Piscina";
-            this.chkbxPiscina.UseVisualStyleBackColor = true;
             // 
             // Form1
             // 
@@ -624,6 +645,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.numUpEscolar)).EndInit();
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.numUpDiasRecidencia)).EndInit();
             this.panel2.ResumeLayout(false);
             this.panel2.PerformLayout();
             this.panel3.ResumeLayout(false);
@@ -687,6 +709,8 @@
         private System.Windows.Forms.CheckBox chkbxCena;
         private System.Windows.Forms.CheckBox chkbxAlmuerzo;
         private System.Windows.Forms.CheckBox chkbxDesayuno;
+        private System.Windows.Forms.NumericUpDown numUpDiasRecidencia;
+        private System.Windows.Forms.Label lblDiasRecidencia;
     }
 }
 

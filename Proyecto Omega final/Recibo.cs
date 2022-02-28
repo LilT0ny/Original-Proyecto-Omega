@@ -18,6 +18,7 @@ namespace Proyecto_Omega_final
         }
 
         private void Recibo_Load(object sender, EventArgs e){
+          
             txtRecibo.Text = "Informacion" + "\r\n" +
                              "Nombre:\t\t\t" + Datos.nombre + "\r\n" +
                              "Apellido:\t\t\t" + Datos.apellido + "\r\n" +
@@ -29,6 +30,7 @@ namespace Proyecto_Omega_final
                              "Categoria:\t\t" + Hotel.categoria + "\r\n" +
                              "Provincia:\t\t\t" + Hotel.provincia + "\r\n" +
                              "Fecha de reservacion:\t" + Hotel.fecha + "\r\n" +
+                             "Dias de residencia:\t" + Hotel.diasRecidencia + "\r\n" +
                              "Transporte:\t\t" + Hotel.transporte + "\r\n" +
                              "Adicionales:\t\t" + Hotel.desayuno + "\r\n" +
                              "\t\t\t" + Hotel.almuerzo + "\r\n" +
@@ -48,7 +50,9 @@ namespace Proyecto_Omega_final
                              "Precio por habitacion:\t" + Precios.preciosCamas + "\r\n" +
                              "Subtotal:\t\t\t" + Precios.pagoSubtotal + "\r\n" +
                              "Total:" + Precios.pagoTotal + "\r\n";
+           
         }
+
         private void btnConfirmar_Click(object sender, EventArgs e){
             MessageBox.Show("Su alquier ha sido reservado exitosamente" + "\nDisfrute de sus vacaiones");
         }
