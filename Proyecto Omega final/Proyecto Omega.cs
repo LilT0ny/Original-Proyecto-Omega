@@ -23,6 +23,12 @@ namespace Proyecto_Omega_final {
         double precioAdicion2 = 0;
         double precioAdicion3 = 0;
         double precioAdicion4 = 0;
+        double iva=0;
+        double subtotal=0;
+        double precioDesayuno=0;
+        double precioAlmuerzo = 0;
+        double precioCena = 0;
+        double precioPiscina = 0;
 
         public void verificacionNombre() {
             if (txtNombre.Text.Trim() != String.Empty && txtNombre.Text.All(Char.IsLetter)) {
@@ -81,12 +87,9 @@ namespace Proyecto_Omega_final {
             }
         }
         public void validacion() {
-            if (verificarnombre > 0 || verificarApellido > 0 || verificarCedula > 0 || verificarTelefono > 0)
-
-            {
+            if (verificarnombre > 0 || verificarApellido > 0 || verificarCedula > 0 || verificarTelefono > 0) {
                 btConfirmar.Enabled = true;
-            }
-            else {
+            } else {
                 btConfirmar.Enabled = false;
             }
         }
@@ -103,10 +106,6 @@ namespace Proyecto_Omega_final {
             rbtCarro.Checked = false;
             rbtBus.Checked = false;
             rbtAvion.Checked = false;
-            chbxDesayuno.Checked = false;
-            chbxAlmuerzo.Checked = false;
-            chbxCena.Checked = false;
-            chbxPiscina.Checked = false;
             numUpAcompaniante.Value = 0;
             numUpAdultos.Value = 0;
             numUpNiños.Value = 0;
@@ -138,58 +137,56 @@ namespace Proyecto_Omega_final {
             Huespedes.acompanantes = numUpAcompaniante.Value.ToString();
             Huespedes.adultos = numUpAdultos.Value.ToString();
             Huespedes.ninos = numUpNiños.Value.ToString();
+            Factura();
 
         }
         public void Adiciones() {
-            
-                if (chbxDesayuno.Checked == true)
-                {
-                    if (chbxCena.Checked == true) if (chbxPiscina.Checked == true)
-                            Hotel.desayuno = chbxDesayuno.Text.ToUpper();
-                    precioAdicion1 = 2.50;
-                }
-                else
-                {
-                    precioAdicion1 = 0;
-                }
+            if(chkbxDesayuno.Checked == true)
+            {
+                Hotel.desayuno = chkbxDesayuno.Text.ToString().ToUpper();
+                precioDesayuno = 2.50;
+            }
+            if(chkbxAlmuerzo.Checked == true)
+            {
+                Hotel.almuerzo  = chkbxAlmuerzo.Text.ToString().ToUpper();
+                precioAlmuerzo = 3.50;
+            }
+            if (chkbxCena.Checked == true)
+            {
+                Hotel.cena= chkbxCena.Text.ToString().ToUpper();
+                precioCena = 2.50;
+            }
+            if (chkbxPiscina.Checked == true)
+            {
+                Hotel.piscina = chkbxPiscina.Text.ToString().ToUpper();
+                precioPiscina = 6;
+            }
 
-                if (chbxAlmuerzo.Checked == true)
-                {
-                    Hotel.almuerzo = chbxAlmuerzo.Text.ToUpper();
-                    precioAdicion2 = 3.50;
-                }
-                else
-                {
-                    Hotel.desayuno = "ninguno".ToUpper();
-                    precioAdicion2 = 0;
-                }
-            
-
-         
-            
-
-            Hotel.cena = chbxCena.Text.ToUpper();
-            precioAdicion3 = 2.50;
-            Hotel.piscina = chbxPiscina.Text.ToUpper();
-            precioAdicion4 = 6;
-
-            Precios.precioAdicion = precioAdicion1 + precioAdicion2 + precioAdicion3 + precioAdicion4;
         }
+        public void Transporte()
+        {
 
-        public void Transporte() {
-
-            if (rbtCarro.Checked == true) {
+            if (rbtCarro.Checked == true)
+            {
                 Hotel.transporte = "Alquiler Automovil".ToUpper();
                 Precios.precioTransporte = 100;
-            } else {
-                if(rbtBus.Checked == true) {
+            }
+            else
+            {
+                if (rbtBus.Checked == true)
+                {
                     Hotel.transporte = rbtBus.Text.ToUpper();
                     Precios.precioTransporte = 15;
-                } else {
-                    if (rbtAvion.Checked == true) {
+                }
+                else
+                {
+                    if (rbtAvion.Checked == true)
+                    {
                         Hotel.transporte = rbtAvion.Text.ToUpper();
                         Precios.precioTransporte = 300;
-                    } else {
+                    }
+                    else
+                    {
                         Hotel.transporte = "Ninguno".ToUpper();
                         Precios.precioTransporte = 0;
                     }
@@ -197,32 +194,645 @@ namespace Proyecto_Omega_final {
             }
 
         }
-        public void Provincias() {
+        public void Provincias()
+        {
+            int NumeroHabitacionMatrimonial = Convert.ToInt32(Habitaciones.matrimonial);
+            int NumeroHabitacionfamiliar = Convert.ToInt32(Habitaciones.familiar);
+            int NumeroHabitacionescolar = Convert.ToInt32(Habitaciones.escolar);
 
-            if (cmbProvincia.Text == "Pichincha" ) {
-                if(cmbCategoria.Text == "★★★★★") {
+            if (cmbProvincia.Text == "Pichincha")
+            {
+                if (cmbCategoria.Text == "★★★★★")
+                {
                     Hotel.nombre = "Prueba 5";
-                    matrimonial = 80 * numUpMatrimonial.Value;
-                    familiar = 100 *;
-                    Habitaciones.escolar = 300;
+                    Precios.precioMatrimonial = NumeroHabitacionMatrimonial * 80;
+                    Precios.precioFamiliar = NumeroHabitacionfamiliar * 100;
+                    Precios.precioEscolar = NumeroHabitacionescolar * 165;
                 }
                 if (cmbCategoria.Text == "★★★")
                 {
                     Hotel.nombre = "Prueba 3";
-                    Habitaciones.matrimonial = 30;
-                    Habitaciones.familiar = 40;
-                    Habitaciones.escolar = 150;
+                    Precios.precioMatrimonial = NumeroHabitacionMatrimonial * 60;
+                    Precios.precioFamiliar = NumeroHabitacionfamiliar * 90;
+                    Precios.precioEscolar = NumeroHabitacionescolar * 135;
+
                 }
-                if (cmbCategoria.Text == "★") {
+                if (cmbCategoria.Text == "★")
+                {
                     Hotel.nombre = "Prueba 1";
-                    Habitaciones.matrimonial = 15;
-                    Habitaciones.familiar = 20;
-                    Habitaciones.escolar = 80;
+                    Precios.precioMatrimonial = NumeroHabitacionMatrimonial * 20;
+                    Precios.precioFamiliar = NumeroHabitacionfamiliar * 50;
+                    Precios.precioEscolar = NumeroHabitacionescolar * 90;
+
+                }
+
+            }
+            if (cmbProvincia.Text == "Cotopaxi")
+            {
+                if (cmbCategoria.Text == "★★★★★")
+                {
+                    Hotel.nombre = "Hotel San Agustín Plaza";
+                    Precios.precioMatrimonial = NumeroHabitacionMatrimonial * 80;
+                    Precios.precioFamiliar = NumeroHabitacionfamiliar * 100;
+                    Precios.precioEscolar = NumeroHabitacionescolar * 165;
+                }
+                if (cmbCategoria.Text == "★★★")
+                {
+                    Hotel.nombre = "Hotel Makroz";
+                    Precios.precioMatrimonial = NumeroHabitacionMatrimonial * 60;
+                    Precios.precioFamiliar = NumeroHabitacionfamiliar * 90;
+                    Precios.precioEscolar = NumeroHabitacionescolar * 135;
+
+                }
+                if (cmbCategoria.Text == "★")
+                {
+                    Hotel.nombre = "El Castillo Hotel";
+                    Precios.precioMatrimonial = NumeroHabitacionMatrimonial * 20;
+                    Precios.precioFamiliar = NumeroHabitacionfamiliar * 50;
+                    Precios.precioEscolar = NumeroHabitacionescolar * 90;
+
+                }
+
+            }
+            if (cmbProvincia.Text == "Azuay")
+            {
+                if (cmbCategoria.Text == "★★★★★")
+                {
+                    Hotel.nombre = "Luxury Danna Plaza Mayor";
+                    Precios.precioMatrimonial = NumeroHabitacionMatrimonial * 80;
+                    Precios.precioFamiliar = NumeroHabitacionfamiliar * 100;
+                    Precios.precioEscolar = NumeroHabitacionescolar * 165;
+                }
+                if (cmbCategoria.Text == "★★★")
+                {
+                    Hotel.nombre = "Hotel Cuenca";
+                    Precios.precioMatrimonial = NumeroHabitacionMatrimonial * 60;
+                    Precios.precioFamiliar = NumeroHabitacionfamiliar * 90;
+                    Precios.precioEscolar = NumeroHabitacionescolar * 135;
+
+                }
+                if (cmbCategoria.Text == "★")
+                {
+                    Hotel.nombre = "Hostal Residencial Perla Cuencana";
+                    Precios.precioMatrimonial = NumeroHabitacionMatrimonial * 20;
+                    Precios.precioFamiliar = NumeroHabitacionfamiliar * 50;
+                    Precios.precioEscolar = NumeroHabitacionescolar * 90;
+
                 }
             }
+            if (cmbProvincia.Text == "Bolivar")
+            {
+                if (cmbCategoria.Text == "★★★★★")
+                {
+                    Hotel.nombre = "San Rafael Hotel";
+                    Precios.precioMatrimonial = NumeroHabitacionMatrimonial * 80;
+                    Precios.precioFamiliar = NumeroHabitacionfamiliar * 100;
+                    Precios.precioEscolar = NumeroHabitacionescolar * 165;
+                }
+                if (cmbCategoria.Text == "★★★")
+                {
+                    Hotel.nombre = "La Rustica Hotel";
+                    Precios.precioMatrimonial = NumeroHabitacionMatrimonial * 60;
+                    Precios.precioFamiliar = NumeroHabitacionfamiliar * 90;
+                    Precios.precioEscolar = NumeroHabitacionescolar * 135;
+
+                }
+                if (cmbCategoria.Text == "★")
+                {
+                    Hotel.nombre = "Hotel Colonial";
+                    Precios.precioMatrimonial = NumeroHabitacionMatrimonial * 20;
+                    Precios.precioFamiliar = NumeroHabitacionfamiliar * 50;
+                    Precios.precioEscolar = NumeroHabitacionescolar * 90;
+
+                }
+            }
+            if (cmbProvincia.Text == "Cañar")
+            {
+                if (cmbCategoria.Text == "★★★★★")
+                {
+                    Hotel.nombre = "Hostería Santa Ana";
+                    Precios.precioMatrimonial = NumeroHabitacionMatrimonial * 80;
+                    Precios.precioFamiliar = NumeroHabitacionfamiliar * 100;
+                    Precios.precioEscolar = NumeroHabitacionescolar * 165;
+                }
+                if (cmbCategoria.Text == "★★★")
+                {
+                    Hotel.nombre = "Hospedaje El Castillo Ingapirca";
+                    Precios.precioMatrimonial = NumeroHabitacionMatrimonial * 60;
+                    Precios.precioFamiliar = NumeroHabitacionfamiliar * 90;
+                    Precios.precioEscolar = NumeroHabitacionescolar * 135;
+
+                }
+                if (cmbCategoria.Text == "★")
+                {
+                    Hotel.nombre = "Hostal Chasky";
+                    Precios.precioMatrimonial = NumeroHabitacionMatrimonial * 20;
+                    Precios.precioFamiliar = NumeroHabitacionfamiliar * 50;
+                    Precios.precioEscolar = NumeroHabitacionescolar * 90;
+
+                }
+            }
+            if (cmbProvincia.Text == "Carchi")
+            {
+                if (cmbCategoria.Text == "★★★★★")
+                {
+                    Hotel.nombre = "Hostería Totoral";
+                    Precios.precioMatrimonial = NumeroHabitacionMatrimonial * 80;
+                    Precios.precioFamiliar = NumeroHabitacionfamiliar * 100;
+                    Precios.precioEscolar = NumeroHabitacionescolar * 165;
+                }
+                if (cmbCategoria.Text == "★★★")
+                {
+                    Hotel.nombre = "Tunas & Cabras Hotel";
+                    Precios.precioMatrimonial = NumeroHabitacionMatrimonial * 60;
+                    Precios.precioFamiliar = NumeroHabitacionfamiliar * 90;
+                    Precios.precioEscolar = NumeroHabitacionescolar * 135;
+
+                }
+                if (cmbCategoria.Text == "★")
+                {
+                    Hotel.nombre = "Las Garza Alojamiento";
+                    Precios.precioMatrimonial = NumeroHabitacionMatrimonial * 20;
+                    Precios.precioFamiliar = NumeroHabitacionfamiliar * 50;
+                    Precios.precioEscolar = NumeroHabitacionescolar * 90;
+
+                }
+            }
+            if (cmbProvincia.Text == "Chimborazo")
+            {
+                if (cmbCategoria.Text == "★★★★★")
+                {
+                    Hotel.nombre = "Quindolema Art Hotel And Gallery";
+                    Precios.precioMatrimonial = NumeroHabitacionMatrimonial * 80;
+                    Precios.precioFamiliar = NumeroHabitacionfamiliar * 100;
+                    Precios.precioEscolar = NumeroHabitacionescolar * 165;
+                }
+                if (cmbCategoria.Text == "★★★")
+                {
+                    Hotel.nombre = "Hotel Shalom";
+                    Precios.precioMatrimonial = NumeroHabitacionMatrimonial * 60;
+                    Precios.precioFamiliar = NumeroHabitacionfamiliar * 90;
+                    Precios.precioEscolar = NumeroHabitacionescolar * 135;
+
+                }
+                if (cmbCategoria.Text == "★")
+                {
+                    Hotel.nombre = "Hotel El Altar";
+                    Precios.precioMatrimonial = NumeroHabitacionMatrimonial * 20;
+                    Precios.precioFamiliar = NumeroHabitacionfamiliar * 50;
+                    Precios.precioEscolar = NumeroHabitacionescolar * 90;
+
+                }
+            }
+            if (cmbProvincia.Text == "El Oro")
+            {
+                if (cmbCategoria.Text == "★★★★★")
+                {
+                    Hotel.nombre = "Hotel Oro Verde";
+                    Precios.precioMatrimonial = NumeroHabitacionMatrimonial * 80;
+                    Precios.precioFamiliar = NumeroHabitacionfamiliar * 100;
+                    Precios.precioEscolar = NumeroHabitacionescolar * 165;
+                }
+                if (cmbCategoria.Text == "★★★")
+                {
+                    Hotel.nombre = "Hotel Veuxor";
+                    Precios.precioMatrimonial = NumeroHabitacionMatrimonial * 60;
+                    Precios.precioFamiliar = NumeroHabitacionfamiliar * 90;
+                    Precios.precioEscolar = NumeroHabitacionescolar * 135;
+
+                }
+                if (cmbCategoria.Text == "★")
+                {
+                    Hotel.nombre = "Machala Chino Casa";
+                    Precios.precioMatrimonial = NumeroHabitacionMatrimonial * 20;
+                    Precios.precioFamiliar = NumeroHabitacionfamiliar * 50;
+                    Precios.precioEscolar = NumeroHabitacionescolar * 90;
+
+                }
+            }
+            if (cmbProvincia.Text == "Esmeraldas")
+            {
+                if (cmbCategoria.Text == "★★★★★")
+                {
+                    Hotel.nombre = "Hotel Casa Arnaldo";
+                    Precios.precioMatrimonial = NumeroHabitacionMatrimonial * 80;
+                    Precios.precioFamiliar = NumeroHabitacionfamiliar * 100;
+                    Precios.precioEscolar = NumeroHabitacionescolar * 165;
+                }
+                if (cmbCategoria.Text == "★★★")
+                {
+                    Hotel.nombre = "Hotel Kemarios";
+                    Precios.precioMatrimonial = NumeroHabitacionMatrimonial * 60;
+                    Precios.precioFamiliar = NumeroHabitacionfamiliar * 90;
+                    Precios.precioEscolar = NumeroHabitacionescolar * 135;
+
+                }
+                if (cmbCategoria.Text == "★")
+                {
+                    Hotel.nombre = "Hotel la Barca";
+                    Precios.precioMatrimonial = NumeroHabitacionMatrimonial * 20;
+                    Precios.precioFamiliar = NumeroHabitacionfamiliar * 50;
+                    Precios.precioEscolar = NumeroHabitacionescolar * 90;
+
+                }
+            }
+            if (cmbProvincia.Text == "Galapagos")
+            {
+                if (cmbCategoria.Text == "★★★★★")
+                {
+                    Hotel.nombre = "Royal Palm Galápagos";
+                    Precios.precioMatrimonial = NumeroHabitacionMatrimonial * 80;
+                    Precios.precioFamiliar = NumeroHabitacionfamiliar * 100;
+                    Precios.precioEscolar = NumeroHabitacionescolar * 165;
+                }
+                if (cmbCategoria.Text == "★★★")
+                {
+                    Hotel.nombre = "Ikala Galápagos Hotel";
+                    Precios.precioMatrimonial = NumeroHabitacionMatrimonial * 60;
+                    Precios.precioFamiliar = NumeroHabitacionfamiliar * 90;
+                    Precios.precioEscolar = NumeroHabitacionescolar * 135;
+
+                }
+                if (cmbCategoria.Text == "★")
+                {
+                    Hotel.nombre = "Galápagos verde Azul";
+                    Precios.precioMatrimonial = NumeroHabitacionMatrimonial * 20;
+                    Precios.precioFamiliar = NumeroHabitacionfamiliar * 50;
+                    Precios.precioEscolar = NumeroHabitacionescolar * 90;
+
+                }
+            }
+            if (cmbProvincia.Text == "Guayas")
+            {
+                if (cmbCategoria.Text == "★★★★★")
+                {
+                    Hotel.nombre = "Hotel Hilton Colon Guayaquil";
+                    Precios.precioMatrimonial = NumeroHabitacionMatrimonial * 80;
+                    Precios.precioFamiliar = NumeroHabitacionfamiliar * 100;
+                    Precios.precioEscolar = NumeroHabitacionescolar * 165;
+                }
+                if (cmbCategoria.Text == "★★★")
+                {
+                    Hotel.nombre = "Courtyard by Marriot Guayaquil";
+                    Precios.precioMatrimonial = NumeroHabitacionMatrimonial * 60;
+                    Precios.precioFamiliar = NumeroHabitacionfamiliar * 90;
+                    Precios.precioEscolar = NumeroHabitacionescolar * 135;
+
+                }
+                if (cmbCategoria.Text == "★")
+                {
+                    Hotel.nombre = "Hotel Murali";
+                    Precios.precioMatrimonial = NumeroHabitacionMatrimonial * 20;
+                    Precios.precioFamiliar = NumeroHabitacionfamiliar * 50;
+                    Precios.precioEscolar = NumeroHabitacionescolar * 90;
+
+                }
+            }
+            if (cmbProvincia.Text == "Imbabura")
+            {
+                if (cmbCategoria.Text == "★★★★★")
+                {
+                    Hotel.nombre = "Prueba 5";
+                    Precios.precioMatrimonial = NumeroHabitacionMatrimonial * 80;
+                    Precios.precioFamiliar = NumeroHabitacionfamiliar * 100;
+                    Precios.precioEscolar = NumeroHabitacionescolar * 165;
+                }
+                if (cmbCategoria.Text == "★★★")
+                {
+                    Hotel.nombre = "Prueba 3";
+                    Precios.precioMatrimonial = NumeroHabitacionMatrimonial * 60;
+                    Precios.precioFamiliar = NumeroHabitacionfamiliar * 90;
+                    Precios.precioEscolar = NumeroHabitacionescolar * 135;
+
+                }
+                if (cmbCategoria.Text == "★")
+                {
+                    Hotel.nombre = "Prueba 1";
+                    Precios.precioMatrimonial = NumeroHabitacionMatrimonial * 20;
+                    Precios.precioFamiliar = NumeroHabitacionfamiliar * 50;
+                    Precios.precioEscolar = NumeroHabitacionescolar * 90;
+
+                }
+            }
+            if (cmbProvincia.Text == "loja")
+            {
+                if (cmbCategoria.Text == "★★★★★")
+                {
+                    Hotel.nombre = "Prueba 5";
+                    Precios.precioMatrimonial = NumeroHabitacionMatrimonial * 80;
+                    Precios.precioFamiliar = NumeroHabitacionfamiliar * 100;
+                    Precios.precioEscolar = NumeroHabitacionescolar * 165;
+                }
+                if (cmbCategoria.Text == "★★★")
+                {
+                    Hotel.nombre = "Prueba 3";
+                    Precios.precioMatrimonial = NumeroHabitacionMatrimonial * 60;
+                    Precios.precioFamiliar = NumeroHabitacionfamiliar * 90;
+                    Precios.precioEscolar = NumeroHabitacionescolar * 135;
+
+                }
+                if (cmbCategoria.Text == "★")
+                {
+                    Hotel.nombre = "Prueba 1";
+                    Precios.precioMatrimonial = NumeroHabitacionMatrimonial * 20;
+                    Precios.precioFamiliar = NumeroHabitacionfamiliar * 50;
+                    Precios.precioEscolar = NumeroHabitacionescolar * 90;
+
+                }
+            }
+            if (cmbProvincia.Text == "Los Ríos")
+            {
+                if (cmbCategoria.Text == "★★★★★")
+                {
+                    Hotel.nombre = "Prueba 5";
+                    Precios.precioMatrimonial = NumeroHabitacionMatrimonial * 80;
+                    Precios.precioFamiliar = NumeroHabitacionfamiliar * 100;
+                    Precios.precioEscolar = NumeroHabitacionescolar * 165;
+                }
+                if (cmbCategoria.Text == "★★★")
+                {
+                    Hotel.nombre = "Prueba 3";
+                    Precios.precioMatrimonial = NumeroHabitacionMatrimonial * 60;
+                    Precios.precioFamiliar = NumeroHabitacionfamiliar * 90;
+                    Precios.precioEscolar = NumeroHabitacionescolar * 135;
+
+                }
+                if (cmbCategoria.Text == "★")
+                {
+                    Hotel.nombre = "Prueba 1";
+                    Precios.precioMatrimonial = NumeroHabitacionMatrimonial * 20;
+                    Precios.precioFamiliar = NumeroHabitacionfamiliar * 50;
+                    Precios.precioEscolar = NumeroHabitacionescolar * 90;
+
+                }
+            }
+            if (cmbProvincia.Text == "Manabí")
+            {
+                if (cmbCategoria.Text == "★★★★★")
+                {
+                    Hotel.nombre = "Prueba 5";
+                    Precios.precioMatrimonial = NumeroHabitacionMatrimonial * 80;
+                    Precios.precioFamiliar = NumeroHabitacionfamiliar * 100;
+                    Precios.precioEscolar = NumeroHabitacionescolar * 165;
+                }
+                if (cmbCategoria.Text == "★★★")
+                {
+                    Hotel.nombre = "Prueba 3";
+                    Precios.precioMatrimonial = NumeroHabitacionMatrimonial * 60;
+                    Precios.precioFamiliar = NumeroHabitacionfamiliar * 90;
+                    Precios.precioEscolar = NumeroHabitacionescolar * 135;
+
+                }
+                if (cmbCategoria.Text == "★")
+                {
+                    Hotel.nombre = "Prueba 1";
+                    Precios.precioMatrimonial = NumeroHabitacionMatrimonial * 20;
+                    Precios.precioFamiliar = NumeroHabitacionfamiliar * 50;
+                    Precios.precioEscolar = NumeroHabitacionescolar * 90;
+
+                }
+            }
+            if (cmbProvincia.Text == "Morona-Santiago")
+            {
+                if (cmbCategoria.Text == "★★★★★")
+                {
+                    Hotel.nombre = "Prueba 5";
+                    Precios.precioMatrimonial = NumeroHabitacionMatrimonial * 80;
+                    Precios.precioFamiliar = NumeroHabitacionfamiliar * 100;
+                    Precios.precioEscolar = NumeroHabitacionescolar * 165;
+                }
+                if (cmbCategoria.Text == "★★★")
+                {
+                    Hotel.nombre = "Prueba 3";
+                    Precios.precioMatrimonial = NumeroHabitacionMatrimonial * 60;
+                    Precios.precioFamiliar = NumeroHabitacionfamiliar * 90;
+                    Precios.precioEscolar = NumeroHabitacionescolar * 135;
+
+                }
+                if (cmbCategoria.Text == "★")
+                {
+                    Hotel.nombre = "Prueba 1";
+                    Precios.precioMatrimonial = NumeroHabitacionMatrimonial * 20;
+                    Precios.precioFamiliar = NumeroHabitacionfamiliar * 50;
+                    Precios.precioEscolar = NumeroHabitacionescolar * 90;
+
+                }
+            }
+            if (cmbProvincia.Text == "Napo")
+            {
+                if (cmbCategoria.Text == "★★★★★")
+                {
+                    Hotel.nombre = "Prueba 5";
+                    Precios.precioMatrimonial = NumeroHabitacionMatrimonial * 80;
+                    Precios.precioFamiliar = NumeroHabitacionfamiliar * 100;
+                    Precios.precioEscolar = NumeroHabitacionescolar * 165;
+                }
+                if (cmbCategoria.Text == "★★★")
+                {
+                    Hotel.nombre = "Prueba 3";
+                    Precios.precioMatrimonial = NumeroHabitacionMatrimonial * 60;
+                    Precios.precioFamiliar = NumeroHabitacionfamiliar * 90;
+                    Precios.precioEscolar = NumeroHabitacionescolar * 135;
+
+                }
+                if (cmbCategoria.Text == "★")
+                {
+                    Hotel.nombre = "Prueba 1";
+                    Precios.precioMatrimonial = NumeroHabitacionMatrimonial * 20;
+                    Precios.precioFamiliar = NumeroHabitacionfamiliar * 50;
+                    Precios.precioEscolar = NumeroHabitacionescolar * 90;
+
+                }
+            }
+            if (cmbProvincia.Text == "Orellana")
+            {
+                if (cmbCategoria.Text == "★★★★★")
+                {
+                    Hotel.nombre = "Prueba 5";
+                    Precios.precioMatrimonial = NumeroHabitacionMatrimonial * 80;
+                    Precios.precioFamiliar = NumeroHabitacionfamiliar * 100;
+                    Precios.precioEscolar = NumeroHabitacionescolar * 165;
+                }
+                if (cmbCategoria.Text == "★★★")
+                {
+                    Hotel.nombre = "Prueba 3";
+                    Precios.precioMatrimonial = NumeroHabitacionMatrimonial * 60;
+                    Precios.precioFamiliar = NumeroHabitacionfamiliar * 90;
+                    Precios.precioEscolar = NumeroHabitacionescolar * 135;
+
+                }
+                if (cmbCategoria.Text == "★")
+                {
+                    Hotel.nombre = "Prueba 1";
+                    Precios.precioMatrimonial = NumeroHabitacionMatrimonial * 20;
+                    Precios.precioFamiliar = NumeroHabitacionfamiliar * 50;
+                    Precios.precioEscolar = NumeroHabitacionescolar * 90;
+
+                }
+            }
+            if (cmbProvincia.Text == "Pastaza")
+            {
+                if (cmbCategoria.Text == "★★★★★")
+                {
+                    Hotel.nombre = "Prueba 5";
+                    Precios.precioMatrimonial = NumeroHabitacionMatrimonial * 80;
+                    Precios.precioFamiliar = NumeroHabitacionfamiliar * 100;
+                    Precios.precioEscolar = NumeroHabitacionescolar * 165;
+                }
+                if (cmbCategoria.Text == "★★★")
+                {
+                    Hotel.nombre = "Prueba 3";
+                    Precios.precioMatrimonial = NumeroHabitacionMatrimonial * 60;
+                    Precios.precioFamiliar = NumeroHabitacionfamiliar * 90;
+                    Precios.precioEscolar = NumeroHabitacionescolar * 135;
+
+                }
+                if (cmbCategoria.Text == "★")
+                {
+                    Hotel.nombre = "Prueba 1";
+                    Precios.precioMatrimonial = NumeroHabitacionMatrimonial * 20;
+                    Precios.precioFamiliar = NumeroHabitacionfamiliar * 50;
+                    Precios.precioEscolar = NumeroHabitacionescolar * 90;
+
+                }
+            }
+            if (cmbProvincia.Text == "Santa Elena")
+            {
+                if (cmbCategoria.Text == "★★★★★")
+                {
+                    Hotel.nombre = "Prueba 5";
+                    Precios.precioMatrimonial = NumeroHabitacionMatrimonial * 80;
+                    Precios.precioFamiliar = NumeroHabitacionfamiliar * 100;
+                    Precios.precioEscolar = NumeroHabitacionescolar * 165;
+                }
+                if (cmbCategoria.Text == "★★★")
+                {
+                    Hotel.nombre = "Prueba 3";
+                    Precios.precioMatrimonial = NumeroHabitacionMatrimonial * 60;
+                    Precios.precioFamiliar = NumeroHabitacionfamiliar * 90;
+                    Precios.precioEscolar = NumeroHabitacionescolar * 135;
+
+                }
+                if (cmbCategoria.Text == "★")
+                {
+                    Hotel.nombre = "Prueba 1";
+                    Precios.precioMatrimonial = NumeroHabitacionMatrimonial * 20;
+                    Precios.precioFamiliar = NumeroHabitacionfamiliar * 50;
+                    Precios.precioEscolar = NumeroHabitacionescolar * 90;
+
+                }
+            }
+            if (cmbProvincia.Text == "Santo Domingo")
+            {
+                if (cmbCategoria.Text == "★★★★★")
+                {
+                    Hotel.nombre = "Prueba 5";
+                    Precios.precioMatrimonial = NumeroHabitacionMatrimonial * 80;
+                    Precios.precioFamiliar = NumeroHabitacionfamiliar * 100;
+                    Precios.precioEscolar = NumeroHabitacionescolar * 165;
+                }
+                if (cmbCategoria.Text == "★★★")
+                {
+                    Hotel.nombre = "Prueba 3";
+                    Precios.precioMatrimonial = NumeroHabitacionMatrimonial * 60;
+                    Precios.precioFamiliar = NumeroHabitacionfamiliar * 90;
+                    Precios.precioEscolar = NumeroHabitacionescolar * 135;
+
+                }
+                if (cmbCategoria.Text == "★")
+                {
+                    Hotel.nombre = "Prueba 1";
+                    Precios.precioMatrimonial = NumeroHabitacionMatrimonial * 20;
+                    Precios.precioFamiliar = NumeroHabitacionfamiliar * 50;
+                    Precios.precioEscolar = NumeroHabitacionescolar * 90;
+
+                }
+            }
+            if (cmbProvincia.Text == "Sucumbíos")
+            {
+                if (cmbCategoria.Text == "★★★★★")
+                {
+                    Hotel.nombre = "Prueba 5";
+                    Precios.precioMatrimonial = NumeroHabitacionMatrimonial * 80;
+                    Precios.precioFamiliar = NumeroHabitacionfamiliar * 100;
+                    Precios.precioEscolar = NumeroHabitacionescolar * 165;
+                }
+                if (cmbCategoria.Text == "★★★")
+                {
+                    Hotel.nombre = "Prueba 3";
+                    Precios.precioMatrimonial = NumeroHabitacionMatrimonial * 60;
+                    Precios.precioFamiliar = NumeroHabitacionfamiliar * 90;
+                    Precios.precioEscolar = NumeroHabitacionescolar * 135;
+
+                }
+                if (cmbCategoria.Text == "★")
+                {
+                    Hotel.nombre = "Prueba 1";
+                    Precios.precioMatrimonial = NumeroHabitacionMatrimonial * 20;
+                    Precios.precioFamiliar = NumeroHabitacionfamiliar * 50;
+                    Precios.precioEscolar = NumeroHabitacionescolar * 90;
+
+                }
+            }
+            if (cmbProvincia.Text == "Tungurahua")
+            {
+                if (cmbCategoria.Text == "★★★★★")
+                {
+                    Hotel.nombre = "Prueba 5";
+                    Precios.precioMatrimonial = NumeroHabitacionMatrimonial * 80;
+                    Precios.precioFamiliar = NumeroHabitacionfamiliar * 100;
+                    Precios.precioEscolar = NumeroHabitacionescolar * 165;
+                }
+                if (cmbCategoria.Text == "★★★")
+                {
+                    Hotel.nombre = "Prueba 3";
+                    Precios.precioMatrimonial = NumeroHabitacionMatrimonial * 60;
+                    Precios.precioFamiliar = NumeroHabitacionfamiliar * 90;
+                    Precios.precioEscolar = NumeroHabitacionescolar * 135;
+
+                }
+                if (cmbCategoria.Text == "★")
+                {
+                    Hotel.nombre = "Prueba 1";
+                    Precios.precioMatrimonial = NumeroHabitacionMatrimonial * 20;
+                    Precios.precioFamiliar = NumeroHabitacionfamiliar * 50;
+                    Precios.precioEscolar = NumeroHabitacionescolar * 90;
+
+                }
+            }
+            if (cmbProvincia.Text == "Zamora-Chinchipe")
+            {
+                if (cmbCategoria.Text == "★★★★★")
+                {
+                    Hotel.nombre = "Prueba 5";
+                    Precios.precioMatrimonial = NumeroHabitacionMatrimonial * 80;
+                    Precios.precioFamiliar = NumeroHabitacionfamiliar * 100;
+                    Precios.precioEscolar = NumeroHabitacionescolar * 165;
+                }
+                if (cmbCategoria.Text == "★★★")
+                {
+                    Hotel.nombre = "Prueba 3";
+                    Precios.precioMatrimonial = NumeroHabitacionMatrimonial * 60;
+                    Precios.precioFamiliar = NumeroHabitacionfamiliar * 90;
+                    Precios.precioEscolar = NumeroHabitacionescolar * 135;
+
+                }
+                if (cmbCategoria.Text == "★")
+                {
+                    Hotel.nombre = "Prueba 1";
+                    Precios.precioMatrimonial = NumeroHabitacionMatrimonial * 20;
+                    Precios.precioFamiliar = NumeroHabitacionfamiliar * 50;
+                    Precios.precioEscolar = NumeroHabitacionescolar * 90;
+
+                }
+            }
+            Precios.preciosCamas = Precios.precioMatrimonial + Precios.precioFamiliar + Precios.precioEscolar;
         }
         public void Factura() {
-            subtotal = ; 
+            subtotal = Precios.precioTransporte ;
+            Precios.pagoSubtotal = subtotal ;
+            iva = subtotal * 0.12;
+            Precios.pagoTotal = iva + subtotal;
         }
         private void Form1_Load(object sender, EventArgs e) {
             btConfirmar.Enabled = false;
@@ -243,11 +853,7 @@ namespace Proyecto_Omega_final {
             verificacionTelefono();
             validacion();
         }
-
-        private void checkBox2_CheckedChanged(object sender, EventArgs e)
-        {
-
-        }
+        
     }
     }
 

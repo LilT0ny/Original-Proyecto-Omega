@@ -75,10 +75,10 @@
             this.panel4 = new System.Windows.Forms.Panel();
             this.btnSalir = new System.Windows.Forms.Button();
             this.errorProvider1 = new System.Windows.Forms.ErrorProvider(this.components);
-            this.chbxDesayuno = new System.Windows.Forms.CheckBox();
-            this.chbxAlmuerzo = new System.Windows.Forms.CheckBox();
-            this.chbxCena = new System.Windows.Forms.CheckBox();
-            this.chbxPiscina = new System.Windows.Forms.CheckBox();
+            this.chkbxDesayuno = new System.Windows.Forms.CheckBox();
+            this.chkbxAlmuerzo = new System.Windows.Forms.CheckBox();
+            this.chkbxCena = new System.Windows.Forms.CheckBox();
+            this.chkbxPiscina = new System.Windows.Forms.CheckBox();
             ((System.ComponentModel.ISupportInitialize)(this.numUpAcompaniante)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.numUpAdultos)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.numUpNiños)).BeginInit();
@@ -472,20 +472,20 @@
             // panel1
             // 
             this.panel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(192)))), ((int)(((byte)(255)))));
+            this.panel1.Controls.Add(this.chkbxPiscina);
+            this.panel1.Controls.Add(this.chkbxCena);
+            this.panel1.Controls.Add(this.chkbxAlmuerzo);
+            this.panel1.Controls.Add(this.chkbxDesayuno);
             this.panel1.Controls.Add(this.rbtCarro);
             this.panel1.Controls.Add(this.label22);
             this.panel1.Controls.Add(this.label11);
             this.panel1.Controls.Add(this.label7);
-            this.panel1.Controls.Add(this.chbxPiscina);
             this.panel1.Controls.Add(this.dtFecha);
             this.panel1.Controls.Add(this.rbtAvion);
             this.panel1.Controls.Add(this.label13);
             this.panel1.Controls.Add(this.rbtBus);
             this.panel1.Controls.Add(this.cmbProvincia);
-            this.panel1.Controls.Add(this.chbxCena);
             this.panel1.Controls.Add(this.label21);
-            this.panel1.Controls.Add(this.chbxDesayuno);
-            this.panel1.Controls.Add(this.chbxAlmuerzo);
             this.panel1.Controls.Add(this.cmbCategoria);
             this.panel1.Controls.Add(this.label20);
             this.panel1.Location = new System.Drawing.Point(339, 62);
@@ -557,53 +557,52 @@
             // 
             this.errorProvider1.ContainerControl = this;
             // 
-            // chbxDesayuno
+            // chkbxDesayuno
             // 
-            this.chbxDesayuno.AutoSize = true;
-            this.chbxDesayuno.Location = new System.Drawing.Point(96, 164);
-            this.chbxDesayuno.Name = "chbxDesayuno";
-            this.chbxDesayuno.Size = new System.Drawing.Size(74, 17);
-            this.chbxDesayuno.TabIndex = 59;
-            this.chbxDesayuno.Text = "Desayuno";
-            this.chbxDesayuno.UseVisualStyleBackColor = true;
+            this.chkbxDesayuno.AutoSize = true;
+            this.chkbxDesayuno.Location = new System.Drawing.Point(92, 163);
+            this.chkbxDesayuno.Name = "chkbxDesayuno";
+            this.chkbxDesayuno.Size = new System.Drawing.Size(74, 17);
+            this.chkbxDesayuno.TabIndex = 43;
+            this.chkbxDesayuno.Text = "Desayuno";
+            this.chkbxDesayuno.UseVisualStyleBackColor = true;
             // 
-            // chbxAlmuerzo
+            // chkbxAlmuerzo
             // 
-            this.chbxAlmuerzo.AutoSize = true;
-            this.chbxAlmuerzo.Location = new System.Drawing.Point(96, 187);
-            this.chbxAlmuerzo.Name = "chbxAlmuerzo";
-            this.chbxAlmuerzo.Size = new System.Drawing.Size(69, 17);
-            this.chbxAlmuerzo.TabIndex = 41;
-            this.chbxAlmuerzo.Text = "Almuerzo";
-            this.chbxAlmuerzo.UseVisualStyleBackColor = true;
-            this.chbxAlmuerzo.CheckedChanged += new System.EventHandler(this.checkBox2_CheckedChanged);
+            this.chkbxAlmuerzo.AutoSize = true;
+            this.chkbxAlmuerzo.Location = new System.Drawing.Point(92, 186);
+            this.chkbxAlmuerzo.Name = "chkbxAlmuerzo";
+            this.chkbxAlmuerzo.Size = new System.Drawing.Size(69, 17);
+            this.chkbxAlmuerzo.TabIndex = 44;
+            this.chkbxAlmuerzo.Text = "Almuerzo";
+            this.chkbxAlmuerzo.UseVisualStyleBackColor = true;
             // 
-            // chbxCena
+            // chkbxCena
             // 
-            this.chbxCena.AutoSize = true;
-            this.chbxCena.Location = new System.Drawing.Point(96, 210);
-            this.chbxCena.Name = "chbxCena";
-            this.chbxCena.Size = new System.Drawing.Size(51, 17);
-            this.chbxCena.TabIndex = 60;
-            this.chbxCena.Text = "Cena";
-            this.chbxCena.UseVisualStyleBackColor = true;
+            this.chkbxCena.AutoSize = true;
+            this.chkbxCena.Location = new System.Drawing.Point(92, 209);
+            this.chkbxCena.Name = "chkbxCena";
+            this.chkbxCena.Size = new System.Drawing.Size(51, 17);
+            this.chkbxCena.TabIndex = 45;
+            this.chkbxCena.Text = "Cena";
+            this.chkbxCena.UseVisualStyleBackColor = true;
             // 
-            // chbxPiscina
+            // chkbxPiscina
             // 
-            this.chbxPiscina.AutoSize = true;
-            this.chbxPiscina.Location = new System.Drawing.Point(96, 233);
-            this.chbxPiscina.Name = "chbxPiscina";
-            this.chbxPiscina.Size = new System.Drawing.Size(60, 17);
-            this.chbxPiscina.TabIndex = 61;
-            this.chbxPiscina.Text = "Piscina";
-            this.chbxPiscina.UseVisualStyleBackColor = true;
+            this.chkbxPiscina.AutoSize = true;
+            this.chkbxPiscina.Location = new System.Drawing.Point(92, 232);
+            this.chkbxPiscina.Name = "chkbxPiscina";
+            this.chkbxPiscina.Size = new System.Drawing.Size(60, 17);
+            this.chkbxPiscina.TabIndex = 46;
+            this.chkbxPiscina.Text = "Piscina";
+            this.chkbxPiscina.UseVisualStyleBackColor = true;
             // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(128)))), ((int)(((byte)(255)))));
-            this.ClientSize = new System.Drawing.Size(825, 679);
+            this.ClientSize = new System.Drawing.Size(692, 633);
             this.Controls.Add(this.btnSalir);
             this.Controls.Add(this.panel4);
             this.Controls.Add(this.panel3);
@@ -684,10 +683,10 @@
         private System.Windows.Forms.Panel panel4;
         private System.Windows.Forms.Button btnSalir;
         private System.Windows.Forms.ErrorProvider errorProvider1;
-        private System.Windows.Forms.CheckBox chbxDesayuno;
-        private System.Windows.Forms.CheckBox chbxAlmuerzo;
-        private System.Windows.Forms.CheckBox chbxPiscina;
-        private System.Windows.Forms.CheckBox chbxCena;
+        private System.Windows.Forms.CheckBox chkbxPiscina;
+        private System.Windows.Forms.CheckBox chkbxCena;
+        private System.Windows.Forms.CheckBox chkbxAlmuerzo;
+        private System.Windows.Forms.CheckBox chkbxDesayuno;
     }
 }
 

@@ -29,8 +29,11 @@ namespace Proyecto_Omega_final
                              "Categoria:\t\t" + Hotel.categoria + "\r\n" +
                              "Provincia:\t\t\t" + Hotel.provincia + "\r\n" +
                              "Fecha de reservacion:\t" + Hotel.fecha + "\r\n" +
-                             "Adicionales:\t\t" + Hotel.desayuno + ',' + Hotel.almuerzo + ',' + Hotel.cena + ',' + Hotel.piscina + "\r\n" +
                              "Transporte:\t\t" + Hotel.transporte + "\r\n" +
+                             "Adicionales:\t\t" + Hotel.desayuno + "\r\n" +
+                             "\t\t\t" + Hotel.almuerzo + "\r\n" +
+                             "\t\t\t" + Hotel.cena + "\r\n" +
+                             "\t\t\t" + Hotel.piscina + "\r\n" +
                              "\r\n" +
                              "Habitaciones" + "\r\n" +
                              "Matrimonial:\t\t" + Habitaciones.matrimonial + "\r\n" +
@@ -40,7 +43,11 @@ namespace Proyecto_Omega_final
                              "Huespedes" + "\r\n" +
                              "Acompañantes:\t\t" + Huespedes.acompanantes + "\r\n" +
                              "Adultos\t\t\t" + Huespedes.adultos + "\r\n" +
-                             "Niños:\t\t\t" + Huespedes.ninos + "\r\n";
+                             "Niños:\t\t\t" + Huespedes.ninos + "\r\n" +
+                             "\r\n" +
+                             "Precio por habitacion:\t" + Precios.preciosCamas + "\r\n" +
+                             "Subtotal:\t\t\t" + Precios.pagoSubtotal + "\r\n" +
+                             "Total:" + Precios.pagoTotal + "\r\n";
         }
         private void btnConfirmar_Click(object sender, EventArgs e){
             MessageBox.Show("Su alquier ha sido reservado exitosamente" + "\nDisfrute de sus vacaiones");
