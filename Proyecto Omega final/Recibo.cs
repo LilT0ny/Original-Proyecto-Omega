@@ -54,7 +54,7 @@ namespace Proyecto_Omega_final
         }
 
         private void btnConfirmar_Click(object sender, EventArgs e){
-            MessageBox.Show("Su alquier ha sido exitoso \nDisfute de sus vacaciones", "Confirmacion alquiler", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            MessageBox.Show("RESERVACION REALIZADA CON EXITO \n ♥ Disfute de sus vacaciones ♥ ", "CONFIRMACION", MessageBoxButtons.OK, MessageBoxIcon.Asterisk);
         }
 
         private void btnSalir_Click(object sender, EventArgs e)

@@ -74,7 +74,7 @@ namespace Proyecto_Omega_final {
             Datos.telefono = txtTelefono.Text;
 
 
-            Provincias();
+            
             Hotel.categoria = cmbCategoria.Text;
             Hotel.provincia = cmbProvincia.Text.ToUpper();
             Hotel.fecha = dtFecha.Value.ToString("dd-MM-yyyy");
@@ -92,6 +92,7 @@ namespace Proyecto_Omega_final {
             Huespedes.adultos = numUpAdultos.Value.ToString();
             Huespedes.ninos = numUpNiños.Value.ToString();
 
+            Provincias();
             Factura();
             recibo.ShowDialog();
 
@@ -236,7 +237,7 @@ namespace Proyecto_Omega_final {
             if (chkbxDesayuno.Checked == true)
             {
                 Hotel.desayuno = chkbxDesayuno.Text.ToString().ToUpper();
-                precioDesayuno = 2.50 * numeroDiasRecidencia;
+                precioDesayuno = 2.0 * numeroDiasRecidencia;
             } else
             {
                 Hotel.desayuno = "---".ToUpper();
@@ -246,7 +247,7 @@ namespace Proyecto_Omega_final {
             if(chkbxAlmuerzo.Checked == true)
             {
                 Hotel.almuerzo  = chkbxAlmuerzo.Text.ToString().ToUpper();
-                precioAlmuerzo = 3.50 * numeroDiasRecidencia;
+                precioAlmuerzo = 2.75 * numeroDiasRecidencia;
             }else
             {
                 Hotel.almuerzo = "---".ToUpper();
@@ -267,7 +268,7 @@ namespace Proyecto_Omega_final {
             if (chkbxPiscina.Checked == true)
             {
                 Hotel.piscina = chkbxPiscina.Text.ToString().ToUpper();
-                precioPiscina = 10;
+                precioPiscina = 7;
             } else
             {
                 Hotel.piscina = "---".ToUpper();
@@ -291,14 +292,14 @@ namespace Proyecto_Omega_final {
                 if (rbtBus.Checked == true)
                 {
                     Hotel.transporte = rbtBus.Text.ToUpper();
-                    Precios.precioTransporte = 15;
+                    Precios.precioTransporte = 10;
                 }
                 else
                 {
                     if (rbtAvion.Checked == true)
                     {
                         Hotel.transporte = rbtAvion.Text.ToUpper();
-                        Precios.precioTransporte = 300;
+                        Precios.precioTransporte = 200;
                     }
                     else
                     {
@@ -312,9 +313,9 @@ namespace Proyecto_Omega_final {
 
         //PROVINCIAS CON SUS RESPECTOS HOTELES Y PRECIOS
         public void Provincias() {
-            int HabitacionMatrimonial = 0 ;
-            int HabitacionFamiliar = 0;
-            int HabitacionEscolar = 0;
+            int HabitacionMatrimonial =0;
+            int HabitacionFamiliar =0;
+            int HabitacionEscolar =0;
             int NumeroHabitacionMatrimonial = Convert.ToInt32(Habitaciones.matrimonial);
             int NumeroHabitacionfamiliar = Convert.ToInt32(Habitaciones.familiar);
             int NumeroHabitacionescolar = Convert.ToInt32(Habitaciones.escolar);
@@ -326,21 +327,21 @@ namespace Proyecto_Omega_final {
                     switch (cmbCategoria.Text)
                     {
                         case "★★★★★":
-                            Hotel.nombre = "Prueba 5";
-                            HabitacionMatrimonial = (NumeroHabitacionMatrimonial * 80) * numeroDiasRecidencia;
-                            HabitacionFamiliar = (NumeroHabitacionfamiliar * 100) * numeroDiasRecidencia;
+                            Hotel.nombre = "Luxury Danna Plaza Mayor";
+                            HabitacionMatrimonial = (NumeroHabitacionMatrimonial * 75) * numeroDiasRecidencia;
+                            HabitacionFamiliar = (NumeroHabitacionfamiliar * 90) * numeroDiasRecidencia;
                             HabitacionEscolar = (NumeroHabitacionescolar * 165) * numeroDiasRecidencia;
                             break;
                         case "★★★":
-                            Hotel.nombre = "Prueba 3";
+                            Hotel.nombre = "Hotel Cuenca";
                             HabitacionMatrimonial = (NumeroHabitacionMatrimonial * 60) * numeroDiasRecidencia;
                             HabitacionFamiliar = (NumeroHabitacionfamiliar * 90) * numeroDiasRecidencia;
                             HabitacionEscolar = (NumeroHabitacionescolar * 135) * numeroDiasRecidencia;
                             break;
                         case "★":
-                            Hotel.nombre = "Prueba 1";
+                            Hotel.nombre = "Hostal Residencial Perla Cuencana";
                             HabitacionMatrimonial = (NumeroHabitacionMatrimonial * 20) * numeroDiasRecidencia;
-                            HabitacionFamiliar = (NumeroHabitacionfamiliar * 50) * numeroDiasRecidencia;
+                            HabitacionFamiliar = (NumeroHabitacionfamiliar * 45) * numeroDiasRecidencia;
                             HabitacionEscolar = (NumeroHabitacionescolar * 90) * numeroDiasRecidencia;
                             break;
                     }
@@ -349,21 +350,21 @@ namespace Proyecto_Omega_final {
                     switch (cmbCategoria.Text)
                     {
                         case "★★★★★":
-                            Hotel.nombre = "Prueba 5";
-                            HabitacionMatrimonial = (NumeroHabitacionMatrimonial * 80) * numeroDiasRecidencia;
-                            HabitacionFamiliar = (NumeroHabitacionfamiliar * 100) * numeroDiasRecidencia;
+                            Hotel.nombre = "San Rafael Hotel";
+                            HabitacionMatrimonial = (NumeroHabitacionMatrimonial * 75) * numeroDiasRecidencia;
+                            HabitacionFamiliar = (NumeroHabitacionfamiliar * 90) * numeroDiasRecidencia;
                             HabitacionEscolar = (NumeroHabitacionescolar * 165) * numeroDiasRecidencia;
                             break;
                         case "★★★":
-                            Hotel.nombre = "Prueba 3";
+                            Hotel.nombre = "La Rustica Hotel";
                             HabitacionMatrimonial = (NumeroHabitacionMatrimonial * 60) * numeroDiasRecidencia;
                             HabitacionFamiliar = (NumeroHabitacionfamiliar * 90) * numeroDiasRecidencia;
                             HabitacionEscolar = (NumeroHabitacionescolar * 135) * numeroDiasRecidencia;
                             break;
                         case "★":
-                            Hotel.nombre = "Prueba 1";
+                            Hotel.nombre = "Hotel Colonial";
                             HabitacionMatrimonial = (NumeroHabitacionMatrimonial * 20) * numeroDiasRecidencia;
-                            HabitacionFamiliar = (NumeroHabitacionfamiliar * 50) * numeroDiasRecidencia;
+                            HabitacionFamiliar = (NumeroHabitacionfamiliar * 45) * numeroDiasRecidencia;
                             HabitacionEscolar = (NumeroHabitacionescolar * 90) * numeroDiasRecidencia;
                             break;
                     }
@@ -372,21 +373,21 @@ namespace Proyecto_Omega_final {
                     switch (cmbCategoria.Text)
                     {
                         case "★★★★★":
-                            Hotel.nombre = "Prueba 5";
-                            HabitacionMatrimonial = (NumeroHabitacionMatrimonial * 80) * numeroDiasRecidencia;
-                            HabitacionFamiliar = (NumeroHabitacionfamiliar * 100) * numeroDiasRecidencia;
+                            Hotel.nombre = "Hostería Santa Ana";
+                            HabitacionMatrimonial = (NumeroHabitacionMatrimonial * 75) * numeroDiasRecidencia;
+                            HabitacionFamiliar = (NumeroHabitacionfamiliar * 90) * numeroDiasRecidencia;
                             HabitacionEscolar = (NumeroHabitacionescolar * 165) * numeroDiasRecidencia;
                             break;
                         case "★★★":
-                            Hotel.nombre = "Prueba 3";
+                            Hotel.nombre = "Hospedaje El Castillo Ingapirca";
                             HabitacionMatrimonial = (NumeroHabitacionMatrimonial * 60) * numeroDiasRecidencia;
                             HabitacionFamiliar = (NumeroHabitacionfamiliar * 90) * numeroDiasRecidencia;
                             HabitacionEscolar = (NumeroHabitacionescolar * 135) * numeroDiasRecidencia;
                             break;
                         case "★":
-                            Hotel.nombre = "Prueba 1";
+                            Hotel.nombre = "Hostal Chasky";
                             HabitacionMatrimonial = (NumeroHabitacionMatrimonial * 20) * numeroDiasRecidencia;
-                            HabitacionFamiliar = (NumeroHabitacionfamiliar * 50) * numeroDiasRecidencia;
+                            HabitacionFamiliar = (NumeroHabitacionfamiliar * 45) * numeroDiasRecidencia;
                             HabitacionEscolar = (NumeroHabitacionescolar * 90) * numeroDiasRecidencia;
                             break;
                     }
@@ -395,21 +396,21 @@ namespace Proyecto_Omega_final {
                     switch (cmbCategoria.Text)
                     {
                         case "★★★★★":
-                            Hotel.nombre = "Prueba 5";
-                            HabitacionMatrimonial = (NumeroHabitacionMatrimonial * 80) * numeroDiasRecidencia;
-                            HabitacionFamiliar = (NumeroHabitacionfamiliar * 100) * numeroDiasRecidencia;
+                            Hotel.nombre = "Hostería Totoral";
+                            HabitacionMatrimonial = (NumeroHabitacionMatrimonial * 75) * numeroDiasRecidencia;
+                            HabitacionFamiliar = (NumeroHabitacionfamiliar * 90) * numeroDiasRecidencia;
                             HabitacionEscolar = (NumeroHabitacionescolar * 165) * numeroDiasRecidencia;
                             break;
                         case "★★★":
-                            Hotel.nombre = "Prueba 3";
+                            Hotel.nombre = "Tunas & Cabras Hotel";
                             HabitacionMatrimonial = (NumeroHabitacionMatrimonial * 60) * numeroDiasRecidencia;
                             HabitacionFamiliar = (NumeroHabitacionfamiliar * 90) * numeroDiasRecidencia;
                             HabitacionEscolar = (NumeroHabitacionescolar * 135) * numeroDiasRecidencia;
                             break;
                         case "★":
-                            Hotel.nombre = "Prueba 1";
+                            Hotel.nombre = "Las Garza Alojamiento";
                             HabitacionMatrimonial = (NumeroHabitacionMatrimonial * 20) * numeroDiasRecidencia;
-                            HabitacionFamiliar = (NumeroHabitacionfamiliar * 50) * numeroDiasRecidencia;
+                            HabitacionFamiliar = (NumeroHabitacionfamiliar * 45) * numeroDiasRecidencia;
                             HabitacionEscolar = (NumeroHabitacionescolar * 90) * numeroDiasRecidencia;
                             break;
                     }
@@ -418,21 +419,21 @@ namespace Proyecto_Omega_final {
                     switch (cmbCategoria.Text)
                     {
                         case "★★★★★":
-                            Hotel.nombre = "Prueba 5";
-                            HabitacionMatrimonial = (NumeroHabitacionMatrimonial * 80) * numeroDiasRecidencia;
-                            HabitacionFamiliar = (NumeroHabitacionfamiliar * 100) * numeroDiasRecidencia;
+                            Hotel.nombre = "Quindolema Art Hotel And Gallery";
+                            HabitacionMatrimonial = (NumeroHabitacionMatrimonial * 75) * numeroDiasRecidencia;
+                            HabitacionFamiliar = (NumeroHabitacionfamiliar * 90) * numeroDiasRecidencia;
                             HabitacionEscolar = (NumeroHabitacionescolar * 165) * numeroDiasRecidencia;
                             break;
                         case "★★★":
-                            Hotel.nombre = "Prueba 3";
+                            Hotel.nombre = "Hotel Shalom";
                             HabitacionMatrimonial = (NumeroHabitacionMatrimonial * 60) * numeroDiasRecidencia;
                             HabitacionFamiliar = (NumeroHabitacionfamiliar * 90) * numeroDiasRecidencia;
                             HabitacionEscolar = (NumeroHabitacionescolar * 135) * numeroDiasRecidencia;
                             break;
                         case "★":
-                            Hotel.nombre = "Prueba 1";
+                            Hotel.nombre = "Hotel El Altar";
                             HabitacionMatrimonial = (NumeroHabitacionMatrimonial * 20) * numeroDiasRecidencia;
-                            HabitacionFamiliar = (NumeroHabitacionfamiliar * 50) * numeroDiasRecidencia;
+                            HabitacionFamiliar = (NumeroHabitacionfamiliar * 45) * numeroDiasRecidencia;
                             HabitacionEscolar = (NumeroHabitacionescolar * 90) * numeroDiasRecidencia;
                             break;
                     }
@@ -441,21 +442,21 @@ namespace Proyecto_Omega_final {
                     switch (cmbCategoria.Text)
                     {
                         case "★★★★★":
-                            Hotel.nombre = "Prueba 5";
-                            HabitacionMatrimonial = (NumeroHabitacionMatrimonial * 80) * numeroDiasRecidencia;
-                            HabitacionFamiliar = (NumeroHabitacionfamiliar * 100) * numeroDiasRecidencia;
+                            Hotel.nombre = "Hotel San Agustín Plaza";
+                            HabitacionMatrimonial = (NumeroHabitacionMatrimonial * 75) * numeroDiasRecidencia;
+                            HabitacionFamiliar = (NumeroHabitacionfamiliar * 90) * numeroDiasRecidencia;
                             HabitacionEscolar = (NumeroHabitacionescolar * 165) * numeroDiasRecidencia;
                             break;
                         case "★★★":
-                            Hotel.nombre = "Prueba 3";
+                            Hotel.nombre = "Hotel Makroz";
                             HabitacionMatrimonial = (NumeroHabitacionMatrimonial * 60) * numeroDiasRecidencia;
                             HabitacionFamiliar = (NumeroHabitacionfamiliar * 90) * numeroDiasRecidencia;
                             HabitacionEscolar = (NumeroHabitacionescolar * 135) * numeroDiasRecidencia;
                             break;
                         case "★":
-                            Hotel.nombre = "Prueba 1";
+                            Hotel.nombre = "El Castillo Hotel";
                             HabitacionMatrimonial = (NumeroHabitacionMatrimonial * 20) * numeroDiasRecidencia;
-                            HabitacionFamiliar = (NumeroHabitacionfamiliar * 50) * numeroDiasRecidencia;
+                            HabitacionFamiliar = (NumeroHabitacionfamiliar * 45) * numeroDiasRecidencia;
                             HabitacionEscolar = (NumeroHabitacionescolar * 90) * numeroDiasRecidencia;
                             break;
                     }
@@ -464,21 +465,21 @@ namespace Proyecto_Omega_final {
                     switch (cmbCategoria.Text)
                     {
                         case "★★★★★":
-                            Hotel.nombre = "Prueba 5";
-                            HabitacionMatrimonial = (NumeroHabitacionMatrimonial * 80) * numeroDiasRecidencia;
-                            HabitacionFamiliar = (NumeroHabitacionfamiliar * 100) * numeroDiasRecidencia;
+                            Hotel.nombre = "Hotel Oro Verde";
+                            HabitacionMatrimonial = (NumeroHabitacionMatrimonial * 75) * numeroDiasRecidencia;
+                            HabitacionFamiliar = (NumeroHabitacionfamiliar * 90) * numeroDiasRecidencia;
                             HabitacionEscolar = (NumeroHabitacionescolar * 165) * numeroDiasRecidencia;
                             break;
                         case "★★★":
-                            Hotel.nombre = "Prueba 3";
+                            Hotel.nombre = "Hotel Veuxor";
                             HabitacionMatrimonial = (NumeroHabitacionMatrimonial * 60) * numeroDiasRecidencia;
                             HabitacionFamiliar = (NumeroHabitacionfamiliar * 90) * numeroDiasRecidencia;
                             HabitacionEscolar = (NumeroHabitacionescolar * 135) * numeroDiasRecidencia;
                             break;
                         case "★":
-                            Hotel.nombre = "Prueba 1";
+                            Hotel.nombre = "Machala Chino Casa";
                             HabitacionMatrimonial = (NumeroHabitacionMatrimonial * 20) * numeroDiasRecidencia;
-                            HabitacionFamiliar = (NumeroHabitacionfamiliar * 50) * numeroDiasRecidencia;
+                            HabitacionFamiliar = (NumeroHabitacionfamiliar * 45) * numeroDiasRecidencia;
                             HabitacionEscolar = (NumeroHabitacionescolar * 90) * numeroDiasRecidencia;
                             break;
                     }
@@ -487,21 +488,21 @@ namespace Proyecto_Omega_final {
                     switch (cmbCategoria.Text)
                     {
                         case "★★★★★":
-                            Hotel.nombre = "Prueba 5";
-                            HabitacionMatrimonial = (NumeroHabitacionMatrimonial * 80) * numeroDiasRecidencia;
-                            HabitacionFamiliar = (NumeroHabitacionfamiliar * 100) * numeroDiasRecidencia;
+                            Hotel.nombre = "Hotel Casa Arnaldo";
+                            HabitacionMatrimonial = (NumeroHabitacionMatrimonial * 75) * numeroDiasRecidencia;
+                            HabitacionFamiliar = (NumeroHabitacionfamiliar * 90) * numeroDiasRecidencia;
                             HabitacionEscolar = (NumeroHabitacionescolar * 165) * numeroDiasRecidencia;
                             break;
                         case "★★★":
-                            Hotel.nombre = "Prueba 3";
+                            Hotel.nombre = "Hotel Kemarios";
                             HabitacionMatrimonial = (NumeroHabitacionMatrimonial * 60) * numeroDiasRecidencia;
                             HabitacionFamiliar = (NumeroHabitacionfamiliar * 90) * numeroDiasRecidencia;
                             HabitacionEscolar = (NumeroHabitacionescolar * 135) * numeroDiasRecidencia;
                             break;
                         case "★":
-                            Hotel.nombre = "Prueba 1";
+                            Hotel.nombre = "Hotel la Barca";
                             HabitacionMatrimonial = (NumeroHabitacionMatrimonial * 20) * numeroDiasRecidencia;
-                            HabitacionFamiliar = (NumeroHabitacionfamiliar * 50) * numeroDiasRecidencia;
+                            HabitacionFamiliar = (NumeroHabitacionfamiliar * 45) * numeroDiasRecidencia;
                             HabitacionEscolar = (NumeroHabitacionescolar * 90) * numeroDiasRecidencia;
                             break;
                     }
@@ -510,21 +511,21 @@ namespace Proyecto_Omega_final {
                     switch (cmbCategoria.Text)
                     {
                         case "★★★★★":
-                            Hotel.nombre = "Prueba 5";
-                            HabitacionMatrimonial = (NumeroHabitacionMatrimonial * 80) * numeroDiasRecidencia;
-                            HabitacionFamiliar = (NumeroHabitacionfamiliar * 100) * numeroDiasRecidencia;
+                            Hotel.nombre = "Royal Palm Galápagos";
+                            HabitacionMatrimonial = (NumeroHabitacionMatrimonial * 75) * numeroDiasRecidencia;
+                            HabitacionFamiliar = (NumeroHabitacionfamiliar * 90) * numeroDiasRecidencia;
                             HabitacionEscolar = (NumeroHabitacionescolar * 165) * numeroDiasRecidencia;
                             break;
                         case "★★★":
-                            Hotel.nombre = "Prueba 3";
+                            Hotel.nombre = "Ikala Galápagos Hotel";
                             HabitacionMatrimonial = (NumeroHabitacionMatrimonial * 60) * numeroDiasRecidencia;
                             HabitacionFamiliar = (NumeroHabitacionfamiliar * 90) * numeroDiasRecidencia;
                             HabitacionEscolar = (NumeroHabitacionescolar * 135) * numeroDiasRecidencia;
                             break;
                         case "★":
-                            Hotel.nombre = "Prueba 1";
+                            Hotel.nombre = "Galápagos verde Azul";
                             HabitacionMatrimonial = (NumeroHabitacionMatrimonial * 20) * numeroDiasRecidencia;
-                            HabitacionFamiliar = (NumeroHabitacionfamiliar * 50) * numeroDiasRecidencia;
+                            HabitacionFamiliar = (NumeroHabitacionfamiliar * 45) * numeroDiasRecidencia;
                             HabitacionEscolar = (NumeroHabitacionescolar * 90) * numeroDiasRecidencia;
                             break;
                     }
@@ -533,21 +534,21 @@ namespace Proyecto_Omega_final {
                     switch (cmbCategoria.Text)
                     {
                         case "★★★★★":
-                            Hotel.nombre = "Prueba 5";
-                            HabitacionMatrimonial = (NumeroHabitacionMatrimonial * 80) * numeroDiasRecidencia;
-                            HabitacionFamiliar = (NumeroHabitacionfamiliar * 100) * numeroDiasRecidencia;
+                            Hotel.nombre = "Hotel Hilton Colon Guayaquil";
+                            HabitacionMatrimonial = (NumeroHabitacionMatrimonial * 75) * numeroDiasRecidencia;
+                            HabitacionFamiliar = (NumeroHabitacionfamiliar * 90) * numeroDiasRecidencia;
                             HabitacionEscolar = (NumeroHabitacionescolar * 165) * numeroDiasRecidencia;
                             break;
                         case "★★★":
-                            Hotel.nombre = "Prueba 3";
+                            Hotel.nombre = "Courtyard by Marriot Guayaquil";
                             HabitacionMatrimonial = (NumeroHabitacionMatrimonial * 60) * numeroDiasRecidencia;
                             HabitacionFamiliar = (NumeroHabitacionfamiliar * 90) * numeroDiasRecidencia;
                             HabitacionEscolar = (NumeroHabitacionescolar * 135) * numeroDiasRecidencia;
                             break;
                         case "★":
-                            Hotel.nombre = "Prueba 1";
+                            Hotel.nombre = "Hotel Murali";
                             HabitacionMatrimonial = (NumeroHabitacionMatrimonial * 20) * numeroDiasRecidencia;
-                            HabitacionFamiliar = (NumeroHabitacionfamiliar * 50) * numeroDiasRecidencia;
+                            HabitacionFamiliar = (NumeroHabitacionfamiliar * 45) * numeroDiasRecidencia;
                             HabitacionEscolar = (NumeroHabitacionescolar * 90) * numeroDiasRecidencia;
                             break;
                     }
@@ -556,21 +557,21 @@ namespace Proyecto_Omega_final {
                     switch (cmbCategoria.Text)
                     {
                         case "★★★★★":
-                            Hotel.nombre = "Prueba 5";
-                            HabitacionMatrimonial = (NumeroHabitacionMatrimonial * 80) * numeroDiasRecidencia;
-                            HabitacionFamiliar = (NumeroHabitacionfamiliar * 100) * numeroDiasRecidencia;
+                            Hotel.nombre = "Tunas & Cabras Hotel";
+                            HabitacionMatrimonial = (NumeroHabitacionMatrimonial * 75) * numeroDiasRecidencia;
+                            HabitacionFamiliar = (NumeroHabitacionfamiliar * 90) * numeroDiasRecidencia;
                             HabitacionEscolar = (NumeroHabitacionescolar * 165) * numeroDiasRecidencia;
                             break;
                         case "★★★":
-                            Hotel.nombre = "Prueba 3";
+                            Hotel.nombre = "Hostería Totoral";
                             HabitacionMatrimonial = (NumeroHabitacionMatrimonial * 60) * numeroDiasRecidencia;
                             HabitacionFamiliar = (NumeroHabitacionfamiliar * 90) * numeroDiasRecidencia;
                             HabitacionEscolar = (NumeroHabitacionescolar * 135) * numeroDiasRecidencia;
                             break;
                         case "★":
-                            Hotel.nombre = "Prueba 1";
+                            Hotel.nombre = "Hotel Miraflores";
                             HabitacionMatrimonial = (NumeroHabitacionMatrimonial * 20) * numeroDiasRecidencia;
-                            HabitacionFamiliar = (NumeroHabitacionfamiliar * 50) * numeroDiasRecidencia;
+                            HabitacionFamiliar = (NumeroHabitacionfamiliar * 45) * numeroDiasRecidencia;
                             HabitacionEscolar = (NumeroHabitacionescolar * 90) * numeroDiasRecidencia;
                             break;
                     }
@@ -579,21 +580,21 @@ namespace Proyecto_Omega_final {
                     switch (cmbCategoria.Text)
                     {
                         case "★★★★★":
-                            Hotel.nombre = "Prueba 5";
-                            HabitacionMatrimonial = (NumeroHabitacionMatrimonial * 80) * numeroDiasRecidencia;
-                            HabitacionFamiliar = (NumeroHabitacionfamiliar * 100) * numeroDiasRecidencia;
+                            Hotel.nombre = "Sonesta Hotel Loja";
+                            HabitacionMatrimonial = (NumeroHabitacionMatrimonial * 75) * numeroDiasRecidencia;
+                            HabitacionFamiliar = (NumeroHabitacionfamiliar * 90) * numeroDiasRecidencia;
                             HabitacionEscolar = (NumeroHabitacionescolar * 165) * numeroDiasRecidencia;
                             break;
                         case "★★★":
-                            Hotel.nombre = "Prueba 3";
+                            Hotel.nombre = "Hotel Libertador";
                             HabitacionMatrimonial = (NumeroHabitacionMatrimonial * 60) * numeroDiasRecidencia;
                             HabitacionFamiliar = (NumeroHabitacionfamiliar * 90) * numeroDiasRecidencia;
                             HabitacionEscolar = (NumeroHabitacionescolar * 135) * numeroDiasRecidencia;
                             break;
                         case "★":
-                            Hotel.nombre = "Prueba 1";
+                            Hotel.nombre = "Hotel Carrion";
                             HabitacionMatrimonial = (NumeroHabitacionMatrimonial * 20) * numeroDiasRecidencia;
-                            HabitacionFamiliar = (NumeroHabitacionfamiliar * 50) * numeroDiasRecidencia;
+                            HabitacionFamiliar = (NumeroHabitacionfamiliar * 45) * numeroDiasRecidencia;
                             HabitacionEscolar = (NumeroHabitacionescolar * 90) * numeroDiasRecidencia;
                             break;
                     }
@@ -602,21 +603,21 @@ namespace Proyecto_Omega_final {
                     switch (cmbCategoria.Text)
                     {
                         case "★★★★★":
-                            Hotel.nombre = "Prueba 5";
-                            HabitacionMatrimonial = (NumeroHabitacionMatrimonial * 80) * numeroDiasRecidencia;
-                            HabitacionFamiliar = (NumeroHabitacionfamiliar * 100) * numeroDiasRecidencia;
+                            Hotel.nombre = "Hotel House Center";
+                            HabitacionMatrimonial = (NumeroHabitacionMatrimonial * 75) * numeroDiasRecidencia;
+                            HabitacionFamiliar = (NumeroHabitacionfamiliar * 90) * numeroDiasRecidencia;
                             HabitacionEscolar = (NumeroHabitacionescolar * 165) * numeroDiasRecidencia;
                             break;
                         case "★★★":
-                            Hotel.nombre = "Prueba 3";
+                            Hotel.nombre = "Hacienda la Danesa";
                             HabitacionMatrimonial = (NumeroHabitacionMatrimonial * 60) * numeroDiasRecidencia;
                             HabitacionFamiliar = (NumeroHabitacionfamiliar * 90) * numeroDiasRecidencia;
                             HabitacionEscolar = (NumeroHabitacionescolar * 135) * numeroDiasRecidencia;
                             break;
                         case "★":
-                            Hotel.nombre = "Prueba 1";
+                            Hotel.nombre = "Hotel Cachari";
                             HabitacionMatrimonial = (NumeroHabitacionMatrimonial * 20) * numeroDiasRecidencia;
-                            HabitacionFamiliar = (NumeroHabitacionfamiliar * 50) * numeroDiasRecidencia;
+                            HabitacionFamiliar = (NumeroHabitacionfamiliar * 45) * numeroDiasRecidencia;
                             HabitacionEscolar = (NumeroHabitacionescolar * 90) * numeroDiasRecidencia;
                             break;
                     }
@@ -625,21 +626,21 @@ namespace Proyecto_Omega_final {
                     switch (cmbCategoria.Text)
                     {
                         case "★★★★★":
-                            Hotel.nombre = "Prueba 5";
-                            HabitacionMatrimonial = (NumeroHabitacionMatrimonial * 80) * numeroDiasRecidencia;
-                            HabitacionFamiliar = (NumeroHabitacionfamiliar * 100) * numeroDiasRecidencia;
+                            Hotel.nombre = "Hotel Ceibo Real";
+                            HabitacionMatrimonial = (NumeroHabitacionMatrimonial * 75) * numeroDiasRecidencia;
+                            HabitacionFamiliar = (NumeroHabitacionfamiliar * 90) * numeroDiasRecidencia;
                             HabitacionEscolar = (NumeroHabitacionescolar * 165) * numeroDiasRecidencia;
                             break;
                         case "★★★":
-                            Hotel.nombre = "Prueba 3";
+                            Hotel.nombre = "Hotel Hamilton";
                             HabitacionMatrimonial = (NumeroHabitacionMatrimonial * 60) * numeroDiasRecidencia;
                             HabitacionFamiliar = (NumeroHabitacionfamiliar * 90) * numeroDiasRecidencia;
                             HabitacionEscolar = (NumeroHabitacionescolar * 135) * numeroDiasRecidencia;
                             break;
                         case "★":
-                            Hotel.nombre = "Prueba 1";
+                            Hotel.nombre = "Casa lolita Hotel";
                             HabitacionMatrimonial = (NumeroHabitacionMatrimonial * 20) * numeroDiasRecidencia;
-                            HabitacionFamiliar = (NumeroHabitacionfamiliar * 50) * numeroDiasRecidencia;
+                            HabitacionFamiliar = (NumeroHabitacionfamiliar * 45) * numeroDiasRecidencia;
                             HabitacionEscolar = (NumeroHabitacionescolar * 90) * numeroDiasRecidencia;
                             break;
                     }
@@ -648,21 +649,21 @@ namespace Proyecto_Omega_final {
                     switch (cmbCategoria.Text)
                     {
                         case "★★★★★":
-                            Hotel.nombre = "Prueba 5";
-                            HabitacionMatrimonial = (NumeroHabitacionMatrimonial * 80) * numeroDiasRecidencia;
-                            HabitacionFamiliar = (NumeroHabitacionfamiliar * 100) * numeroDiasRecidencia;
+                            Hotel.nombre = "Hostería Farallon";
+                            HabitacionMatrimonial = (NumeroHabitacionMatrimonial * 75) * numeroDiasRecidencia;
+                            HabitacionFamiliar = (NumeroHabitacionfamiliar * 90) * numeroDiasRecidencia;
                             HabitacionEscolar = (NumeroHabitacionescolar * 165) * numeroDiasRecidencia;
                             break;
                         case "★★★":
-                            Hotel.nombre = "Prueba 3";
+                            Hotel.nombre = "Casa NOE";
                             HabitacionMatrimonial = (NumeroHabitacionMatrimonial * 60) * numeroDiasRecidencia;
                             HabitacionFamiliar = (NumeroHabitacionfamiliar * 90) * numeroDiasRecidencia;
                             HabitacionEscolar = (NumeroHabitacionescolar * 135) * numeroDiasRecidencia;
                             break;
                         case "★":
-                            Hotel.nombre = "Prueba 1";
+                            Hotel.nombre = "Casa de la Abuela";
                             HabitacionMatrimonial = (NumeroHabitacionMatrimonial * 20) * numeroDiasRecidencia;
-                            HabitacionFamiliar = (NumeroHabitacionfamiliar * 50) * numeroDiasRecidencia;
+                            HabitacionFamiliar = (NumeroHabitacionfamiliar * 45) * numeroDiasRecidencia;
                             HabitacionEscolar = (NumeroHabitacionescolar * 90) * numeroDiasRecidencia;
                             break;
                     }
@@ -671,21 +672,21 @@ namespace Proyecto_Omega_final {
                     switch (cmbCategoria.Text)
                     {
                         case "★★★★★":
-                            Hotel.nombre = "Prueba 5";
-                            HabitacionMatrimonial = (NumeroHabitacionMatrimonial * 80) * numeroDiasRecidencia;
-                            HabitacionFamiliar = (NumeroHabitacionfamiliar * 100) * numeroDiasRecidencia;
+                            Hotel.nombre = "Huasquila Amazon Lodge";
+                            HabitacionMatrimonial = (NumeroHabitacionMatrimonial * 75) * numeroDiasRecidencia;
+                            HabitacionFamiliar = (NumeroHabitacionfamiliar * 90) * numeroDiasRecidencia;
                             HabitacionEscolar = (NumeroHabitacionescolar * 165) * numeroDiasRecidencia;
                             break;
                         case "★★★":
-                            Hotel.nombre = "Prueba 3";
+                            Hotel.nombre = "Selina Amazon Hotel";
                             HabitacionMatrimonial = (NumeroHabitacionMatrimonial * 60) * numeroDiasRecidencia;
                             HabitacionFamiliar = (NumeroHabitacionfamiliar * 90) * numeroDiasRecidencia;
                             HabitacionEscolar = (NumeroHabitacionescolar * 135) * numeroDiasRecidencia;
                             break;
                         case "★":
-                            Hotel.nombre = "Prueba 1";
+                            Hotel.nombre = "Tres Ríos Jungle";
                             HabitacionMatrimonial = (NumeroHabitacionMatrimonial * 20) * numeroDiasRecidencia;
-                            HabitacionFamiliar = (NumeroHabitacionfamiliar * 50) * numeroDiasRecidencia;
+                            HabitacionFamiliar = (NumeroHabitacionfamiliar * 45) * numeroDiasRecidencia;
                             HabitacionEscolar = (NumeroHabitacionescolar * 90) * numeroDiasRecidencia;
                             break;
                     }
@@ -694,21 +695,21 @@ namespace Proyecto_Omega_final {
                     switch (cmbCategoria.Text)
                     {
                         case "★★★★★":
-                            Hotel.nombre = "Prueba 5";
-                            HabitacionMatrimonial = (NumeroHabitacionMatrimonial * 80) * numeroDiasRecidencia;
-                            HabitacionFamiliar = (NumeroHabitacionfamiliar * 100) * numeroDiasRecidencia;
+                            Hotel.nombre = "Gran Hotel De Lago El Coca";
+                            HabitacionMatrimonial = (NumeroHabitacionMatrimonial * 75) * numeroDiasRecidencia;
+                            HabitacionFamiliar = (NumeroHabitacionfamiliar * 90) * numeroDiasRecidencia;
                             HabitacionEscolar = (NumeroHabitacionescolar * 165) * numeroDiasRecidencia;
                             break;
                         case "★★★":
-                            Hotel.nombre = "Prueba 3";
+                            Hotel.nombre = "Hotel del Auca";
                             HabitacionMatrimonial = (NumeroHabitacionMatrimonial * 60) * numeroDiasRecidencia;
                             HabitacionFamiliar = (NumeroHabitacionfamiliar * 90) * numeroDiasRecidencia;
                             HabitacionEscolar = (NumeroHabitacionescolar * 135) * numeroDiasRecidencia;
                             break;
                         case "★":
-                            Hotel.nombre = "Prueba 1";
+                            Hotel.nombre = "Hotel Coca Imperial";
                             HabitacionMatrimonial = (NumeroHabitacionMatrimonial * 20) * numeroDiasRecidencia;
-                            HabitacionFamiliar = (NumeroHabitacionfamiliar * 50) * numeroDiasRecidencia;
+                            HabitacionFamiliar = (NumeroHabitacionfamiliar * 45) * numeroDiasRecidencia;
                             HabitacionEscolar = (NumeroHabitacionescolar * 90) * numeroDiasRecidencia;
                             break;
                     }
@@ -717,21 +718,21 @@ namespace Proyecto_Omega_final {
                     switch (cmbCategoria.Text)
                     {
                         case "★★★★★":
-                            Hotel.nombre = "Prueba 5";
-                            HabitacionMatrimonial = (NumeroHabitacionMatrimonial * 80) * numeroDiasRecidencia;
-                            HabitacionFamiliar = (NumeroHabitacionfamiliar * 100) * numeroDiasRecidencia;
+                            Hotel.nombre = "Green House";
+                            HabitacionMatrimonial = (NumeroHabitacionMatrimonial * 75) * numeroDiasRecidencia;
+                            HabitacionFamiliar = (NumeroHabitacionfamiliar * 90) * numeroDiasRecidencia;
                             HabitacionEscolar = (NumeroHabitacionescolar * 165) * numeroDiasRecidencia;
                             break;
                         case "★★★":
-                            Hotel.nombre = "Prueba 3";
+                            Hotel.nombre = "Hostería Hachacaspi";
                             HabitacionMatrimonial = (NumeroHabitacionMatrimonial * 60) * numeroDiasRecidencia;
                             HabitacionFamiliar = (NumeroHabitacionfamiliar * 90) * numeroDiasRecidencia;
                             HabitacionEscolar = (NumeroHabitacionescolar * 135) * numeroDiasRecidencia;
                             break;
                         case "★":
-                            Hotel.nombre = "Prueba 1";
+                            Hotel.nombre = "Miramelindo Spa Hotel";
                             HabitacionMatrimonial = (NumeroHabitacionMatrimonial * 20) * numeroDiasRecidencia;
-                            HabitacionFamiliar = (NumeroHabitacionfamiliar * 50) * numeroDiasRecidencia;
+                            HabitacionFamiliar = (NumeroHabitacionfamiliar * 45) * numeroDiasRecidencia;
                             HabitacionEscolar = (NumeroHabitacionescolar * 90) * numeroDiasRecidencia;
                             break;
                     }
@@ -740,21 +741,21 @@ namespace Proyecto_Omega_final {
                     switch (cmbCategoria.Text)
                     {
                         case "★★★★★":
-                            Hotel.nombre = "Prueba 5";
-                            HabitacionMatrimonial = (NumeroHabitacionMatrimonial * 80) * numeroDiasRecidencia;
-                            HabitacionFamiliar = (NumeroHabitacionfamiliar * 100) * numeroDiasRecidencia;
+                            Hotel.nombre = "Hotel Wyndham Garden";
+                            HabitacionMatrimonial = (NumeroHabitacionMatrimonial * 75) * numeroDiasRecidencia;
+                            HabitacionFamiliar = (NumeroHabitacionfamiliar * 90) * numeroDiasRecidencia;
                             HabitacionEscolar = (NumeroHabitacionescolar * 165) * numeroDiasRecidencia;
                             break;
                         case "★★★":
-                            Hotel.nombre = "Prueba 3";
+                            Hotel.nombre = "Hotel Hilton Colón";
                             HabitacionMatrimonial = (NumeroHabitacionMatrimonial * 60) * numeroDiasRecidencia;
                             HabitacionFamiliar = (NumeroHabitacionfamiliar * 90) * numeroDiasRecidencia;
                             HabitacionEscolar = (NumeroHabitacionescolar * 135) * numeroDiasRecidencia;
                             break;
                         case "★":
-                            Hotel.nombre = "Prueba 1";
+                            Hotel.nombre = "Hotel Rosas de la Tola";
                             HabitacionMatrimonial = (NumeroHabitacionMatrimonial * 20) * numeroDiasRecidencia;
-                            HabitacionFamiliar = (NumeroHabitacionfamiliar * 50) * numeroDiasRecidencia;
+                            HabitacionFamiliar = (NumeroHabitacionfamiliar * 45) * numeroDiasRecidencia;
                             HabitacionEscolar = (NumeroHabitacionescolar * 90) * numeroDiasRecidencia;
                             break;
                     }
@@ -763,21 +764,21 @@ namespace Proyecto_Omega_final {
                     switch (cmbCategoria.Text)
                     {
                         case "★★★★★":
-                            Hotel.nombre = "Prueba 5";
-                            HabitacionMatrimonial = (NumeroHabitacionMatrimonial * 80) * numeroDiasRecidencia;
-                            HabitacionFamiliar = (NumeroHabitacionfamiliar * 100) * numeroDiasRecidencia;
+                            Hotel.nombre = "Howard Johnson by Wyndham Montañita";
+                            HabitacionMatrimonial = (NumeroHabitacionMatrimonial * 75) * numeroDiasRecidencia;
+                            HabitacionFamiliar = (NumeroHabitacionfamiliar * 90) * numeroDiasRecidencia;
                             HabitacionEscolar = (NumeroHabitacionescolar * 165) * numeroDiasRecidencia;
                             break;
                         case "★★★":
-                            Hotel.nombre = "Prueba 3";
+                            Hotel.nombre = "Hotel Colón Salinas";
                             HabitacionMatrimonial = (NumeroHabitacionMatrimonial * 60) * numeroDiasRecidencia;
                             HabitacionFamiliar = (NumeroHabitacionfamiliar * 90) * numeroDiasRecidencia;
                             HabitacionEscolar = (NumeroHabitacionescolar * 135) * numeroDiasRecidencia;
                             break;
                         case "★":
-                            Hotel.nombre = "Prueba 1";
+                            Hotel.nombre = "Hotel Kundalini";
                             HabitacionMatrimonial = (NumeroHabitacionMatrimonial * 20) * numeroDiasRecidencia;
-                            HabitacionFamiliar = (NumeroHabitacionfamiliar * 50) * numeroDiasRecidencia;
+                            HabitacionFamiliar = (NumeroHabitacionfamiliar * 45) * numeroDiasRecidencia;
                             HabitacionEscolar = (NumeroHabitacionescolar * 90) * numeroDiasRecidencia;
                             break;
                     }
@@ -786,21 +787,21 @@ namespace Proyecto_Omega_final {
                     switch (cmbCategoria.Text)
                     {
                         case "★★★★★":
-                            Hotel.nombre = "Prueba 5";
-                            HabitacionMatrimonial = (NumeroHabitacionMatrimonial * 80) * numeroDiasRecidencia;
-                            HabitacionFamiliar = (NumeroHabitacionfamiliar * 100) * numeroDiasRecidencia;
+                            Hotel.nombre = "Victoria Suites Hostal";
+                            HabitacionMatrimonial = (NumeroHabitacionMatrimonial * 75) * numeroDiasRecidencia;
+                            HabitacionFamiliar = (NumeroHabitacionfamiliar * 90) * numeroDiasRecidencia;
                             HabitacionEscolar = (NumeroHabitacionescolar * 165) * numeroDiasRecidencia;
                             break;
                         case "★★★":
-                            Hotel.nombre = "Prueba 3";
+                            Hotel.nombre = "Hotel Zaracay";
                             HabitacionMatrimonial = (NumeroHabitacionMatrimonial * 60) * numeroDiasRecidencia;
                             HabitacionFamiliar = (NumeroHabitacionfamiliar * 90) * numeroDiasRecidencia;
                             HabitacionEscolar = (NumeroHabitacionescolar * 135) * numeroDiasRecidencia;
                             break;
                         case "★":
-                            Hotel.nombre = "Prueba 1";
+                            Hotel.nombre = "Hostería Kasadasa";
                             HabitacionMatrimonial = (NumeroHabitacionMatrimonial * 20) * numeroDiasRecidencia;
-                            HabitacionFamiliar = (NumeroHabitacionfamiliar * 50) * numeroDiasRecidencia;
+                            HabitacionFamiliar = (NumeroHabitacionfamiliar * 45) * numeroDiasRecidencia;
                             HabitacionEscolar = (NumeroHabitacionescolar * 90) * numeroDiasRecidencia;
                             break;
                     }
@@ -809,21 +810,21 @@ namespace Proyecto_Omega_final {
                     switch (cmbCategoria.Text)
                     {
                         case "★★★★★":
-                            Hotel.nombre = "Prueba 5";
-                            HabitacionMatrimonial = (NumeroHabitacionMatrimonial * 80) * numeroDiasRecidencia;
-                            HabitacionFamiliar = (NumeroHabitacionfamiliar * 100) * numeroDiasRecidencia;
+                            Hotel.nombre = "Gran Hotel de Lago";
+                            HabitacionMatrimonial = (NumeroHabitacionMatrimonial * 75) * numeroDiasRecidencia;
+                            HabitacionFamiliar = (NumeroHabitacionfamiliar * 90) * numeroDiasRecidencia;
                             HabitacionEscolar = (NumeroHabitacionescolar * 165) * numeroDiasRecidencia;
                             break;
                         case "★★★":
-                            Hotel.nombre = "Prueba 3";
+                            Hotel.nombre = "Hotel Arazá";
                             HabitacionMatrimonial = (NumeroHabitacionMatrimonial * 60) * numeroDiasRecidencia;
                             HabitacionFamiliar = (NumeroHabitacionfamiliar * 90) * numeroDiasRecidencia;
                             HabitacionEscolar = (NumeroHabitacionescolar * 135) * numeroDiasRecidencia;
                             break;
                         case "★":
-                            Hotel.nombre = "Prueba 1";
+                            Hotel.nombre = "Hotel D´Mario";
                             HabitacionMatrimonial = (NumeroHabitacionMatrimonial * 20) * numeroDiasRecidencia;
-                            HabitacionFamiliar = (NumeroHabitacionfamiliar * 50) * numeroDiasRecidencia;
+                            HabitacionFamiliar = (NumeroHabitacionfamiliar * 45) * numeroDiasRecidencia;
                             HabitacionEscolar = (NumeroHabitacionescolar * 90) * numeroDiasRecidencia;
                             break;
                     }
@@ -832,51 +833,54 @@ namespace Proyecto_Omega_final {
                     switch (cmbCategoria.Text)
                     {
                         case "★★★★★":
-                            Hotel.nombre = "Prueba 5";
-                            HabitacionMatrimonial = (NumeroHabitacionMatrimonial * 80) * numeroDiasRecidencia;
-                            HabitacionFamiliar = (NumeroHabitacionfamiliar * 100) * numeroDiasRecidencia;
+                            Hotel.nombre = "Hotel Florida";
+                            HabitacionMatrimonial = (NumeroHabitacionMatrimonial * 75) * numeroDiasRecidencia;
+                            HabitacionFamiliar = (NumeroHabitacionfamiliar * 90) * numeroDiasRecidencia;
                             HabitacionEscolar = (NumeroHabitacionescolar * 165) * numeroDiasRecidencia;
                             break;
                         case "★★★":
-                            Hotel.nombre = "Prueba 3";
+                            Hotel.nombre = "Hotel Ambato";
                             HabitacionMatrimonial = (NumeroHabitacionMatrimonial * 60) * numeroDiasRecidencia;
                             HabitacionFamiliar = (NumeroHabitacionfamiliar * 90) * numeroDiasRecidencia;
                             HabitacionEscolar = (NumeroHabitacionescolar * 135) * numeroDiasRecidencia;
                             break;
                         case "★":
-                            Hotel.nombre = "Prueba 1";
+                            Hotel.nombre = "Hotel Emperador";
                             HabitacionMatrimonial = (NumeroHabitacionMatrimonial * 20) * numeroDiasRecidencia;
-                            HabitacionFamiliar = (NumeroHabitacionfamiliar * 50) * numeroDiasRecidencia;
+                            HabitacionFamiliar = (NumeroHabitacionfamiliar * 45) * numeroDiasRecidencia;
                             HabitacionEscolar = (NumeroHabitacionescolar * 90) * numeroDiasRecidencia;
                             break;
                     }
                     break;
+
                 case "Zamora-Chinchipe":
                     switch (cmbCategoria.Text)
                     {
                         case "★★★★★":
-                            Hotel.nombre = "Prueba 5";
-                            HabitacionMatrimonial = (NumeroHabitacionMatrimonial * 80) * numeroDiasRecidencia;
-                            HabitacionFamiliar = (NumeroHabitacionfamiliar * 100) * numeroDiasRecidencia;
+                            Hotel.nombre = "Hotel Samuria";
+                            HabitacionMatrimonial = (NumeroHabitacionMatrimonial * 75) * numeroDiasRecidencia;
+                            HabitacionFamiliar = (NumeroHabitacionfamiliar * 90) * numeroDiasRecidencia;
                             HabitacionEscolar = (NumeroHabitacionescolar * 165) * numeroDiasRecidencia;
                             break;
                         case "★★★":
-                            Hotel.nombre = "Prueba 3";
+                            Hotel.nombre = "Zamorano Real Hotel";
                             HabitacionMatrimonial = (NumeroHabitacionMatrimonial * 60) * numeroDiasRecidencia;
                             HabitacionFamiliar = (NumeroHabitacionfamiliar * 90) * numeroDiasRecidencia;
                             HabitacionEscolar = (NumeroHabitacionescolar * 135) * numeroDiasRecidencia;
                             break;
                         case "★":
-                            Hotel.nombre = "Prueba 1";
+                            Hotel.nombre = "Hostería Paraíso";
                             HabitacionMatrimonial = (NumeroHabitacionMatrimonial * 20) * numeroDiasRecidencia;
-                            HabitacionFamiliar = (NumeroHabitacionfamiliar * 50) * numeroDiasRecidencia;
+                            HabitacionFamiliar = (NumeroHabitacionfamiliar * 45) * numeroDiasRecidencia;
                             HabitacionEscolar = (NumeroHabitacionescolar * 90) * numeroDiasRecidencia;
                             break;
                     }
                     break;
             }
 
+
             Precios.preciosCamas = HabitacionMatrimonial + HabitacionFamiliar + HabitacionEscolar;
+           
             
         }
 

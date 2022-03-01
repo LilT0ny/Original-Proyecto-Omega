@@ -53,6 +53,7 @@
             this.txtRecibo.Location = new System.Drawing.Point(28, 64);
             this.txtRecibo.Multiline = true;
             this.txtRecibo.Name = "txtRecibo";
+            this.txtRecibo.ReadOnly = true;
             this.txtRecibo.Size = new System.Drawing.Size(305, 426);
             this.txtRecibo.TabIndex = 1;
             // 
