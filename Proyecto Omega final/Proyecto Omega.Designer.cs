@@ -148,9 +148,9 @@
             this.label6.AutoSize = true;
             this.label6.Location = new System.Drawing.Point(6, 51);
             this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(96, 26);
+            this.label6.Size = new System.Drawing.Size(66, 26);
             this.label6.TabIndex = 5;
-            this.label6.Text = "NUMERO\r\nACOMPAÑANTES\r\n";
+            this.label6.Text = "NUMERO\r\nPERSONAS\r\n";
             // 
             // label7
             // 
@@ -623,7 +623,8 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(128)))), ((int)(((byte)(255)))));
-            this.ClientSize = new System.Drawing.Size(692, 633);
+            this.ClientSize = new System.Drawing.Size(694, 636);
+            this.ControlBox = false;
             this.Controls.Add(this.btnSalir);
             this.Controls.Add(this.panel4);
             this.Controls.Add(this.panel3);
@@ -632,7 +633,9 @@
             this.Controls.Add(this.btnLimpiar);
             this.Controls.Add(this.btConfirmar);
             this.Controls.Add(this.label1);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
+            this.MaximizeBox = false;
             this.Name = "Form1";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Proyecto Omega";

@@ -44,10 +44,7 @@ namespace Proyecto_Omega_final {
 
     //PRECIOS 
     static class Precios {
-        static public int precioMatrimonial = 0;
-        static public int precioFamiliar = 0;
-        static public int precioEscolar = 0;
-        static public double preciosCamas = 0;
+        static public double preciosCamas;
         static public int precioTransporte = 0;
         static public double precioAdicion = 0;
         static public double pagoTotal = 0;

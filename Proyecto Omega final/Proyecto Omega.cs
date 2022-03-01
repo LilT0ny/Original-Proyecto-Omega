@@ -49,14 +49,23 @@ namespace Proyecto_Omega_final {
             chkbxAlmuerzo.Checked = false;
             chkbxCena.Checked = false;
             chkbxPiscina.Checked = false;
+            numUpDiasRecidencia.Value = 0;
+            numUpAcompaniante.Value = 0;
             numUpAdultos.Value = 0;
             numUpNiños.Value = 0;
+            btConfirmar.Enabled = false;
+            errorProvider1.SetError(txtNombre, "");
+            errorProvider1.SetError(txtApellido, "");
+            errorProvider1.SetError(txtCedula, "");
+            errorProvider1.SetError(txtTelefono, "");
+            dtFecha.ResetText();
+
         }  
         public void btComprar_Click(object sender, EventArgs e) {
 
 
             Form recibo = new Recibo();
-            recibo.Show();
+           
 
 
             Datos.nombre = txtNombre.Text.ToUpper();
@@ -84,8 +93,10 @@ namespace Proyecto_Omega_final {
             Huespedes.ninos = numUpNiños.Value.ToString();
 
             Factura();
+            recibo.ShowDialog();
 
         }
+
         // FUNCIONES A LLAMAR EN LAS TXTBOX PARA LA VALIDACION DE LOS DATOS
         private void txtNombre_TextChanged(object sender, EventArgs e)
         {
@@ -214,9 +225,6 @@ namespace Proyecto_Omega_final {
             }
         }
 
-
-
-
         //ADICIONES
         public void Adiciones() {
             double precioDesayuno;
@@ -231,7 +239,7 @@ namespace Proyecto_Omega_final {
                 precioDesayuno = 2.50 * numeroDiasRecidencia;
             } else
             {
-                Hotel.piscina = "ninguno".ToUpper();
+                Hotel.desayuno = "---".ToUpper();
                 precioDesayuno = 0;
             }
             
@@ -241,7 +249,7 @@ namespace Proyecto_Omega_final {
                 precioAlmuerzo = 3.50 * numeroDiasRecidencia;
             }else
             {
-                Hotel.piscina = "ninguno".ToUpper();
+                Hotel.almuerzo = "---".ToUpper();
                 precioAlmuerzo = 0;
             }
 
@@ -252,7 +260,7 @@ namespace Proyecto_Omega_final {
             }
             else
             {
-                Hotel.piscina = "ninguno".ToUpper();
+                Hotel.cena = "---".ToUpper();
                 precioCena = 0;
             }
 
@@ -262,7 +270,7 @@ namespace Proyecto_Omega_final {
                 precioPiscina = 10;
             } else
             {
-                Hotel.piscina = "ninguno".ToUpper();
+                Hotel.piscina = "---".ToUpper();
                 precioPiscina = 0;
             }
 
@@ -271,10 +279,8 @@ namespace Proyecto_Omega_final {
         }
 
         //TRANSPORTE 
-        //PROVINCIAS CON SUS RESPECTOS HOTELES Y PRECIOS
-        public void Transporte()
-        {
-
+        public void Transporte() {
+        
             if (rbtCarro.Checked == true)
             {
                 Hotel.transporte = "Alquiler Automovil".ToUpper();
@@ -303,639 +309,577 @@ namespace Proyecto_Omega_final {
             }
 
         }
+
+        //PROVINCIAS CON SUS RESPECTOS HOTELES Y PRECIOS
         public void Provincias() {
+            int HabitacionMatrimonial = 0 ;
+            int HabitacionFamiliar = 0;
+            int HabitacionEscolar = 0;
             int NumeroHabitacionMatrimonial = Convert.ToInt32(Habitaciones.matrimonial);
             int NumeroHabitacionfamiliar = Convert.ToInt32(Habitaciones.familiar);
             int NumeroHabitacionescolar = Convert.ToInt32(Habitaciones.escolar);
+            int numeroDiasRecidencia = Convert.ToInt32(Hotel.diasRecidencia);
 
-            if (cmbProvincia.Text == "Pichincha")
+            switch (cmbProvincia.Text)
             {
-                if (cmbCategoria.Text == "★★★★★")
-                {
-                    Hotel.nombre = "Prueba 5";
-                    Precios.precioMatrimonial = NumeroHabitacionMatrimonial * 80;
-                    Precios.precioFamiliar = NumeroHabitacionfamiliar * 100;
-                    Precios.precioEscolar = NumeroHabitacionescolar * 165;
-                }
-                if (cmbCategoria.Text == "★★★")
-                {
-                    Hotel.nombre = "Prueba 3";
-                    Precios.precioMatrimonial = NumeroHabitacionMatrimonial * 60;
-                    Precios.precioFamiliar = NumeroHabitacionfamiliar * 90;
-                    Precios.precioEscolar = NumeroHabitacionescolar * 135;
-
-                }
-                if (cmbCategoria.Text == "★")
-                {
-                    Hotel.nombre = "Prueba 1";
-                    Precios.precioMatrimonial = NumeroHabitacionMatrimonial * 20;
-                    Precios.precioFamiliar = NumeroHabitacionfamiliar * 50;
-                    Precios.precioEscolar = NumeroHabitacionescolar * 90;
-
-                }
-
+                case "Azuay":
+                    switch (cmbCategoria.Text)
+                    {
+                        case "★★★★★":
+                            Hotel.nombre = "Prueba 5";
+                            HabitacionMatrimonial = (NumeroHabitacionMatrimonial * 80) * numeroDiasRecidencia;
+                            HabitacionFamiliar = (NumeroHabitacionfamiliar * 100) * numeroDiasRecidencia;
+                            HabitacionEscolar = (NumeroHabitacionescolar * 165) * numeroDiasRecidencia;
+                            break;
+                        case "★★★":
+                            Hotel.nombre = "Prueba 3";
+                            HabitacionMatrimonial = (NumeroHabitacionMatrimonial * 60) * numeroDiasRecidencia;
+                            HabitacionFamiliar = (NumeroHabitacionfamiliar * 90) * numeroDiasRecidencia;
+                            HabitacionEscolar = (NumeroHabitacionescolar * 135) * numeroDiasRecidencia;
+                            break;
+                        case "★":
+                            Hotel.nombre = "Prueba 1";
+                            HabitacionMatrimonial = (NumeroHabitacionMatrimonial * 20) * numeroDiasRecidencia;
+                            HabitacionFamiliar = (NumeroHabitacionfamiliar * 50) * numeroDiasRecidencia;
+                            HabitacionEscolar = (NumeroHabitacionescolar * 90) * numeroDiasRecidencia;
+                            break;
+                    }
+                    break;
+                case "Bolívar":
+                    switch (cmbCategoria.Text)
+                    {
+                        case "★★★★★":
+                            Hotel.nombre = "Prueba 5";
+                            HabitacionMatrimonial = (NumeroHabitacionMatrimonial * 80) * numeroDiasRecidencia;
+                            HabitacionFamiliar = (NumeroHabitacionfamiliar * 100) * numeroDiasRecidencia;
+                            HabitacionEscolar = (NumeroHabitacionescolar * 165) * numeroDiasRecidencia;
+                            break;
+                        case "★★★":
+                            Hotel.nombre = "Prueba 3";
+                            HabitacionMatrimonial = (NumeroHabitacionMatrimonial * 60) * numeroDiasRecidencia;
+                            HabitacionFamiliar = (NumeroHabitacionfamiliar * 90) * numeroDiasRecidencia;
+                            HabitacionEscolar = (NumeroHabitacionescolar * 135) * numeroDiasRecidencia;
+                            break;
+                        case "★":
+                            Hotel.nombre = "Prueba 1";
+                            HabitacionMatrimonial = (NumeroHabitacionMatrimonial * 20) * numeroDiasRecidencia;
+                            HabitacionFamiliar = (NumeroHabitacionfamiliar * 50) * numeroDiasRecidencia;
+                            HabitacionEscolar = (NumeroHabitacionescolar * 90) * numeroDiasRecidencia;
+                            break;
+                    }
+                    break;
+                case "Cañar":
+                    switch (cmbCategoria.Text)
+                    {
+                        case "★★★★★":
+                            Hotel.nombre = "Prueba 5";
+                            HabitacionMatrimonial = (NumeroHabitacionMatrimonial * 80) * numeroDiasRecidencia;
+                            HabitacionFamiliar = (NumeroHabitacionfamiliar * 100) * numeroDiasRecidencia;
+                            HabitacionEscolar = (NumeroHabitacionescolar * 165) * numeroDiasRecidencia;
+                            break;
+                        case "★★★":
+                            Hotel.nombre = "Prueba 3";
+                            HabitacionMatrimonial = (NumeroHabitacionMatrimonial * 60) * numeroDiasRecidencia;
+                            HabitacionFamiliar = (NumeroHabitacionfamiliar * 90) * numeroDiasRecidencia;
+                            HabitacionEscolar = (NumeroHabitacionescolar * 135) * numeroDiasRecidencia;
+                            break;
+                        case "★":
+                            Hotel.nombre = "Prueba 1";
+                            HabitacionMatrimonial = (NumeroHabitacionMatrimonial * 20) * numeroDiasRecidencia;
+                            HabitacionFamiliar = (NumeroHabitacionfamiliar * 50) * numeroDiasRecidencia;
+                            HabitacionEscolar = (NumeroHabitacionescolar * 90) * numeroDiasRecidencia;
+                            break;
+                    }
+                    break;
+                case "Carchi":
+                    switch (cmbCategoria.Text)
+                    {
+                        case "★★★★★":
+                            Hotel.nombre = "Prueba 5";
+                            HabitacionMatrimonial = (NumeroHabitacionMatrimonial * 80) * numeroDiasRecidencia;
+                            HabitacionFamiliar = (NumeroHabitacionfamiliar * 100) * numeroDiasRecidencia;
+                            HabitacionEscolar = (NumeroHabitacionescolar * 165) * numeroDiasRecidencia;
+                            break;
+                        case "★★★":
+                            Hotel.nombre = "Prueba 3";
+                            HabitacionMatrimonial = (NumeroHabitacionMatrimonial * 60) * numeroDiasRecidencia;
+                            HabitacionFamiliar = (NumeroHabitacionfamiliar * 90) * numeroDiasRecidencia;
+                            HabitacionEscolar = (NumeroHabitacionescolar * 135) * numeroDiasRecidencia;
+                            break;
+                        case "★":
+                            Hotel.nombre = "Prueba 1";
+                            HabitacionMatrimonial = (NumeroHabitacionMatrimonial * 20) * numeroDiasRecidencia;
+                            HabitacionFamiliar = (NumeroHabitacionfamiliar * 50) * numeroDiasRecidencia;
+                            HabitacionEscolar = (NumeroHabitacionescolar * 90) * numeroDiasRecidencia;
+                            break;
+                    }
+                    break;
+                case "Chimborazo":
+                    switch (cmbCategoria.Text)
+                    {
+                        case "★★★★★":
+                            Hotel.nombre = "Prueba 5";
+                            HabitacionMatrimonial = (NumeroHabitacionMatrimonial * 80) * numeroDiasRecidencia;
+                            HabitacionFamiliar = (NumeroHabitacionfamiliar * 100) * numeroDiasRecidencia;
+                            HabitacionEscolar = (NumeroHabitacionescolar * 165) * numeroDiasRecidencia;
+                            break;
+                        case "★★★":
+                            Hotel.nombre = "Prueba 3";
+                            HabitacionMatrimonial = (NumeroHabitacionMatrimonial * 60) * numeroDiasRecidencia;
+                            HabitacionFamiliar = (NumeroHabitacionfamiliar * 90) * numeroDiasRecidencia;
+                            HabitacionEscolar = (NumeroHabitacionescolar * 135) * numeroDiasRecidencia;
+                            break;
+                        case "★":
+                            Hotel.nombre = "Prueba 1";
+                            HabitacionMatrimonial = (NumeroHabitacionMatrimonial * 20) * numeroDiasRecidencia;
+                            HabitacionFamiliar = (NumeroHabitacionfamiliar * 50) * numeroDiasRecidencia;
+                            HabitacionEscolar = (NumeroHabitacionescolar * 90) * numeroDiasRecidencia;
+                            break;
+                    }
+                    break;
+                case "Cotopaxi":
+                    switch (cmbCategoria.Text)
+                    {
+                        case "★★★★★":
+                            Hotel.nombre = "Prueba 5";
+                            HabitacionMatrimonial = (NumeroHabitacionMatrimonial * 80) * numeroDiasRecidencia;
+                            HabitacionFamiliar = (NumeroHabitacionfamiliar * 100) * numeroDiasRecidencia;
+                            HabitacionEscolar = (NumeroHabitacionescolar * 165) * numeroDiasRecidencia;
+                            break;
+                        case "★★★":
+                            Hotel.nombre = "Prueba 3";
+                            HabitacionMatrimonial = (NumeroHabitacionMatrimonial * 60) * numeroDiasRecidencia;
+                            HabitacionFamiliar = (NumeroHabitacionfamiliar * 90) * numeroDiasRecidencia;
+                            HabitacionEscolar = (NumeroHabitacionescolar * 135) * numeroDiasRecidencia;
+                            break;
+                        case "★":
+                            Hotel.nombre = "Prueba 1";
+                            HabitacionMatrimonial = (NumeroHabitacionMatrimonial * 20) * numeroDiasRecidencia;
+                            HabitacionFamiliar = (NumeroHabitacionfamiliar * 50) * numeroDiasRecidencia;
+                            HabitacionEscolar = (NumeroHabitacionescolar * 90) * numeroDiasRecidencia;
+                            break;
+                    }
+                    break;
+                case "El Oro":
+                    switch (cmbCategoria.Text)
+                    {
+                        case "★★★★★":
+                            Hotel.nombre = "Prueba 5";
+                            HabitacionMatrimonial = (NumeroHabitacionMatrimonial * 80) * numeroDiasRecidencia;
+                            HabitacionFamiliar = (NumeroHabitacionfamiliar * 100) * numeroDiasRecidencia;
+                            HabitacionEscolar = (NumeroHabitacionescolar * 165) * numeroDiasRecidencia;
+                            break;
+                        case "★★★":
+                            Hotel.nombre = "Prueba 3";
+                            HabitacionMatrimonial = (NumeroHabitacionMatrimonial * 60) * numeroDiasRecidencia;
+                            HabitacionFamiliar = (NumeroHabitacionfamiliar * 90) * numeroDiasRecidencia;
+                            HabitacionEscolar = (NumeroHabitacionescolar * 135) * numeroDiasRecidencia;
+                            break;
+                        case "★":
+                            Hotel.nombre = "Prueba 1";
+                            HabitacionMatrimonial = (NumeroHabitacionMatrimonial * 20) * numeroDiasRecidencia;
+                            HabitacionFamiliar = (NumeroHabitacionfamiliar * 50) * numeroDiasRecidencia;
+                            HabitacionEscolar = (NumeroHabitacionescolar * 90) * numeroDiasRecidencia;
+                            break;
+                    }
+                    break;
+                case "Esmeraldas":
+                    switch (cmbCategoria.Text)
+                    {
+                        case "★★★★★":
+                            Hotel.nombre = "Prueba 5";
+                            HabitacionMatrimonial = (NumeroHabitacionMatrimonial * 80) * numeroDiasRecidencia;
+                            HabitacionFamiliar = (NumeroHabitacionfamiliar * 100) * numeroDiasRecidencia;
+                            HabitacionEscolar = (NumeroHabitacionescolar * 165) * numeroDiasRecidencia;
+                            break;
+                        case "★★★":
+                            Hotel.nombre = "Prueba 3";
+                            HabitacionMatrimonial = (NumeroHabitacionMatrimonial * 60) * numeroDiasRecidencia;
+                            HabitacionFamiliar = (NumeroHabitacionfamiliar * 90) * numeroDiasRecidencia;
+                            HabitacionEscolar = (NumeroHabitacionescolar * 135) * numeroDiasRecidencia;
+                            break;
+                        case "★":
+                            Hotel.nombre = "Prueba 1";
+                            HabitacionMatrimonial = (NumeroHabitacionMatrimonial * 20) * numeroDiasRecidencia;
+                            HabitacionFamiliar = (NumeroHabitacionfamiliar * 50) * numeroDiasRecidencia;
+                            HabitacionEscolar = (NumeroHabitacionescolar * 90) * numeroDiasRecidencia;
+                            break;
+                    }
+                    break;
+                case "Galápagos":
+                    switch (cmbCategoria.Text)
+                    {
+                        case "★★★★★":
+                            Hotel.nombre = "Prueba 5";
+                            HabitacionMatrimonial = (NumeroHabitacionMatrimonial * 80) * numeroDiasRecidencia;
+                            HabitacionFamiliar = (NumeroHabitacionfamiliar * 100) * numeroDiasRecidencia;
+                            HabitacionEscolar = (NumeroHabitacionescolar * 165) * numeroDiasRecidencia;
+                            break;
+                        case "★★★":
+                            Hotel.nombre = "Prueba 3";
+                            HabitacionMatrimonial = (NumeroHabitacionMatrimonial * 60) * numeroDiasRecidencia;
+                            HabitacionFamiliar = (NumeroHabitacionfamiliar * 90) * numeroDiasRecidencia;
+                            HabitacionEscolar = (NumeroHabitacionescolar * 135) * numeroDiasRecidencia;
+                            break;
+                        case "★":
+                            Hotel.nombre = "Prueba 1";
+                            HabitacionMatrimonial = (NumeroHabitacionMatrimonial * 20) * numeroDiasRecidencia;
+                            HabitacionFamiliar = (NumeroHabitacionfamiliar * 50) * numeroDiasRecidencia;
+                            HabitacionEscolar = (NumeroHabitacionescolar * 90) * numeroDiasRecidencia;
+                            break;
+                    }
+                    break;
+                case "Guayas":
+                    switch (cmbCategoria.Text)
+                    {
+                        case "★★★★★":
+                            Hotel.nombre = "Prueba 5";
+                            HabitacionMatrimonial = (NumeroHabitacionMatrimonial * 80) * numeroDiasRecidencia;
+                            HabitacionFamiliar = (NumeroHabitacionfamiliar * 100) * numeroDiasRecidencia;
+                            HabitacionEscolar = (NumeroHabitacionescolar * 165) * numeroDiasRecidencia;
+                            break;
+                        case "★★★":
+                            Hotel.nombre = "Prueba 3";
+                            HabitacionMatrimonial = (NumeroHabitacionMatrimonial * 60) * numeroDiasRecidencia;
+                            HabitacionFamiliar = (NumeroHabitacionfamiliar * 90) * numeroDiasRecidencia;
+                            HabitacionEscolar = (NumeroHabitacionescolar * 135) * numeroDiasRecidencia;
+                            break;
+                        case "★":
+                            Hotel.nombre = "Prueba 1";
+                            HabitacionMatrimonial = (NumeroHabitacionMatrimonial * 20) * numeroDiasRecidencia;
+                            HabitacionFamiliar = (NumeroHabitacionfamiliar * 50) * numeroDiasRecidencia;
+                            HabitacionEscolar = (NumeroHabitacionescolar * 90) * numeroDiasRecidencia;
+                            break;
+                    }
+                    break;
+                case "Imbabura":
+                    switch (cmbCategoria.Text)
+                    {
+                        case "★★★★★":
+                            Hotel.nombre = "Prueba 5";
+                            HabitacionMatrimonial = (NumeroHabitacionMatrimonial * 80) * numeroDiasRecidencia;
+                            HabitacionFamiliar = (NumeroHabitacionfamiliar * 100) * numeroDiasRecidencia;
+                            HabitacionEscolar = (NumeroHabitacionescolar * 165) * numeroDiasRecidencia;
+                            break;
+                        case "★★★":
+                            Hotel.nombre = "Prueba 3";
+                            HabitacionMatrimonial = (NumeroHabitacionMatrimonial * 60) * numeroDiasRecidencia;
+                            HabitacionFamiliar = (NumeroHabitacionfamiliar * 90) * numeroDiasRecidencia;
+                            HabitacionEscolar = (NumeroHabitacionescolar * 135) * numeroDiasRecidencia;
+                            break;
+                        case "★":
+                            Hotel.nombre = "Prueba 1";
+                            HabitacionMatrimonial = (NumeroHabitacionMatrimonial * 20) * numeroDiasRecidencia;
+                            HabitacionFamiliar = (NumeroHabitacionfamiliar * 50) * numeroDiasRecidencia;
+                            HabitacionEscolar = (NumeroHabitacionescolar * 90) * numeroDiasRecidencia;
+                            break;
+                    }
+                    break;
+                case "Loja":
+                    switch (cmbCategoria.Text)
+                    {
+                        case "★★★★★":
+                            Hotel.nombre = "Prueba 5";
+                            HabitacionMatrimonial = (NumeroHabitacionMatrimonial * 80) * numeroDiasRecidencia;
+                            HabitacionFamiliar = (NumeroHabitacionfamiliar * 100) * numeroDiasRecidencia;
+                            HabitacionEscolar = (NumeroHabitacionescolar * 165) * numeroDiasRecidencia;
+                            break;
+                        case "★★★":
+                            Hotel.nombre = "Prueba 3";
+                            HabitacionMatrimonial = (NumeroHabitacionMatrimonial * 60) * numeroDiasRecidencia;
+                            HabitacionFamiliar = (NumeroHabitacionfamiliar * 90) * numeroDiasRecidencia;
+                            HabitacionEscolar = (NumeroHabitacionescolar * 135) * numeroDiasRecidencia;
+                            break;
+                        case "★":
+                            Hotel.nombre = "Prueba 1";
+                            HabitacionMatrimonial = (NumeroHabitacionMatrimonial * 20) * numeroDiasRecidencia;
+                            HabitacionFamiliar = (NumeroHabitacionfamiliar * 50) * numeroDiasRecidencia;
+                            HabitacionEscolar = (NumeroHabitacionescolar * 90) * numeroDiasRecidencia;
+                            break;
+                    }
+                    break;
+                case "Los Ríos":
+                    switch (cmbCategoria.Text)
+                    {
+                        case "★★★★★":
+                            Hotel.nombre = "Prueba 5";
+                            HabitacionMatrimonial = (NumeroHabitacionMatrimonial * 80) * numeroDiasRecidencia;
+                            HabitacionFamiliar = (NumeroHabitacionfamiliar * 100) * numeroDiasRecidencia;
+                            HabitacionEscolar = (NumeroHabitacionescolar * 165) * numeroDiasRecidencia;
+                            break;
+                        case "★★★":
+                            Hotel.nombre = "Prueba 3";
+                            HabitacionMatrimonial = (NumeroHabitacionMatrimonial * 60) * numeroDiasRecidencia;
+                            HabitacionFamiliar = (NumeroHabitacionfamiliar * 90) * numeroDiasRecidencia;
+                            HabitacionEscolar = (NumeroHabitacionescolar * 135) * numeroDiasRecidencia;
+                            break;
+                        case "★":
+                            Hotel.nombre = "Prueba 1";
+                            HabitacionMatrimonial = (NumeroHabitacionMatrimonial * 20) * numeroDiasRecidencia;
+                            HabitacionFamiliar = (NumeroHabitacionfamiliar * 50) * numeroDiasRecidencia;
+                            HabitacionEscolar = (NumeroHabitacionescolar * 90) * numeroDiasRecidencia;
+                            break;
+                    }
+                    break;
+                case "Manabí":
+                    switch (cmbCategoria.Text)
+                    {
+                        case "★★★★★":
+                            Hotel.nombre = "Prueba 5";
+                            HabitacionMatrimonial = (NumeroHabitacionMatrimonial * 80) * numeroDiasRecidencia;
+                            HabitacionFamiliar = (NumeroHabitacionfamiliar * 100) * numeroDiasRecidencia;
+                            HabitacionEscolar = (NumeroHabitacionescolar * 165) * numeroDiasRecidencia;
+                            break;
+                        case "★★★":
+                            Hotel.nombre = "Prueba 3";
+                            HabitacionMatrimonial = (NumeroHabitacionMatrimonial * 60) * numeroDiasRecidencia;
+                            HabitacionFamiliar = (NumeroHabitacionfamiliar * 90) * numeroDiasRecidencia;
+                            HabitacionEscolar = (NumeroHabitacionescolar * 135) * numeroDiasRecidencia;
+                            break;
+                        case "★":
+                            Hotel.nombre = "Prueba 1";
+                            HabitacionMatrimonial = (NumeroHabitacionMatrimonial * 20) * numeroDiasRecidencia;
+                            HabitacionFamiliar = (NumeroHabitacionfamiliar * 50) * numeroDiasRecidencia;
+                            HabitacionEscolar = (NumeroHabitacionescolar * 90) * numeroDiasRecidencia;
+                            break;
+                    }
+                    break;
+                case "Morona-Santiago":
+                    switch (cmbCategoria.Text)
+                    {
+                        case "★★★★★":
+                            Hotel.nombre = "Prueba 5";
+                            HabitacionMatrimonial = (NumeroHabitacionMatrimonial * 80) * numeroDiasRecidencia;
+                            HabitacionFamiliar = (NumeroHabitacionfamiliar * 100) * numeroDiasRecidencia;
+                            HabitacionEscolar = (NumeroHabitacionescolar * 165) * numeroDiasRecidencia;
+                            break;
+                        case "★★★":
+                            Hotel.nombre = "Prueba 3";
+                            HabitacionMatrimonial = (NumeroHabitacionMatrimonial * 60) * numeroDiasRecidencia;
+                            HabitacionFamiliar = (NumeroHabitacionfamiliar * 90) * numeroDiasRecidencia;
+                            HabitacionEscolar = (NumeroHabitacionescolar * 135) * numeroDiasRecidencia;
+                            break;
+                        case "★":
+                            Hotel.nombre = "Prueba 1";
+                            HabitacionMatrimonial = (NumeroHabitacionMatrimonial * 20) * numeroDiasRecidencia;
+                            HabitacionFamiliar = (NumeroHabitacionfamiliar * 50) * numeroDiasRecidencia;
+                            HabitacionEscolar = (NumeroHabitacionescolar * 90) * numeroDiasRecidencia;
+                            break;
+                    }
+                    break;
+                case "Napo":
+                    switch (cmbCategoria.Text)
+                    {
+                        case "★★★★★":
+                            Hotel.nombre = "Prueba 5";
+                            HabitacionMatrimonial = (NumeroHabitacionMatrimonial * 80) * numeroDiasRecidencia;
+                            HabitacionFamiliar = (NumeroHabitacionfamiliar * 100) * numeroDiasRecidencia;
+                            HabitacionEscolar = (NumeroHabitacionescolar * 165) * numeroDiasRecidencia;
+                            break;
+                        case "★★★":
+                            Hotel.nombre = "Prueba 3";
+                            HabitacionMatrimonial = (NumeroHabitacionMatrimonial * 60) * numeroDiasRecidencia;
+                            HabitacionFamiliar = (NumeroHabitacionfamiliar * 90) * numeroDiasRecidencia;
+                            HabitacionEscolar = (NumeroHabitacionescolar * 135) * numeroDiasRecidencia;
+                            break;
+                        case "★":
+                            Hotel.nombre = "Prueba 1";
+                            HabitacionMatrimonial = (NumeroHabitacionMatrimonial * 20) * numeroDiasRecidencia;
+                            HabitacionFamiliar = (NumeroHabitacionfamiliar * 50) * numeroDiasRecidencia;
+                            HabitacionEscolar = (NumeroHabitacionescolar * 90) * numeroDiasRecidencia;
+                            break;
+                    }
+                    break;
+                case "Orellana":
+                    switch (cmbCategoria.Text)
+                    {
+                        case "★★★★★":
+                            Hotel.nombre = "Prueba 5";
+                            HabitacionMatrimonial = (NumeroHabitacionMatrimonial * 80) * numeroDiasRecidencia;
+                            HabitacionFamiliar = (NumeroHabitacionfamiliar * 100) * numeroDiasRecidencia;
+                            HabitacionEscolar = (NumeroHabitacionescolar * 165) * numeroDiasRecidencia;
+                            break;
+                        case "★★★":
+                            Hotel.nombre = "Prueba 3";
+                            HabitacionMatrimonial = (NumeroHabitacionMatrimonial * 60) * numeroDiasRecidencia;
+                            HabitacionFamiliar = (NumeroHabitacionfamiliar * 90) * numeroDiasRecidencia;
+                            HabitacionEscolar = (NumeroHabitacionescolar * 135) * numeroDiasRecidencia;
+                            break;
+                        case "★":
+                            Hotel.nombre = "Prueba 1";
+                            HabitacionMatrimonial = (NumeroHabitacionMatrimonial * 20) * numeroDiasRecidencia;
+                            HabitacionFamiliar = (NumeroHabitacionfamiliar * 50) * numeroDiasRecidencia;
+                            HabitacionEscolar = (NumeroHabitacionescolar * 90) * numeroDiasRecidencia;
+                            break;
+                    }
+                    break;
+                case "Pastaza":
+                    switch (cmbCategoria.Text)
+                    {
+                        case "★★★★★":
+                            Hotel.nombre = "Prueba 5";
+                            HabitacionMatrimonial = (NumeroHabitacionMatrimonial * 80) * numeroDiasRecidencia;
+                            HabitacionFamiliar = (NumeroHabitacionfamiliar * 100) * numeroDiasRecidencia;
+                            HabitacionEscolar = (NumeroHabitacionescolar * 165) * numeroDiasRecidencia;
+                            break;
+                        case "★★★":
+                            Hotel.nombre = "Prueba 3";
+                            HabitacionMatrimonial = (NumeroHabitacionMatrimonial * 60) * numeroDiasRecidencia;
+                            HabitacionFamiliar = (NumeroHabitacionfamiliar * 90) * numeroDiasRecidencia;
+                            HabitacionEscolar = (NumeroHabitacionescolar * 135) * numeroDiasRecidencia;
+                            break;
+                        case "★":
+                            Hotel.nombre = "Prueba 1";
+                            HabitacionMatrimonial = (NumeroHabitacionMatrimonial * 20) * numeroDiasRecidencia;
+                            HabitacionFamiliar = (NumeroHabitacionfamiliar * 50) * numeroDiasRecidencia;
+                            HabitacionEscolar = (NumeroHabitacionescolar * 90) * numeroDiasRecidencia;
+                            break;
+                    }
+                    break;
+                case "Pichincha":
+                    switch (cmbCategoria.Text)
+                    {
+                        case "★★★★★":
+                            Hotel.nombre = "Prueba 5";
+                            HabitacionMatrimonial = (NumeroHabitacionMatrimonial * 80) * numeroDiasRecidencia;
+                            HabitacionFamiliar = (NumeroHabitacionfamiliar * 100) * numeroDiasRecidencia;
+                            HabitacionEscolar = (NumeroHabitacionescolar * 165) * numeroDiasRecidencia;
+                            break;
+                        case "★★★":
+                            Hotel.nombre = "Prueba 3";
+                            HabitacionMatrimonial = (NumeroHabitacionMatrimonial * 60) * numeroDiasRecidencia;
+                            HabitacionFamiliar = (NumeroHabitacionfamiliar * 90) * numeroDiasRecidencia;
+                            HabitacionEscolar = (NumeroHabitacionescolar * 135) * numeroDiasRecidencia;
+                            break;
+                        case "★":
+                            Hotel.nombre = "Prueba 1";
+                            HabitacionMatrimonial = (NumeroHabitacionMatrimonial * 20) * numeroDiasRecidencia;
+                            HabitacionFamiliar = (NumeroHabitacionfamiliar * 50) * numeroDiasRecidencia;
+                            HabitacionEscolar = (NumeroHabitacionescolar * 90) * numeroDiasRecidencia;
+                            break;
+                    }
+                    break;
+                case "Santa Elena":
+                    switch (cmbCategoria.Text)
+                    {
+                        case "★★★★★":
+                            Hotel.nombre = "Prueba 5";
+                            HabitacionMatrimonial = (NumeroHabitacionMatrimonial * 80) * numeroDiasRecidencia;
+                            HabitacionFamiliar = (NumeroHabitacionfamiliar * 100) * numeroDiasRecidencia;
+                            HabitacionEscolar = (NumeroHabitacionescolar * 165) * numeroDiasRecidencia;
+                            break;
+                        case "★★★":
+                            Hotel.nombre = "Prueba 3";
+                            HabitacionMatrimonial = (NumeroHabitacionMatrimonial * 60) * numeroDiasRecidencia;
+                            HabitacionFamiliar = (NumeroHabitacionfamiliar * 90) * numeroDiasRecidencia;
+                            HabitacionEscolar = (NumeroHabitacionescolar * 135) * numeroDiasRecidencia;
+                            break;
+                        case "★":
+                            Hotel.nombre = "Prueba 1";
+                            HabitacionMatrimonial = (NumeroHabitacionMatrimonial * 20) * numeroDiasRecidencia;
+                            HabitacionFamiliar = (NumeroHabitacionfamiliar * 50) * numeroDiasRecidencia;
+                            HabitacionEscolar = (NumeroHabitacionescolar * 90) * numeroDiasRecidencia;
+                            break;
+                    }
+                    break;
+                case "Santo Domingo de los Tsáchilas":
+                    switch (cmbCategoria.Text)
+                    {
+                        case "★★★★★":
+                            Hotel.nombre = "Prueba 5";
+                            HabitacionMatrimonial = (NumeroHabitacionMatrimonial * 80) * numeroDiasRecidencia;
+                            HabitacionFamiliar = (NumeroHabitacionfamiliar * 100) * numeroDiasRecidencia;
+                            HabitacionEscolar = (NumeroHabitacionescolar * 165) * numeroDiasRecidencia;
+                            break;
+                        case "★★★":
+                            Hotel.nombre = "Prueba 3";
+                            HabitacionMatrimonial = (NumeroHabitacionMatrimonial * 60) * numeroDiasRecidencia;
+                            HabitacionFamiliar = (NumeroHabitacionfamiliar * 90) * numeroDiasRecidencia;
+                            HabitacionEscolar = (NumeroHabitacionescolar * 135) * numeroDiasRecidencia;
+                            break;
+                        case "★":
+                            Hotel.nombre = "Prueba 1";
+                            HabitacionMatrimonial = (NumeroHabitacionMatrimonial * 20) * numeroDiasRecidencia;
+                            HabitacionFamiliar = (NumeroHabitacionfamiliar * 50) * numeroDiasRecidencia;
+                            HabitacionEscolar = (NumeroHabitacionescolar * 90) * numeroDiasRecidencia;
+                            break;
+                    }
+                    break;
+                case "Sucumbíos":
+                    switch (cmbCategoria.Text)
+                    {
+                        case "★★★★★":
+                            Hotel.nombre = "Prueba 5";
+                            HabitacionMatrimonial = (NumeroHabitacionMatrimonial * 80) * numeroDiasRecidencia;
+                            HabitacionFamiliar = (NumeroHabitacionfamiliar * 100) * numeroDiasRecidencia;
+                            HabitacionEscolar = (NumeroHabitacionescolar * 165) * numeroDiasRecidencia;
+                            break;
+                        case "★★★":
+                            Hotel.nombre = "Prueba 3";
+                            HabitacionMatrimonial = (NumeroHabitacionMatrimonial * 60) * numeroDiasRecidencia;
+                            HabitacionFamiliar = (NumeroHabitacionfamiliar * 90) * numeroDiasRecidencia;
+                            HabitacionEscolar = (NumeroHabitacionescolar * 135) * numeroDiasRecidencia;
+                            break;
+                        case "★":
+                            Hotel.nombre = "Prueba 1";
+                            HabitacionMatrimonial = (NumeroHabitacionMatrimonial * 20) * numeroDiasRecidencia;
+                            HabitacionFamiliar = (NumeroHabitacionfamiliar * 50) * numeroDiasRecidencia;
+                            HabitacionEscolar = (NumeroHabitacionescolar * 90) * numeroDiasRecidencia;
+                            break;
+                    }
+                    break;
+                case "Tungurahua":
+                    switch (cmbCategoria.Text)
+                    {
+                        case "★★★★★":
+                            Hotel.nombre = "Prueba 5";
+                            HabitacionMatrimonial = (NumeroHabitacionMatrimonial * 80) * numeroDiasRecidencia;
+                            HabitacionFamiliar = (NumeroHabitacionfamiliar * 100) * numeroDiasRecidencia;
+                            HabitacionEscolar = (NumeroHabitacionescolar * 165) * numeroDiasRecidencia;
+                            break;
+                        case "★★★":
+                            Hotel.nombre = "Prueba 3";
+                            HabitacionMatrimonial = (NumeroHabitacionMatrimonial * 60) * numeroDiasRecidencia;
+                            HabitacionFamiliar = (NumeroHabitacionfamiliar * 90) * numeroDiasRecidencia;
+                            HabitacionEscolar = (NumeroHabitacionescolar * 135) * numeroDiasRecidencia;
+                            break;
+                        case "★":
+                            Hotel.nombre = "Prueba 1";
+                            HabitacionMatrimonial = (NumeroHabitacionMatrimonial * 20) * numeroDiasRecidencia;
+                            HabitacionFamiliar = (NumeroHabitacionfamiliar * 50) * numeroDiasRecidencia;
+                            HabitacionEscolar = (NumeroHabitacionescolar * 90) * numeroDiasRecidencia;
+                            break;
+                    }
+                    break;
+                case "Zamora-Chinchipe":
+                    switch (cmbCategoria.Text)
+                    {
+                        case "★★★★★":
+                            Hotel.nombre = "Prueba 5";
+                            HabitacionMatrimonial = (NumeroHabitacionMatrimonial * 80) * numeroDiasRecidencia;
+                            HabitacionFamiliar = (NumeroHabitacionfamiliar * 100) * numeroDiasRecidencia;
+                            HabitacionEscolar = (NumeroHabitacionescolar * 165) * numeroDiasRecidencia;
+                            break;
+                        case "★★★":
+                            Hotel.nombre = "Prueba 3";
+                            HabitacionMatrimonial = (NumeroHabitacionMatrimonial * 60) * numeroDiasRecidencia;
+                            HabitacionFamiliar = (NumeroHabitacionfamiliar * 90) * numeroDiasRecidencia;
+                            HabitacionEscolar = (NumeroHabitacionescolar * 135) * numeroDiasRecidencia;
+                            break;
+                        case "★":
+                            Hotel.nombre = "Prueba 1";
+                            HabitacionMatrimonial = (NumeroHabitacionMatrimonial * 20) * numeroDiasRecidencia;
+                            HabitacionFamiliar = (NumeroHabitacionfamiliar * 50) * numeroDiasRecidencia;
+                            HabitacionEscolar = (NumeroHabitacionescolar * 90) * numeroDiasRecidencia;
+                            break;
+                    }
+                    break;
             }
-            if (cmbProvincia.Text == "Cotopaxi")
-            {
-                if (cmbCategoria.Text == "★★★★★")
-                {
-                    Hotel.nombre = "Hotel San Agustín Plaza";
-                    Precios.precioMatrimonial = NumeroHabitacionMatrimonial * 80;
-                    Precios.precioFamiliar = NumeroHabitacionfamiliar * 100;
-                    Precios.precioEscolar = NumeroHabitacionescolar * 165;
-                }
-                if (cmbCategoria.Text == "★★★")
-                {
-                    Hotel.nombre = "Hotel Makroz";
-                    Precios.precioMatrimonial = NumeroHabitacionMatrimonial * 60;
-                    Precios.precioFamiliar = NumeroHabitacionfamiliar * 90;
-                    Precios.precioEscolar = NumeroHabitacionescolar * 135;
 
-                }
-                if (cmbCategoria.Text == "★")
-                {
-                    Hotel.nombre = "El Castillo Hotel";
-                    Precios.precioMatrimonial = NumeroHabitacionMatrimonial * 20;
-                    Precios.precioFamiliar = NumeroHabitacionfamiliar * 50;
-                    Precios.precioEscolar = NumeroHabitacionescolar * 90;
-
-                }
-
-            }
-            if (cmbProvincia.Text == "Azuay")
-            {
-                if (cmbCategoria.Text == "★★★★★")
-                {
-                    Hotel.nombre = "Luxury Danna Plaza Mayor";
-                    Precios.precioMatrimonial = NumeroHabitacionMatrimonial * 80;
-                    Precios.precioFamiliar = NumeroHabitacionfamiliar * 100;
-                    Precios.precioEscolar = NumeroHabitacionescolar * 165;
-                }
-                if (cmbCategoria.Text == "★★★")
-                {
-                    Hotel.nombre = "Hotel Cuenca";
-                    Precios.precioMatrimonial = NumeroHabitacionMatrimonial * 60;
-                    Precios.precioFamiliar = NumeroHabitacionfamiliar * 90;
-                    Precios.precioEscolar = NumeroHabitacionescolar * 135;
-
-                }
-                if (cmbCategoria.Text == "★")
-                {
-                    Hotel.nombre = "Hostal Residencial Perla Cuencana";
-                    Precios.precioMatrimonial = NumeroHabitacionMatrimonial * 20;
-                    Precios.precioFamiliar = NumeroHabitacionfamiliar * 50;
-                    Precios.precioEscolar = NumeroHabitacionescolar * 90;
-
-                }
-            }
-            if (cmbProvincia.Text == "Bolivar")
-            {
-                if (cmbCategoria.Text == "★★★★★")
-                {
-                    Hotel.nombre = "San Rafael Hotel";
-                    Precios.precioMatrimonial = NumeroHabitacionMatrimonial * 80;
-                    Precios.precioFamiliar = NumeroHabitacionfamiliar * 100;
-                    Precios.precioEscolar = NumeroHabitacionescolar * 165;
-                }
-                if (cmbCategoria.Text == "★★★")
-                {
-                    Hotel.nombre = "La Rustica Hotel";
-                    Precios.precioMatrimonial = NumeroHabitacionMatrimonial * 60;
-                    Precios.precioFamiliar = NumeroHabitacionfamiliar * 90;
-                    Precios.precioEscolar = NumeroHabitacionescolar * 135;
-
-                }
-                if (cmbCategoria.Text == "★")
-                {
-                    Hotel.nombre = "Hotel Colonial";
-                    Precios.precioMatrimonial = NumeroHabitacionMatrimonial * 20;
-                    Precios.precioFamiliar = NumeroHabitacionfamiliar * 50;
-                    Precios.precioEscolar = NumeroHabitacionescolar * 90;
-
-                }
-            }
-            if (cmbProvincia.Text == "Cañar")
-            {
-                if (cmbCategoria.Text == "★★★★★")
-                {
-                    Hotel.nombre = "Hostería Santa Ana";
-                    Precios.precioMatrimonial = NumeroHabitacionMatrimonial * 80;
-                    Precios.precioFamiliar = NumeroHabitacionfamiliar * 100;
-                    Precios.precioEscolar = NumeroHabitacionescolar * 165;
-                }
-                if (cmbCategoria.Text == "★★★")
-                {
-                    Hotel.nombre = "Hospedaje El Castillo Ingapirca";
-                    Precios.precioMatrimonial = NumeroHabitacionMatrimonial * 60;
-                    Precios.precioFamiliar = NumeroHabitacionfamiliar * 90;
-                    Precios.precioEscolar = NumeroHabitacionescolar * 135;
-
-                }
-                if (cmbCategoria.Text == "★")
-                {
-                    Hotel.nombre = "Hostal Chasky";
-                    Precios.precioMatrimonial = NumeroHabitacionMatrimonial * 20;
-                    Precios.precioFamiliar = NumeroHabitacionfamiliar * 50;
-                    Precios.precioEscolar = NumeroHabitacionescolar * 90;
-
-                }
-            }
-            if (cmbProvincia.Text == "Carchi")
-            {
-                if (cmbCategoria.Text == "★★★★★")
-                {
-                    Hotel.nombre = "Hostería Totoral";
-                    Precios.precioMatrimonial = NumeroHabitacionMatrimonial * 80;
-                    Precios.precioFamiliar = NumeroHabitacionfamiliar * 100;
-                    Precios.precioEscolar = NumeroHabitacionescolar * 165;
-                }
-                if (cmbCategoria.Text == "★★★")
-                {
-                    Hotel.nombre = "Tunas & Cabras Hotel";
-                    Precios.precioMatrimonial = NumeroHabitacionMatrimonial * 60;
-                    Precios.precioFamiliar = NumeroHabitacionfamiliar * 90;
-                    Precios.precioEscolar = NumeroHabitacionescolar * 135;
-
-                }
-                if (cmbCategoria.Text == "★")
-                {
-                    Hotel.nombre = "Las Garza Alojamiento";
-                    Precios.precioMatrimonial = NumeroHabitacionMatrimonial * 20;
-                    Precios.precioFamiliar = NumeroHabitacionfamiliar * 50;
-                    Precios.precioEscolar = NumeroHabitacionescolar * 90;
-
-                }
-            }
-            if (cmbProvincia.Text == "Chimborazo")
-            {
-                if (cmbCategoria.Text == "★★★★★")
-                {
-                    Hotel.nombre = "Quindolema Art Hotel And Gallery";
-                    Precios.precioMatrimonial = NumeroHabitacionMatrimonial * 80;
-                    Precios.precioFamiliar = NumeroHabitacionfamiliar * 100;
-                    Precios.precioEscolar = NumeroHabitacionescolar * 165;
-                }
-                if (cmbCategoria.Text == "★★★")
-                {
-                    Hotel.nombre = "Hotel Shalom";
-                    Precios.precioMatrimonial = NumeroHabitacionMatrimonial * 60;
-                    Precios.precioFamiliar = NumeroHabitacionfamiliar * 90;
-                    Precios.precioEscolar = NumeroHabitacionescolar * 135;
-
-                }
-                if (cmbCategoria.Text == "★")
-                {
-                    Hotel.nombre = "Hotel El Altar";
-                    Precios.precioMatrimonial = NumeroHabitacionMatrimonial * 20;
-                    Precios.precioFamiliar = NumeroHabitacionfamiliar * 50;
-                    Precios.precioEscolar = NumeroHabitacionescolar * 90;
-
-                }
-            }
-            if (cmbProvincia.Text == "El Oro")
-            {
-                if (cmbCategoria.Text == "★★★★★")
-                {
-                    Hotel.nombre = "Hotel Oro Verde";
-                    Precios.precioMatrimonial = NumeroHabitacionMatrimonial * 80;
-                    Precios.precioFamiliar = NumeroHabitacionfamiliar * 100;
-                    Precios.precioEscolar = NumeroHabitacionescolar * 165;
-                }
-                if (cmbCategoria.Text == "★★★")
-                {
-                    Hotel.nombre = "Hotel Veuxor";
-                    Precios.precioMatrimonial = NumeroHabitacionMatrimonial * 60;
-                    Precios.precioFamiliar = NumeroHabitacionfamiliar * 90;
-                    Precios.precioEscolar = NumeroHabitacionescolar * 135;
-
-                }
-                if (cmbCategoria.Text == "★")
-                {
-                    Hotel.nombre = "Machala Chino Casa";
-                    Precios.precioMatrimonial = NumeroHabitacionMatrimonial * 20;
-                    Precios.precioFamiliar = NumeroHabitacionfamiliar * 50;
-                    Precios.precioEscolar = NumeroHabitacionescolar * 90;
-
-                }
-            }
-            if (cmbProvincia.Text == "Esmeraldas")
-            {
-                if (cmbCategoria.Text == "★★★★★")
-                {
-                    Hotel.nombre = "Hotel Casa Arnaldo";
-                    Precios.precioMatrimonial = NumeroHabitacionMatrimonial * 80;
-                    Precios.precioFamiliar = NumeroHabitacionfamiliar * 100;
-                    Precios.precioEscolar = NumeroHabitacionescolar * 165;
-                }
-                if (cmbCategoria.Text == "★★★")
-                {
-                    Hotel.nombre = "Hotel Kemarios";
-                    Precios.precioMatrimonial = NumeroHabitacionMatrimonial * 60;
-                    Precios.precioFamiliar = NumeroHabitacionfamiliar * 90;
-                    Precios.precioEscolar = NumeroHabitacionescolar * 135;
-
-                }
-                if (cmbCategoria.Text == "★")
-                {
-                    Hotel.nombre = "Hotel la Barca";
-                    Precios.precioMatrimonial = NumeroHabitacionMatrimonial * 20;
-                    Precios.precioFamiliar = NumeroHabitacionfamiliar * 50;
-                    Precios.precioEscolar = NumeroHabitacionescolar * 90;
-
-                }
-            }
-            if (cmbProvincia.Text == "Galapagos")
-            {
-                if (cmbCategoria.Text == "★★★★★")
-                {
-                    Hotel.nombre = "Royal Palm Galápagos";
-                    Precios.precioMatrimonial = NumeroHabitacionMatrimonial * 80;
-                    Precios.precioFamiliar = NumeroHabitacionfamiliar * 100;
-                    Precios.precioEscolar = NumeroHabitacionescolar * 165;
-                }
-                if (cmbCategoria.Text == "★★★")
-                {
-                    Hotel.nombre = "Ikala Galápagos Hotel";
-                    Precios.precioMatrimonial = NumeroHabitacionMatrimonial * 60;
-                    Precios.precioFamiliar = NumeroHabitacionfamiliar * 90;
-                    Precios.precioEscolar = NumeroHabitacionescolar * 135;
-
-                }
-                if (cmbCategoria.Text == "★")
-                {
-                    Hotel.nombre = "Galápagos verde Azul";
-                    Precios.precioMatrimonial = NumeroHabitacionMatrimonial * 20;
-                    Precios.precioFamiliar = NumeroHabitacionfamiliar * 50;
-                    Precios.precioEscolar = NumeroHabitacionescolar * 90;
-
-                }
-            }
-            if (cmbProvincia.Text == "Guayas")
-            {
-                if (cmbCategoria.Text == "★★★★★")
-                {
-                    Hotel.nombre = "Hotel Hilton Colon Guayaquil";
-                    Precios.precioMatrimonial = NumeroHabitacionMatrimonial * 80;
-                    Precios.precioFamiliar = NumeroHabitacionfamiliar * 100;
-                    Precios.precioEscolar = NumeroHabitacionescolar * 165;
-                }
-                if (cmbCategoria.Text == "★★★")
-                {
-                    Hotel.nombre = "Courtyard by Marriot Guayaquil";
-                    Precios.precioMatrimonial = NumeroHabitacionMatrimonial * 60;
-                    Precios.precioFamiliar = NumeroHabitacionfamiliar * 90;
-                    Precios.precioEscolar = NumeroHabitacionescolar * 135;
-
-                }
-                if (cmbCategoria.Text == "★")
-                {
-                    Hotel.nombre = "Hotel Murali";
-                    Precios.precioMatrimonial = NumeroHabitacionMatrimonial * 20;
-                    Precios.precioFamiliar = NumeroHabitacionfamiliar * 50;
-                    Precios.precioEscolar = NumeroHabitacionescolar * 90;
-
-                }
-            }
-            if (cmbProvincia.Text == "Imbabura")
-            {
-                if (cmbCategoria.Text == "★★★★★")
-                {
-                    Hotel.nombre = "Prueba 5";
-                    Precios.precioMatrimonial = NumeroHabitacionMatrimonial * 80;
-                    Precios.precioFamiliar = NumeroHabitacionfamiliar * 100;
-                    Precios.precioEscolar = NumeroHabitacionescolar * 165;
-                }
-                if (cmbCategoria.Text == "★★★")
-                {
-                    Hotel.nombre = "Prueba 3";
-                    Precios.precioMatrimonial = NumeroHabitacionMatrimonial * 60;
-                    Precios.precioFamiliar = NumeroHabitacionfamiliar * 90;
-                    Precios.precioEscolar = NumeroHabitacionescolar * 135;
-
-                }
-                if (cmbCategoria.Text == "★")
-                {
-                    Hotel.nombre = "Prueba 1";
-                    Precios.precioMatrimonial = NumeroHabitacionMatrimonial * 20;
-                    Precios.precioFamiliar = NumeroHabitacionfamiliar * 50;
-                    Precios.precioEscolar = NumeroHabitacionescolar * 90;
-
-                }
-            }
-            if (cmbProvincia.Text == "loja")
-            {
-                if (cmbCategoria.Text == "★★★★★")
-                {
-                    Hotel.nombre = "Prueba 5";
-                    Precios.precioMatrimonial = NumeroHabitacionMatrimonial * 80;
-                    Precios.precioFamiliar = NumeroHabitacionfamiliar * 100;
-                    Precios.precioEscolar = NumeroHabitacionescolar * 165;
-                }
-                if (cmbCategoria.Text == "★★★")
-                {
-                    Hotel.nombre = "Prueba 3";
-                    Precios.precioMatrimonial = NumeroHabitacionMatrimonial * 60;
-                    Precios.precioFamiliar = NumeroHabitacionfamiliar * 90;
-                    Precios.precioEscolar = NumeroHabitacionescolar * 135;
-
-                }
-                if (cmbCategoria.Text == "★")
-                {
-                    Hotel.nombre = "Prueba 1";
-                    Precios.precioMatrimonial = NumeroHabitacionMatrimonial * 20;
-                    Precios.precioFamiliar = NumeroHabitacionfamiliar * 50;
-                    Precios.precioEscolar = NumeroHabitacionescolar * 90;
-
-                }
-            }
-            if (cmbProvincia.Text == "Los Ríos")
-            {
-                if (cmbCategoria.Text == "★★★★★")
-                {
-                    Hotel.nombre = "Prueba 5";
-                    Precios.precioMatrimonial = NumeroHabitacionMatrimonial * 80;
-                    Precios.precioFamiliar = NumeroHabitacionfamiliar * 100;
-                    Precios.precioEscolar = NumeroHabitacionescolar * 165;
-                }
-                if (cmbCategoria.Text == "★★★")
-                {
-                    Hotel.nombre = "Prueba 3";
-                    Precios.precioMatrimonial = NumeroHabitacionMatrimonial * 60;
-                    Precios.precioFamiliar = NumeroHabitacionfamiliar * 90;
-                    Precios.precioEscolar = NumeroHabitacionescolar * 135;
-
-                }
-                if (cmbCategoria.Text == "★")
-                {
-                    Hotel.nombre = "Prueba 1";
-                    Precios.precioMatrimonial = NumeroHabitacionMatrimonial * 20;
-                    Precios.precioFamiliar = NumeroHabitacionfamiliar * 50;
-                    Precios.precioEscolar = NumeroHabitacionescolar * 90;
-
-                }
-            }
-            if (cmbProvincia.Text == "Manabí")
-            {
-                if (cmbCategoria.Text == "★★★★★")
-                {
-                    Hotel.nombre = "Prueba 5";
-                    Precios.precioMatrimonial = NumeroHabitacionMatrimonial * 80;
-                    Precios.precioFamiliar = NumeroHabitacionfamiliar * 100;
-                    Precios.precioEscolar = NumeroHabitacionescolar * 165;
-                }
-                if (cmbCategoria.Text == "★★★")
-                {
-                    Hotel.nombre = "Prueba 3";
-                    Precios.precioMatrimonial = NumeroHabitacionMatrimonial * 60;
-                    Precios.precioFamiliar = NumeroHabitacionfamiliar * 90;
-                    Precios.precioEscolar = NumeroHabitacionescolar * 135;
-
-                }
-                if (cmbCategoria.Text == "★")
-                {
-                    Hotel.nombre = "Prueba 1";
-                    Precios.precioMatrimonial = NumeroHabitacionMatrimonial * 20;
-                    Precios.precioFamiliar = NumeroHabitacionfamiliar * 50;
-                    Precios.precioEscolar = NumeroHabitacionescolar * 90;
-
-                }
-            }
-            if (cmbProvincia.Text == "Morona-Santiago")
-            {
-                if (cmbCategoria.Text == "★★★★★")
-                {
-                    Hotel.nombre = "Prueba 5";
-                    Precios.precioMatrimonial = NumeroHabitacionMatrimonial * 80;
-                    Precios.precioFamiliar = NumeroHabitacionfamiliar * 100;
-                    Precios.precioEscolar = NumeroHabitacionescolar * 165;
-                }
-                if (cmbCategoria.Text == "★★★")
-                {
-                    Hotel.nombre = "Prueba 3";
-                    Precios.precioMatrimonial = NumeroHabitacionMatrimonial * 60;
-                    Precios.precioFamiliar = NumeroHabitacionfamiliar * 90;
-                    Precios.precioEscolar = NumeroHabitacionescolar * 135;
-
-                }
-                if (cmbCategoria.Text == "★")
-                {
-                    Hotel.nombre = "Prueba 1";
-                    Precios.precioMatrimonial = NumeroHabitacionMatrimonial * 20;
-                    Precios.precioFamiliar = NumeroHabitacionfamiliar * 50;
-                    Precios.precioEscolar = NumeroHabitacionescolar * 90;
-
-                }
-            }
-            if (cmbProvincia.Text == "Napo")
-            {
-                if (cmbCategoria.Text == "★★★★★")
-                {
-                    Hotel.nombre = "Prueba 5";
-                    Precios.precioMatrimonial = NumeroHabitacionMatrimonial * 80;
-                    Precios.precioFamiliar = NumeroHabitacionfamiliar * 100;
-                    Precios.precioEscolar = NumeroHabitacionescolar * 165;
-                }
-                if (cmbCategoria.Text == "★★★")
-                {
-                    Hotel.nombre = "Prueba 3";
-                    Precios.precioMatrimonial = NumeroHabitacionMatrimonial * 60;
-                    Precios.precioFamiliar = NumeroHabitacionfamiliar * 90;
-                    Precios.precioEscolar = NumeroHabitacionescolar * 135;
-
-                }
-                if (cmbCategoria.Text == "★")
-                {
-                    Hotel.nombre = "Prueba 1";
-                    Precios.precioMatrimonial = NumeroHabitacionMatrimonial * 20;
-                    Precios.precioFamiliar = NumeroHabitacionfamiliar * 50;
-                    Precios.precioEscolar = NumeroHabitacionescolar * 90;
-
-                }
-            }
-            if (cmbProvincia.Text == "Orellana")
-            {
-                if (cmbCategoria.Text == "★★★★★")
-                {
-                    Hotel.nombre = "Prueba 5";
-                    Precios.precioMatrimonial = NumeroHabitacionMatrimonial * 80;
-                    Precios.precioFamiliar = NumeroHabitacionfamiliar * 100;
-                    Precios.precioEscolar = NumeroHabitacionescolar * 165;
-                }
-                if (cmbCategoria.Text == "★★★")
-                {
-                    Hotel.nombre = "Prueba 3";
-                    Precios.precioMatrimonial = NumeroHabitacionMatrimonial * 60;
-                    Precios.precioFamiliar = NumeroHabitacionfamiliar * 90;
-                    Precios.precioEscolar = NumeroHabitacionescolar * 135;
-
-                }
-                if (cmbCategoria.Text == "★")
-                {
-                    Hotel.nombre = "Prueba 1";
-                    Precios.precioMatrimonial = NumeroHabitacionMatrimonial * 20;
-                    Precios.precioFamiliar = NumeroHabitacionfamiliar * 50;
-                    Precios.precioEscolar = NumeroHabitacionescolar * 90;
-
-                }
-            }
-            if (cmbProvincia.Text == "Pastaza")
-            {
-                if (cmbCategoria.Text == "★★★★★")
-                {
-                    Hotel.nombre = "Prueba 5";
-                    Precios.precioMatrimonial = NumeroHabitacionMatrimonial * 80;
-                    Precios.precioFamiliar = NumeroHabitacionfamiliar * 100;
-                    Precios.precioEscolar = NumeroHabitacionescolar * 165;
-                }
-                if (cmbCategoria.Text == "★★★")
-                {
-                    Hotel.nombre = "Prueba 3";
-                    Precios.precioMatrimonial = NumeroHabitacionMatrimonial * 60;
-                    Precios.precioFamiliar = NumeroHabitacionfamiliar * 90;
-                    Precios.precioEscolar = NumeroHabitacionescolar * 135;
-
-                }
-                if (cmbCategoria.Text == "★")
-                {
-                    Hotel.nombre = "Prueba 1";
-                    Precios.precioMatrimonial = NumeroHabitacionMatrimonial * 20;
-                    Precios.precioFamiliar = NumeroHabitacionfamiliar * 50;
-                    Precios.precioEscolar = NumeroHabitacionescolar * 90;
-
-                }
-            }
-            if (cmbProvincia.Text == "Santa Elena")
-            {
-                if (cmbCategoria.Text == "★★★★★")
-                {
-                    Hotel.nombre = "Prueba 5";
-                    Precios.precioMatrimonial = NumeroHabitacionMatrimonial * 80;
-                    Precios.precioFamiliar = NumeroHabitacionfamiliar * 100;
-                    Precios.precioEscolar = NumeroHabitacionescolar * 165;
-                }
-                if (cmbCategoria.Text == "★★★")
-                {
-                    Hotel.nombre = "Prueba 3";
-                    Precios.precioMatrimonial = NumeroHabitacionMatrimonial * 60;
-                    Precios.precioFamiliar = NumeroHabitacionfamiliar * 90;
-                    Precios.precioEscolar = NumeroHabitacionescolar * 135;
-
-                }
-                if (cmbCategoria.Text == "★")
-                {
-                    Hotel.nombre = "Prueba 1";
-                    Precios.precioMatrimonial = NumeroHabitacionMatrimonial * 20;
-                    Precios.precioFamiliar = NumeroHabitacionfamiliar * 50;
-                    Precios.precioEscolar = NumeroHabitacionescolar * 90;
-
-                }
-            }
-            if (cmbProvincia.Text == "Santo Domingo")
-            {
-                if (cmbCategoria.Text == "★★★★★")
-                {
-                    Hotel.nombre = "Prueba 5";
-                    Precios.precioMatrimonial = NumeroHabitacionMatrimonial * 80;
-                    Precios.precioFamiliar = NumeroHabitacionfamiliar * 100;
-                    Precios.precioEscolar = NumeroHabitacionescolar * 165;
-                }
-                if (cmbCategoria.Text == "★★★")
-                {
-                    Hotel.nombre = "Prueba 3";
-                    Precios.precioMatrimonial = NumeroHabitacionMatrimonial * 60;
-                    Precios.precioFamiliar = NumeroHabitacionfamiliar * 90;
-                    Precios.precioEscolar = NumeroHabitacionescolar * 135;
-
-                }
-                if (cmbCategoria.Text == "★")
-                {
-                    Hotel.nombre = "Prueba 1";
-                    Precios.precioMatrimonial = NumeroHabitacionMatrimonial * 20;
-                    Precios.precioFamiliar = NumeroHabitacionfamiliar * 50;
-                    Precios.precioEscolar = NumeroHabitacionescolar * 90;
-
-                }
-            }
-            if (cmbProvincia.Text == "Sucumbíos")
-            {
-                if (cmbCategoria.Text == "★★★★★")
-                {
-                    Hotel.nombre = "Prueba 5";
-                    Precios.precioMatrimonial = NumeroHabitacionMatrimonial * 80;
-                    Precios.precioFamiliar = NumeroHabitacionfamiliar * 100;
-                    Precios.precioEscolar = NumeroHabitacionescolar * 165;
-                }
-                if (cmbCategoria.Text == "★★★")
-                {
-                    Hotel.nombre = "Prueba 3";
-                    Precios.precioMatrimonial = NumeroHabitacionMatrimonial * 60;
-                    Precios.precioFamiliar = NumeroHabitacionfamiliar * 90;
-                    Precios.precioEscolar = NumeroHabitacionescolar * 135;
-
-                }
-                if (cmbCategoria.Text == "★")
-                {
-                    Hotel.nombre = "Prueba 1";
-                    Precios.precioMatrimonial = NumeroHabitacionMatrimonial * 20;
-                    Precios.precioFamiliar = NumeroHabitacionfamiliar * 50;
-                    Precios.precioEscolar = NumeroHabitacionescolar * 90;
-
-                }
-            }
-            if (cmbProvincia.Text == "Tungurahua")
-            {
-                if (cmbCategoria.Text == "★★★★★")
-                {
-                    Hotel.nombre = "Prueba 5";
-                    Precios.precioMatrimonial = NumeroHabitacionMatrimonial * 80;
-                    Precios.precioFamiliar = NumeroHabitacionfamiliar * 100;
-                    Precios.precioEscolar = NumeroHabitacionescolar * 165;
-                }
-                if (cmbCategoria.Text == "★★★")
-                {
-                    Hotel.nombre = "Prueba 3";
-                    Precios.precioMatrimonial = NumeroHabitacionMatrimonial * 60;
-                    Precios.precioFamiliar = NumeroHabitacionfamiliar * 90;
-                    Precios.precioEscolar = NumeroHabitacionescolar * 135;
-
-                }
-                if (cmbCategoria.Text == "★")
-                {
-                    Hotel.nombre = "Prueba 1";
-                    Precios.precioMatrimonial = NumeroHabitacionMatrimonial * 20;
-                    Precios.precioFamiliar = NumeroHabitacionfamiliar * 50;
-                    Precios.precioEscolar = NumeroHabitacionescolar * 90;
-
-                }
-            }
-            if (cmbProvincia.Text == "Zamora-Chinchipe")
-            {
-                if (cmbCategoria.Text == "★★★★★")
-                {
-                    Hotel.nombre = "Prueba 5";
-                    Precios.precioMatrimonial = NumeroHabitacionMatrimonial * 80;
-                    Precios.precioFamiliar = NumeroHabitacionfamiliar * 100;
-                    Precios.precioEscolar = NumeroHabitacionescolar * 165;
-                }
-                if (cmbCategoria.Text == "★★★")
-                {
-                    Hotel.nombre = "Prueba 3";
-                    Precios.precioMatrimonial = NumeroHabitacionMatrimonial * 60;
-                    Precios.precioFamiliar = NumeroHabitacionfamiliar * 90;
-                    Precios.precioEscolar = NumeroHabitacionescolar * 135;
-
-                }
-                if (cmbCategoria.Text == "★")
-                {
-                    Hotel.nombre = "Prueba 1";
-                    Precios.precioMatrimonial = NumeroHabitacionMatrimonial * 20;
-                    Precios.precioFamiliar = NumeroHabitacionfamiliar * 50;
-                    Precios.precioEscolar = NumeroHabitacionescolar * 90;
-
-                }
-            }
-            Precios.preciosCamas = Precios.precioMatrimonial + Precios.precioFamiliar + Precios.precioEscolar;
+            Precios.preciosCamas = HabitacionMatrimonial + HabitacionFamiliar + HabitacionEscolar;
+            
         }
+
         //FACTURA ES OBTENER TODOS LOS VALORES PARA EL TOTAL Y SUB TOTAL
         public void Factura() {
             int diasRecidencia = Convert.ToInt32(Hotel.diasRecidencia);
@@ -943,23 +887,17 @@ namespace Proyecto_Omega_final {
             int adultos = Convert.ToInt32(Huespedes.adultos);
             int ninios = Convert.ToInt32(Huespedes.ninos);
 
-            
-            subtotal = (Precios.precioTransporte*numAcompaniantes)  + (Precios.preciosCamas*diasRecidencia) ;
+            subtotal = (Precios.precioTransporte*numAcompaniantes)  + Precios.preciosCamas + Precios.precioAdicion;
             Precios.pagoSubtotal = subtotal ;
 
-            if (adultos > 5 || ninios > 3)
-            {
+            if (adultos > 5 || ninios > 7) {
                 Precios.descuentos = subtotal * 0.13;
             }
             else Precios.descuentos = subtotal * 0.05;
 
-            
             iva = subtotal * 0.12;
             Precios.pagoTotal = iva + subtotal - Precios.descuentos;
         }
             
-         
-
-        
     }
     }

@@ -30,7 +30,7 @@ namespace Proyecto_Omega_final
                              "Categoria:\t\t" + Hotel.categoria + "\r\n" +
                              "Provincia:\t\t\t" + Hotel.provincia + "\r\n" +
                              "Fecha de reservacion:\t" + Hotel.fecha + "\r\n" +
-                             "Dias de residencia:\t" + Hotel.diasRecidencia + "\r\n" +
+                             "Dias de recidencia:\t\t" + Hotel.diasRecidencia + "\r\n" +
                              "Transporte:\t\t" + Hotel.transporte + "\r\n" +
                              "Adicionales:\t\t" + Hotel.desayuno + "\r\n" +
                              "\t\t\t" + Hotel.almuerzo + "\r\n" +
@@ -49,12 +49,12 @@ namespace Proyecto_Omega_final
                              "\r\n" +
                              "Precio por habitacion:\t" + Precios.preciosCamas + "\r\n" +
                              "Subtotal:\t\t\t" + Precios.pagoSubtotal + "\r\n" +
-                             "Total:" + Precios.pagoTotal + "\r\n";
+                             "Total:\t\t\t" + Precios.pagoTotal + "\r\n";
            
         }
 
         private void btnConfirmar_Click(object sender, EventArgs e){
-            MessageBox.Show("Su alquier ha sido reservado exitosamente" + "\nDisfrute de sus vacaiones");
+            MessageBox.Show("Su alquier ha sido exitoso \nDisfute de sus vacaciones", "Confirmacion alquiler", MessageBoxButtons.OK, MessageBoxIcon.Information);
         }
 
         private void btnSalir_Click(object sender, EventArgs e)
