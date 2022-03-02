@@ -70,6 +70,13 @@
             this.label22 = new System.Windows.Forms.Label();
             this.btnLimpiar = new System.Windows.Forms.Button();
             this.panel1 = new System.Windows.Forms.Panel();
+            this.label28 = new System.Windows.Forms.Label();
+            this.label27 = new System.Windows.Forms.Label();
+            this.label26 = new System.Windows.Forms.Label();
+            this.label25 = new System.Windows.Forms.Label();
+            this.label24 = new System.Windows.Forms.Label();
+            this.label23 = new System.Windows.Forms.Label();
+            this.label8 = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
             this.numUpDiasRecidencia = new System.Windows.Forms.NumericUpDown();
             this.lblDiasRecidencia = new System.Windows.Forms.Label();
@@ -82,13 +89,8 @@
             this.panel4 = new System.Windows.Forms.Panel();
             this.btnSalir = new System.Windows.Forms.Button();
             this.errorProvider1 = new System.Windows.Forms.ErrorProvider(this.components);
-            this.label8 = new System.Windows.Forms.Label();
-            this.label23 = new System.Windows.Forms.Label();
-            this.label24 = new System.Windows.Forms.Label();
-            this.label25 = new System.Windows.Forms.Label();
-            this.label26 = new System.Windows.Forms.Label();
-            this.label27 = new System.Windows.Forms.Label();
-            this.label28 = new System.Windows.Forms.Label();
+            this.label29 = new System.Windows.Forms.Label();
+            this.label30 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.numUpAcompaniante)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.numUpAdultos)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.numUpNiños)).BeginInit();
@@ -154,7 +156,7 @@
             // label6
             // 
             this.label6.AutoSize = true;
-            this.label6.Location = new System.Drawing.Point(6, 51);
+            this.label6.Location = new System.Drawing.Point(31, 30);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(66, 26);
             this.label6.TabIndex = 5;
@@ -173,7 +175,7 @@
             // 
             this.label9.AutoSize = true;
             this.label9.Font = new System.Drawing.Font("Modern No. 20", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label9.Location = new System.Drawing.Point(87, 22);
+            this.label9.Location = new System.Drawing.Point(91, 5);
             this.label9.Name = "label9";
             this.label9.Size = new System.Drawing.Size(159, 25);
             this.label9.TabIndex = 8;
@@ -182,7 +184,7 @@
             // label10
             // 
             this.label10.AutoSize = true;
-            this.label10.Location = new System.Drawing.Point(6, 83);
+            this.label10.Location = new System.Drawing.Point(26, 107);
             this.label10.Name = "label10";
             this.label10.Size = new System.Drawing.Size(58, 13);
             this.label10.TabIndex = 9;
@@ -257,21 +259,21 @@
             // 
             // numUpAcompaniante
             // 
-            this.numUpAcompaniante.Location = new System.Drawing.Point(127, 51);
+            this.numUpAcompaniante.Location = new System.Drawing.Point(126, 33);
             this.numUpAcompaniante.Name = "numUpAcompaniante";
             this.numUpAcompaniante.Size = new System.Drawing.Size(90, 20);
             this.numUpAcompaniante.TabIndex = 18;
             // 
             // numUpAdultos
             // 
-            this.numUpAdultos.Location = new System.Drawing.Point(127, 83);
+            this.numUpAdultos.Location = new System.Drawing.Point(127, 100);
             this.numUpAdultos.Name = "numUpAdultos";
             this.numUpAdultos.Size = new System.Drawing.Size(90, 20);
             this.numUpAdultos.TabIndex = 19;
             // 
             // numUpNiños
             // 
-            this.numUpNiños.Location = new System.Drawing.Point(127, 109);
+            this.numUpNiños.Location = new System.Drawing.Point(127, 127);
             this.numUpNiños.Name = "numUpNiños";
             this.numUpNiños.Size = new System.Drawing.Size(90, 20);
             this.numUpNiños.TabIndex = 20;
@@ -388,7 +390,7 @@
             // label14
             // 
             this.label14.AutoSize = true;
-            this.label14.Location = new System.Drawing.Point(6, 109);
+            this.label14.Location = new System.Drawing.Point(31, 129);
             this.label14.Name = "label14";
             this.label14.Size = new System.Drawing.Size(41, 13);
             this.label14.TabIndex = 34;
@@ -514,6 +516,69 @@
             this.panel1.Size = new System.Drawing.Size(315, 393);
             this.panel1.TabIndex = 48;
             // 
+            // label28
+            // 
+            this.label28.AutoSize = true;
+            this.label28.Location = new System.Drawing.Point(240, 302);
+            this.label28.Name = "label28";
+            this.label28.Size = new System.Drawing.Size(65, 13);
+            this.label28.TabIndex = 56;
+            this.label28.Text = "Por Persona";
+            // 
+            // label27
+            // 
+            this.label27.AutoSize = true;
+            this.label27.Location = new System.Drawing.Point(251, 355);
+            this.label27.Name = "label27";
+            this.label27.Size = new System.Drawing.Size(46, 13);
+            this.label27.TabIndex = 55;
+            this.label27.Text = "200.00$";
+            // 
+            // label26
+            // 
+            this.label26.AutoSize = true;
+            this.label26.Location = new System.Drawing.Point(251, 334);
+            this.label26.Name = "label26";
+            this.label26.Size = new System.Drawing.Size(40, 13);
+            this.label26.TabIndex = 54;
+            this.label26.Text = "10.00$";
+            // 
+            // label25
+            // 
+            this.label25.AutoSize = true;
+            this.label25.Location = new System.Drawing.Point(251, 315);
+            this.label25.Name = "label25";
+            this.label25.Size = new System.Drawing.Size(46, 13);
+            this.label25.TabIndex = 53;
+            this.label25.Text = "100.00$";
+            // 
+            // label24
+            // 
+            this.label24.AutoSize = true;
+            this.label24.Location = new System.Drawing.Point(171, 262);
+            this.label24.Name = "label24";
+            this.label24.Size = new System.Drawing.Size(34, 13);
+            this.label24.TabIndex = 52;
+            this.label24.Text = "7.00$";
+            // 
+            // label23
+            // 
+            this.label23.AutoSize = true;
+            this.label23.Location = new System.Drawing.Point(171, 239);
+            this.label23.Name = "label23";
+            this.label23.Size = new System.Drawing.Size(34, 13);
+            this.label23.TabIndex = 51;
+            this.label23.Text = "2.50$";
+            // 
+            // label8
+            // 
+            this.label8.AutoSize = true;
+            this.label8.Location = new System.Drawing.Point(171, 216);
+            this.label8.Name = "label8";
+            this.label8.Size = new System.Drawing.Size(34, 13);
+            this.label8.TabIndex = 50;
+            this.label8.Text = "2.75$";
+            // 
             // label5
             // 
             this.label5.AutoSize = true;
@@ -582,6 +647,8 @@
             // panel2
             // 
             this.panel2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(192)))), ((int)(((byte)(255)))));
+            this.panel2.Controls.Add(this.label30);
+            this.panel2.Controls.Add(this.label29);
             this.panel2.Controls.Add(this.label14);
             this.panel2.Controls.Add(this.numUpNiños);
             this.panel2.Controls.Add(this.numUpAdultos);
@@ -643,68 +710,23 @@
             // 
             this.errorProvider1.ContainerControl = this;
             // 
-            // label8
+            // label29
             // 
-            this.label8.AutoSize = true;
-            this.label8.Location = new System.Drawing.Point(171, 216);
-            this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(34, 13);
-            this.label8.TabIndex = 50;
-            this.label8.Text = "2.75$";
+            this.label29.AutoSize = true;
+            this.label29.Location = new System.Drawing.Point(14, 63);
+            this.label29.Name = "label29";
+            this.label29.Size = new System.Drawing.Size(291, 13);
+            this.label29.TabIndex = 35;
+            this.label29.Text = "MAS DE 7 NIÑOS O 5 ADULTOS  DESCUENTO DEL 13% ";
             // 
-            // label23
+            // label30
             // 
-            this.label23.AutoSize = true;
-            this.label23.Location = new System.Drawing.Point(171, 239);
-            this.label23.Name = "label23";
-            this.label23.Size = new System.Drawing.Size(34, 13);
-            this.label23.TabIndex = 51;
-            this.label23.Text = "2.50$";
-            // 
-            // label24
-            // 
-            this.label24.AutoSize = true;
-            this.label24.Location = new System.Drawing.Point(171, 262);
-            this.label24.Name = "label24";
-            this.label24.Size = new System.Drawing.Size(34, 13);
-            this.label24.TabIndex = 52;
-            this.label24.Text = "7.00$";
-            // 
-            // label25
-            // 
-            this.label25.AutoSize = true;
-            this.label25.Location = new System.Drawing.Point(251, 315);
-            this.label25.Name = "label25";
-            this.label25.Size = new System.Drawing.Size(46, 13);
-            this.label25.TabIndex = 53;
-            this.label25.Text = "100.00$";
-            // 
-            // label26
-            // 
-            this.label26.AutoSize = true;
-            this.label26.Location = new System.Drawing.Point(251, 334);
-            this.label26.Name = "label26";
-            this.label26.Size = new System.Drawing.Size(40, 13);
-            this.label26.TabIndex = 54;
-            this.label26.Text = "10.00$";
-            // 
-            // label27
-            // 
-            this.label27.AutoSize = true;
-            this.label27.Location = new System.Drawing.Point(251, 355);
-            this.label27.Name = "label27";
-            this.label27.Size = new System.Drawing.Size(46, 13);
-            this.label27.TabIndex = 55;
-            this.label27.Text = "200.00$";
-            // 
-            // label28
-            // 
-            this.label28.AutoSize = true;
-            this.label28.Location = new System.Drawing.Point(240, 302);
-            this.label28.Name = "label28";
-            this.label28.Size = new System.Drawing.Size(65, 13);
-            this.label28.TabIndex = 56;
-            this.label28.Text = "Por Persona";
+            this.label30.AutoSize = true;
+            this.label30.Location = new System.Drawing.Point(10, 84);
+            this.label30.Name = "label30";
+            this.label30.Size = new System.Drawing.Size(295, 13);
+            this.label30.TabIndex = 36;
+            this.label30.Text = "MENOS DE 7 NIÑOS O 5 ADULTOS DESCEUNTO DEL 5%";
             // 
             // Form1
             // 
@@ -810,6 +832,8 @@
         private System.Windows.Forms.Label label23;
         private System.Windows.Forms.Label label8;
         private System.Windows.Forms.Label label28;
+        private System.Windows.Forms.Label label29;
+        private System.Windows.Forms.Label label30;
     }
 }
 
