@@ -902,6 +902,7 @@ namespace Proyecto_Omega_final {
             iva = subtotal * 0.12;
             Precios.pagoTotal = iva + subtotal - Precios.descuentos;
         }
-            
+
+       
     }
     }
